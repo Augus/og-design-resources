@@ -1,0 +1,71 @@
+// ==========================================================================
+
+//  Base Mixins - built with SASS - http://sass-lang.com/
+//  Theme URI: http://git.io/base
+//  Author: Matthew Hartman - http://www.matthewhartman.com.au/
+//  Version: 0.1 - Last Updated: 7th June, 2013
+
+// ==========================================================================
+
+// Font Sizes (REMs with PX fallback for older browsers)
+@mixin font-size($size) {
+    font-size: $size + px;
+    font-size: ($size/16) + rem;
+}
+
+// Line Height Sizes (REMs with PX fallback for older browsers)
+@mixin line-height($size) {
+    line-height: $size + px;
+    line-height: ($size/16) + rem;
+}
+
+// Rounded Corners
+@mixin rounded($radius) {
+  -webkit-border-radius: ($radius) + px;
+  -moz-border-radius: ($radius) + px;
+  border-radius: ($radius) + px;
+}
+
+
+// 動畫函數
+@mixin easeOutCirc($property, $duration : 500ms) {
+    -webkit-transition: $property $duration cubic-bezier(0.075, 0.820, 0.165, 1.000);
+       -moz-transition: $property $duration cubic-bezier(0.075, 0.820, 0.165, 1.000);
+        -ms-transition: $property $duration cubic-bezier(0.075, 0.820, 0.165, 1.000);
+         -o-transition: $property $duration cubic-bezier(0.075, 0.820, 0.165, 1.000);
+            transition: $property $duration cubic-bezier(0.075, 0.820, 0.165, 1.000);
+
+    -webkit-transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
+       -moz-transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
+        -ms-transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
+         -o-transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
+            transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
+}
+
+@mixin easeOutSine($property, $duration : 500ms) {
+    -webkit-transition: $property  $duration cubic-bezier(0.680, 0, 0.265, 1); /* older webkit */
+    -webkit-transition: $property  $duration cubic-bezier(0.680, -0.550, 0.265, 1.550);
+       -moz-transition: $property  $duration cubic-bezier(0.680, -0.550, 0.265, 1.550);
+         -o-transition: $property  $duration cubic-bezier(0.680, -0.550, 0.265, 1.550);
+            transition: $property  $duration cubic-bezier(0.680, -0.550, 0.265, 1.550); /* easeInOutBack */
+
+   -webkit-transition-timing-function: cubic-bezier(0.390, 0.575, 0.565, 1.000);
+   -moz-transition-timing-function: cubic-bezier(0.390, 0.575, 0.565, 1.000);
+     -o-transition-timing-function: cubic-bezier(0.390, 0.575, 0.565, 1.000);
+        transition-timing-function: cubic-bezier(0.390, 0.575, 0.565, 1.000); /* easeOutSine */
+}
+
+@mixin easeOutBack($property, $duration : 500ms) {
+   -webkit-transition: all $duration cubic-bezier(0.945, 0, 0.030, 1); /* older webkit */
+-webkit-transition: all $duration cubic-bezier(0.945, -0.095, 0.030, 1.135);
+   -moz-transition: all $duration cubic-bezier(0.945, -0.095, 0.030, 1.135);
+     -o-transition: all $duration cubic-bezier(0.945, -0.095, 0.030, 1.135);
+        transition: all $duration cubic-bezier(0.945, -0.095, 0.030, 1.135); /* custom */
+
+-webkit-transition-timing-function: cubic-bezier(0.945, 0, 0.030, 1); /* older webkit */
+-webkit-transition-timing-function: cubic-bezier(0.945, -0.095, 0.030, 1.135);
+   -moz-transition-timing-function: cubic-bezier(0.945, -0.095, 0.030, 1.135);
+     -o-transition-timing-function: cubic-bezier(0.945, -0.095, 0.030, 1.135);
+        transition-timing-function: cubic-bezier(0.945, -0.095, 0.030, 1.135); /* custom */
+
+}

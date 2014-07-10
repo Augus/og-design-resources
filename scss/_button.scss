@@ -1,0 +1,53 @@
+.button {
+	font-size: 14px;
+	padding: 10px 30px;
+	border-radius: 3px;
+	&.disabled {
+		background-color: #ddd
+	}
+	&:hover {
+		cursor: pointer;
+	}
+	&.button-block {
+		display: block;
+		width: 100%;
+	}
+	&.button-outline {
+		background-color: transparent;
+		border: 1px solid $main-color;
+		border-radius: 3px;
+		color: $main-color;
+		&.button-light {
+			color: #fff;
+			border-color: #fff;
+		}
+		&.button-stable {
+			color: #aaa;
+			border-color: #aaa;
+		}
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	&.button-clear {
+		background-color: transparent;
+		border: none;
+		color: #fff;
+		&:hover {
+			cursor: pointer;
+		}
+		&.button-stable {
+			color: #aaa;
+			border-color: #aaa;
+			&:hover, &:active {
+				color: #ddd;
+				border-color: #ddd;
+			}
+		}
+	}
+	&.button-large {
+		font-size: 16px;
+		padding: 16px 40px;
+		border-radius: 3px;
+	}
+}

@@ -1,0 +1,28 @@
+[
+
+    {
+        "name": "Logopond" ,
+        "descript": "提供眾多的品牌 Logo 設計，是一個尋找 Logo 靈感的好地方 ",
+        "link": "http://logopond.com/"
+    }, {
+        "name": "LogoFury ",
+        "descript": "收藏非常多的 Logo，讓設計師們找尋靈感畫廊，在這裡你也可以看到其他人對這些概念的評價 ",
+        "link": "http://logofury.com/ "
+    }, {
+        "name": "Logos ",
+        "descript": "在這裡除了可以找到許多免費的 Logo 素材外，你也可以付費購買一些超讚的作品！",
+        "link": "http://logos.co/ "
+    }, {
+        "name": "Logospire ",
+        "descript": "收藏非常多精選的 Logo，缺少靈感的時候來這邊就對了！ ",
+        "link": "http://www.logospire.com/ "
+    }, {
+        "name": "Logo Galleria ",
+        "descript": "熱門的 Logo 畫廊，也是一個取得靈感的好地方 ",
+        "link": "http://www.logogalleria.com/ "
+    }, {
+        "name": "seeklogo.com ",
+        "descript": "Logo 搜尋引擎，你可以透過關鍵字搜尋，找到意想不到的好靈感"
+        "link": "http://seeklogo.com/"
+    }
+]
