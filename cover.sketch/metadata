@@ -12,14 +12,15 @@
 	<array>
 		<string>Lato-Bold</string>
 		<string>FZLTXHB--B51-0</string>
+		<string>HelveticaNeue-Thin</string>
+		<string>PerpetuaTitlingMT-Light</string>
 		<string>STHeitiTC-Medium</string>
 		<string>Lato-Light</string>
 		<string>Lato-Hairline</string>
-		<string>PerpetuaTitlingMT-Light</string>
 		<string>CurlzMT</string>
 	</array>
 	<key>length</key>
-	<integer>257943</integer>
+	<integer>268244</integer>
 	<key>version</key>
 	<integer>37</integer>
 </dict>
