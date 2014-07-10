@@ -14,9 +14,12 @@
 		<string>FZLTXHB--B51-0</string>
 		<string>STHeitiTC-Medium</string>
 		<string>Lato-Light</string>
+		<string>Lato-Hairline</string>
+		<string>PerpetuaTitlingMT-Light</string>
+		<string>Apple-Chancery</string>
 	</array>
 	<key>length</key>
-	<integer>193629</integer>
+	<integer>257949</integer>
 	<key>version</key>
 	<integer>37</integer>
 </dict>
