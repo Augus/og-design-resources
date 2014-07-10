@@ -285,7 +285,7 @@ form {
 .feature-section {
 	&.gray {
 		.service {
-			border: none;
+			// border: none;
 			background-color: #fff;
 		}
 	}
@@ -301,9 +301,13 @@ form {
 	margin: 10px;
 	margin-bottom: 30px;
 	text-decoration: none;
+	border: 2px solid transparent;
+	@include easeOutCirc(all, 750ms);
 	@include border-radius(5px);
 	&:hover {
+		border: 2px solid #000;
 		.thumbnail {
+			// -webkit-filter: grayscale(0);
 			@include opacity(1);
 		}
 	}
@@ -319,6 +323,7 @@ form {
 		font-size: 30px;
 		padding: 0 20px;
 		color: #fff;
+		// -webkit-filter: grayscale(.7);
 		@include border-radius(3px);
 		@include opacity(.6);
 		@include easeOutCirc(all, 400ms);
