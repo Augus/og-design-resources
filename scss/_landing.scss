@@ -128,7 +128,12 @@ form {
 		&:last-child {
 			// border-bottom: none;
 		}
-		&:hover, &.active {
+		&:hover {
+			cursor: pointer;
+			color: #58E6E2;
+			background-color: darken(#3E4248, 10%);
+		}
+		&.active {
 			cursor: pointer;
 			color: #58E6E2;
 			background-color: darken(#3E4248, 10%);
