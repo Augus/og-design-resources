@@ -16,11 +16,13 @@
 		<string>PerpetuaTitlingMT-Light</string>
 		<string>STHeitiTC-Medium</string>
 		<string>Lato-Light</string>
+		<string>HiraMinPro-W3</string>
+		<string>Lato-Black</string>
 		<string>Lato-Hairline</string>
 		<string>CurlzMT</string>
 	</array>
 	<key>length</key>
-	<integer>268244</integer>
+	<integer>599034</integer>
 	<key>version</key>
 	<integer>37</integer>
 </dict>
