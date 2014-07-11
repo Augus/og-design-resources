@@ -19,13 +19,14 @@
 		<string>HiraMinPro-W3</string>
 		<string>Lato-Black</string>
 		<string>Roboto-Light</string>
+		<string>Helvetica</string>
 		<string>STHeitiTC-Light</string>
 		<string>XinGothic-ZhangYue-W4</string>
 		<string>Lato-Hairline</string>
 		<string>CurlzMT</string>
 	</array>
 	<key>length</key>
-	<integer>899464</integer>
+	<integer>1007648</integer>
 	<key>version</key>
 	<integer>37</integer>
 </dict>
