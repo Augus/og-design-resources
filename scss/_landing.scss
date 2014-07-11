@@ -307,11 +307,12 @@ form {
 	margin: 10px;
 	margin-bottom: 30px;
 	text-decoration: none;
-	border: 2px solid transparent;
+	// border: 2px solid transparent;
 	@include easeOutCirc(all, 750ms);
 	@include border-radius(5px);
+	@include box-shadow(0px 1px #DDD);
 	&:hover {
-		border: 2px solid #000;
+		// border: 2px solid #000;
 		.thumbnail {
 			// -webkit-filter: grayscale(0);
 			@include opacity(1);
