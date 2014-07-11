@@ -18,11 +18,12 @@
 		<string>Lato-Light</string>
 		<string>HiraMinPro-W3</string>
 		<string>Lato-Black</string>
+		<string>XinGothic-ZhangYue-W4</string>
 		<string>Lato-Hairline</string>
 		<string>CurlzMT</string>
 	</array>
 	<key>length</key>
-	<integer>599034</integer>
+	<integer>795518</integer>
 	<key>version</key>
 	<integer>37</integer>
 </dict>
