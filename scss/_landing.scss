@@ -4,6 +4,10 @@ body * {
 	font-family: $globe-font-style;
 }
 
+a {
+	text-decoration: none;
+}
+
 form {
 	input, textarea, label {
 		width: 100%;
@@ -130,12 +134,12 @@ form {
 		}
 		&:hover {
 			cursor: pointer;
-			color: #58E6E2;
+			color: $main-color;
 			background-color: darken(#3E4248, 10%);
 		}
 		&.active {
 			cursor: pointer;
-			color: #58E6E2;
+			color: $main-color;
 			background-color: darken(#3E4248, 10%);
 		}
 	}
@@ -178,7 +182,7 @@ form {
 		content: "";
 		background-color: #000;
 		background-image: url(../images/02.png);
-		opacity: 0.65;
+		opacity: 0.85;
 	}
 	.slogan {
 		z-index: 3;
@@ -406,13 +410,13 @@ form {
 
 .footer {
 	margin: 0 auto;
-	max-width: 1280px;
+	max-width: 1200px;
 	.logo {
 		// max-width: 240px;
 		img {
 			max-width: 240px;
 			// max-width: 100%;
-			height: 100%;
+			// height: 100%;
 			margin-bottom: 15px;
 		}
 		p {
@@ -431,19 +435,29 @@ form {
 			line-height: 40px;
 			text-align: center;
 			background-color: #aaa;
-			border-radius: 3px;
+			border-radius: 5px;
 			color: #fff;
+			a {
+				color: #fff;
+			}
 		}
 	}
 	.footer-title {
-		@include font-size(14);
-		color: $title-color;
+		@include font-size(16);
+		color: $main-color;
+		font-weight: bold;
 		margin-bottom: 20px;
 	}
 	.footer-item {
 		@include font-size(14);
 		color: #777;
 		margin-bottom: 12px;
+		a {
+			color: #777;
+			&:hover {
+				color: $main-color;
+			}
+		}
 	}
 }
 
