@@ -5,13 +5,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Language" content="zh-tw" />
-    <meta property="og:title" content="奧革設計 - 您最值得信賴的設計夥伴" />
     <!-- <meta property="og:url" content="http://" /> -->
     <meta property="og:image" content="images/cover.png" />
-    <meta property="og:description" content="" />
-    <meta name="keywords" content="" />
-    <title>奧革設計 - 設計資源分享</title>
-    <meta name="description" content="">
+    <meta name="keywords" content="設計資源,設計資源推薦,奧革設計,用戶體驗,design resource,神器推薦" />
+    <title>設計必備資源總匯 - 奧革設計</title>
+    <meta name="description" content="精心整理了各式各樣的設計資源，有各種靈感、資源、工具，設計師的你別錯過了！">
+    <meta property="og:title" content="設計必備資源總匯 - 奧革設計" />
+    <meta property="og:description" content="精心整理了各式各樣的設計資源，有各種靈感、資源、工具，設計師的你別錯過了！" />
 
     <link rel="shortcut icon" href="images/favicon.png">
     <link rel="apple-touch-icon" sizes="57x57" href="images/apple-touch-icon.png">
@@ -62,7 +62,9 @@
     </div>
     <div class="quick-menu">
         <div class="menu-header">設計資源導航</div>
-        <div class="menu-item" ng-repeat="item in items" ng-click="scrollTo($index)">{{item}}</div>
+        <div class="menu-content">
+            <div class="menu-item" ng-repeat="item in items" ng-click="scrollTo($index)">{{item}}</div>
+        </div>
         <div class="fb-like" data-href="http://resources.ogdesign.tw/" data-layout="box_count" data-action="like" data-show-faces="false" data-share="true"></div>
     </div>
 

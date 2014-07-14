@@ -1,4 +1,42 @@
+::-webkit-scrollbar {
+	height: 4px !important;
+	overflow: visible !important;
+	width: 6px !important;
+}
 
+::-webkit-scrollbar-thumb {
+	background: rgba(128,128,128, .3) !important;
+	background-clip: padding-box !important;
+	border: 0px solid transparent !important;
+	border-image: initial !important;
+	min-height: 20px !important;
+	padding: 50px 0px 0px !important;
+	@include border-radius(10px);
+}
+
+/* :window-inactive inspired by cssTricks */
+::-webkit-scrollbar-thumb:hover {
+	background: rgba(128,128,128, .6) !important;
+	background-clip: padding-box !important;
+}
+
+/* :window-inactive inspired by cssTricks */
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(220,220,220, 0) !important;
+	background-clip: padding-box !important;
+}
+
+::-webkit-scrollbar-button {
+	height: 0px !important;
+	width: 0px !important;
+}
+
+::-webkit-scrollbar-track {
+}
+
+::-webkit-scrollbar-corner {
+	background: transparent !important;
+}
 
 body * {
 	font-family: $globe-font-style;
@@ -122,6 +160,10 @@ form {
 		color: #eee;
 		font-size: 14px;
 		// margin-bottom: 10px;
+	}
+	.menu-content {
+		max-height: 350px;
+		overflow: auto;
 	}
 	.menu-item {
 		padding: 12px 25px;
