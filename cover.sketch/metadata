@@ -11,6 +11,8 @@
 	<key>fonts</key>
 	<array>
 		<string>Lato-Bold</string>
+		<string>Helvetica</string>
+		<string>Helvetica-Bold</string>
 		<string>Lato-Hairline</string>
 		<string>FZLTXHB--B51-0</string>
 		<string>HelveticaNeue-Thin</string>
@@ -20,13 +22,12 @@
 		<string>HiraMinPro-W3</string>
 		<string>Lato-Black</string>
 		<string>Roboto-Light</string>
-		<string>Helvetica</string>
 		<string>STHeitiTC-Light</string>
 		<string>XinGothic-ZhangYue-W4</string>
 		<string>CurlzMT</string>
 	</array>
 	<key>length</key>
-	<integer>1171224</integer>
+	<integer>1223672</integer>
 	<key>version</key>
 	<integer>37</integer>
 </dict>
