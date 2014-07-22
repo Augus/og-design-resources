@@ -288,6 +288,25 @@ form {
 			}
 		}
 	}
+	&.blue {
+		background-color: #2B3B49;
+		// background-image: url(../images/02.png);
+		.feature-title {
+			color: #fff;
+		}
+		.feature-content {
+			h2 {
+				color: #fff;
+			}
+			p {
+				color: #eee;
+			}
+			a {
+				color: #fff;
+				text-decoration: underline;
+			}
+		}
+	}
 	.feature-title {
 		text-align: center;
 		color: $title-color;
