@@ -439,12 +439,12 @@ app.controller('RootController', function($scope, $location) {
         descript: "設計規範一定有它的道理，了解各種平台上的設計細節",
         items: [{
             linkurl: "http://www.google.com/design/spec/material-design/introduction.html",
-            thumbnail: "images/rscs/material-design",
+            thumbnail: "images/rscs/material-design.jpg",
             name: "Google Material Design",
             descript: "Goolge Material Design 的設計規範，可以從裡頭學到很多很多。",
         }, {
             linkurl: "http://www.ui.cn/Material/index.html",
-            thumbnail: "images/rscs/material-design",
+            thumbnail: "images/rscs/material-design.jpg",
             name: "Google Material Design 中文版",
             descript: "來自對岸翻譯的 Material Design 中文版！",
         }, {
