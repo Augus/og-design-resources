@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js" ng-app="resourcesApp">
+<html lang="en" class="no-js ng-cloak" ng-app="resourcesApp" ng-cloak>
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Language" content="zh-tw" />
-    <meta property="og:title" content="奧革設計 - 您最值得信賴的設計夥伴" />
     <!-- <meta property="og:url" content="http://" /> -->
-    <!-- <meta property="og:image" content="" /> -->
-    <meta property="og:description" content="" />
-    <meta name="keywords" content="" />
-    <title>奧革設計 - 設計資源分享</title>
-    <meta name="description" content="">
+    <meta property="og:image" content="images/cover.png" />
+    <meta name="keywords" content="設計資源,設計資源推薦,奧革設計,用戶體驗,design resource,神器推薦" />
+    <title>設計必備資源總匯 - 奧革設計</title>
+    <meta name="description" content="精心整理了各式各樣的設計資源，有各種靈感、資源、工具，設計師的你別錯過了！">
+    <meta property="og:title" content="設計必備資源總匯 - 奧革設計" />
+    <meta property="og:description" content="精心整理了各式各樣的設計資源，有各種靈感、資源、工具，設計師的你別錯過了！" />
 
     <link rel="shortcut icon" href="images/favicon.png">
     <link rel="apple-touch-icon" sizes="57x57" href="images/apple-touch-icon.png">
@@ -29,680 +29,120 @@
 
         <!-- Header -->
         <div class="header">
-            <!--
+
             <div class="row clear">
-                <div class="col col-3 tablet-col-9 mobile-col-1-2">
+                <div class="col col-3 tablet-col-3 mobile-hide">
                     <h1 class="logo">
-                        <img src="images/white_logo.png" alt="奧革設計, OGDeisgn">
+                        <a href="http://ogdesign.tw">
+                            <img src="images/logos/logo.png" alt="奧革設計, OGDeisgn">
+                        </a>
                     </h1>
                 </div>
-                <div class="col col-9 tablet-col-9 mobile-col-1-2">
+                <div class="col col-9 tablet-col-9 mobile-full">
                     <ul class="nav">
-                        <li>服務項目</li>
-                        <li>服務案例</li>
-                        <li>部落格</li>
-                        <li class="active">聯絡我們</li>
+                        <li><a href="http://ogdesign.tw">首頁</a>
+                        </li>
+                        <li><a href="http://blog.ogdesign.tw">部落格</a>
+                        </li>
+                        <li class="active">設計資源</li>
+                        <li><a href="http://ogdesign.tw/#contact">聯絡我們</a>
+                        </li>
                     </ul>
                 </div>
             </div>
-         --></div>
-        <div class="slogan">
-            <img src="images/white_logo.png" alt="奧革設計, OGDeisgn">
-            <!-- <h2>設計 / 優化諮詢</h2> -->
-            <!-- <h6>我們提供 App / 網頁設計，使用者界面優化諮詢服務</h6> -->
         </div>
-        <!-- <div class="scroll-down">
-            <div class="button button-light button-outline">了解更多</div>
-        </div> -->
-    </div>
-    <div class="quick-menu">
-        <div class="menu-header">快速選單</div>
-        <div class="menu-item" ng-repeat="item in items" ng-click="scrollTo($index)">{{item}}</div>
     </div>
 
-    <!-- ul>li*10 -->
+    <div class="feature-section white">
+        <h2 class="feature-title">設計師必備資源總匯</h2>
+        <div class="feature-content">
+            <p>如果你喜歡這份整理，幫我們分享給更多的人知道：）</p>
+            <div class="fb-like-box" data-href="https://www.facebook.com/ogdesign.tw" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="false" data-show-border="false"></div>
+            <div class="fb-like" data-href="http://resources.ogdesign.tw/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+        </div>
+    </div>
 
     <div class="">
-        <!-- Design Websites -->
-        <div class="feature-section">
-            <h2 class="feature-title">必逛大站</h2>
+        <div class="feature-section" ng-repeat="r in resources" ng-class="{'gray': $index%2===0}">
+            <h2 class="feature-title">{{r.category}}</h2>
             <div class="feature-content">
-                <p>多個LOGO網站，滿滿的都是想法</p>
+                <p>{{r.descript}}</p>
                 <div class="row clear">
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="https://dribbble.com/" target="_blank">
-                            <div class="thumbnail" style="background-color: #354A5D;">Dribbble</div>
-                            <h4 class="title">Dribbble</h4>
-                            <p class="descript"></p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="https://www.behance.net/" target="_blank">
-                            <div class="thumbnail" style="background-color: #354A5D;">Behance</div>
-                            <h4 class="title">Behance</h4>
-                            <p class="descript">Showcase and discover the latest work from top online portfolios by creative professionals across industries.</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://usepanda.com/app/" target="_blank">
-                            <div class="thumbnail" style="background-color: #354A5D;">Panda</div>
-                            <h4 class="title">Panda</h4>
-                            <p class="descript">The must have app for designers. Comfortably browse Designer News, Dribbble, Behance, Hacker News and others all in one place. Never miss anything, again.</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://littlebigdetails.com/" target="_blank">
-                            <div class="thumbnail" style="background-color: #354A5D;">Little Big Details</div>
-                            <h4 class="title">Little Big Details</h4>
-                            <p class="descript">Your daily dose of design inspiration.</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://thedesigninspiration.com/" target="_blank">
-                            <div class="thumbnail" style="background-color: #354A5D;">The Design Inspiration</div>
-                            <h4 class="title">The Design Inspiration</h4>
-                            <p class="descript">The Design Inspiration: Daily Logo Designs, Illustration Art, Website Showcase, Business Cards, Photos and Patterns</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://www.iospirations.com/" target="_blank">
-                            <div class="thumbnail" style="background-color: #354A5D;">iospirations</div>
-                            <h4 class="title">iospirations</h4>
-                            <p class="descript">iOSpirations.com is a showcase gallery featuring the best iOS / mac OSX App and Icon designs to help you finding iOS / Mac app design inspiration.</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://www.ui.cn/" target="_blank">
-                            <div class="thumbnail" style="background-color: #354A5D;">UI中国</div>
-                            <h4 class="title">UI中国</h4>
-                            <p class="descript">UI中国,前身为iconfans.com。是专业的界面设计师交流、学习/展示平台.同时也是UI设计师人才流动的集散地,会员均为一线UI设计师,覆盖主流互联网公司.我们希望借助互联网的力量打造国内最专业的UI设计平台,为UI设计师做最好的服务,提高UI设计行业价值!</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://shijue.me/home/hot/0" target="_blank">
-                            <div class="thumbnail" style="background-color: #354A5D;">視覺中國</div>
-                            <h4 class="title">視覺中國</h4>
-                            <p class="descript">视觉中国是中国最具活力的视觉图片分享社区及创意设计产品社会化电商平台。依托独特的创意生态理论，为原创者和消费者提供一个互动沟通的原创社区，发现原创、发现美丽，收获并分享美好的创意体验。</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://www.uisheji.cn/" target="_blank">
-                            <div class="thumbnail" style="background-color: #354A5D;">UI設計</div>
-                            <h4 class="title">UI設計</h4>
-                            <p class="descript">收藏各式各樣有用的設計資源</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://www.chicun.in/index.html" target="_blank">
-                            <div class="thumbnail" style="background-color: #354A5D;">尺寸</div>
-                            <h4 class="title">尺寸</h4>
-                            <p class="descript">一起為更標準的設計而努力，尺寸ChiCun最給力的設計標準分享網站。</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://www.boxui.com/" target="_blank">
-                            <div class="thumbnail" style="background-color: #354A5D;">BoxUI</div>
-                            <h4 class="title">BoxUI</h4>
-                            <p class="descript">专注于以用户体验为中心的设计，分享精彩的UI设计、交互设计、用户研究作品及相关设计理论知识；您还可以在这里发布最新UI设计行业动态、设计活动及招聘求职信息。</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://www.boxui.com/" target="_blank">
-                            <div class="thumbnail" style="background-color: #354A5D;">BoxUI</div>
-                            <h4 class="title">BoxUI</h4>
-                            <p class="descript">专注于以用户体验为中心的设计，分享精彩的UI设计、交互设计、用户研究作品及相关设计理论知识；您还可以在这里发布最新UI设计行业动态、设计活动及招聘求职信息。</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://designlol.net/" target="_blank">
-                            <div class="thumbnail" style="background-color: #354A5D;">Design LOL</div>
-                            <h4 class="title">Design LOL</h4>
-                            <p class="descript">全球设计精华分享</p>
+                    <div class="col col-3 tablet-col-4 mobile-full" ng-repeat="i in r.items">
+                        <a class="service" href="{{i.linkurl}}" target="_blank">
+                            <div ng-if="i.thumbnail" class="thumbnail" style="background-image: url({{i.thumbnail}});"></div>
+                            <div ng-if="!i.thumbnail" class="thumbnail" style="background-color: {{i.color}}">{{i.name}}</div>
+                            <h4 class="title">{{i.name}}</h4>
+                            <p class="descript">{{i.descript}}</p>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- /Design Websites -->
 
-        <!-- App -->
-        <div class="feature-section gray">
-            <h2 class="feature-title">App UI 靈感</h2>
+        <div class="feature-section blue">
+            <h2 class="feature-title">UI/UX 社團</h2>
             <div class="feature-content">
-                <p>多個LOGO網站，滿滿的都是想法</p>
-                <div class="row clear">
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://inspired-ui.com/" target="_blank">
-                            <div class="thumbnail" style="background-color: #45B29D;">Inspired UI</div>
-                            <h4 class="title">Inspired UI</h4>
-                            <p class="descript">A showcase of the best examples of beautifully designed mobile apps - iPhone, iPad, Android, UI Patterns</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://www.mobile-patterns.com/user-profiles" target="_blank">
-                            <div class="thumbnail" style="background-color: #45B29D;">Mobile Patterns</div>
-                            <h4 class="title">Mobile Patterns</h4>
-                            <p class="descript">A library of iOS and Android screenshots for designers and developers to reference.</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://mobileawesomeness.com/?ref=tap" target="_blank">
-                            <div class="thumbnail" style="background-color: #45B29D;">Mobile Awesomeness</div>
-                            <h4 class="title">Mobile Awesomeness</h4>
-                            <p class="descript">在這裡除了可以找到許多免費的 Logo 素材外，你也可以付費購買一些超讚的作品！</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://www.lovelyui.com/" target="_blank">
-                            <div class="thumbnail" style="background-color: #45B29D;">lovely UI</div>
-                            <h4 class="title">lovely UI</h4>
-                            <p class="descript">lovely UI</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://inspirationmobile.tumblr.com/" target="_blank">
-                            <div class="thumbnail" style="background-color: #45B29D;">Mobile Design Inspiration</div>
-                            <h4 class="title">Mobile Design Inspiration</h4>
-                            <p class="descript">Mobile Design Inspiration is a way to find the best mobile interfaces, app icons and other iPhone iPad app related stuff by top UI designers. Curated by Denis Pakhaliuk CEO at Ramotion - iPhone App...</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://appui.mobi/" target="_blank">
-                            <div class="thumbnail" style="background-color: #45B29D;">APP UI</div>
-                            <h4 class="title">APP UI</h4>
-                            <p class="descript">對岸收藏行動介面設計的網站，發現設計、分享設計</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://www.uisheji.me/" target="_blank">
-                            <div class="thumbnail" style="background-color: #45B29D;">UI SHEJI</div>
-                            <h4 class="title">UI 設計</h4>
-                            <p class="descript">UI设计-最具有视觉性的设计 我们不收集毁三观设计 我们只收集精品 提供原创欣赏 并在用户允许状态下免费提供下载</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://www.uicorner.com/" target="_blank">
-                            <div class="thumbnail" style="background-color: #45B29D;">UICorner</div>
-                            <h4 class="title">UICorner</h4>
-                            <p class="descript">User interface design resources,articles and tutorials</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://www.appdesignserved.co/" target="_blank">
-                            <div class="thumbnail" style="background-color: #45B29D;">App Design Served</div>
-                            <h4 class="title">App Design Served</h4>
-                            <p class="descript">App Design Served features top work in the phone and tablet application design categories.</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://www.pttrns.com/" target="_blank">
-                            <div class="thumbnail" style="background-color: #45B29D;">Pttrns</div>
-                            <h4 class="title">Pttrns</h4>
-                            <p class="descript">A collection of mobile user interface patterns</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://ui4app.com/category/userguide" target="_blank">
-                            <div class="thumbnail" style="background-color: #45B29D;">Ui4App</div>
-                            <h4 class="title">Ui4App</h4>
-                            <p class="descript">分享精美的App界面设计</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /App -->
-
-        <!-- App ICON -->
-        <div class="feature-section">
-            <h2 class="feature-title">App ICON 靈感</h2>
-            <div class="feature-content">
-                <p>多個LOGO網站，滿滿的都是想法</p>
-                <div class="row clear">
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://www.overlapps.com/" target="_blank">
-                            <div class="thumbnail" style="background-color: #6DBB47;">overlapps</div>
-                            <h4 class="title">overlapps</h4>
-                            <p class="descript">Showcasing the greatest apps for iPhone, iPod touch iPad + Android</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://iosicongallery.com/" target="_blank">
-                            <div class="thumbnail" style="background-color: #6DBB47;">iOS Icon Gallery</div>
-                            <h4 class="title">iOS Icon Gallery</h4>
-                            <p class="descript">A gallery showcasing great icon designs from the iOS ecosystem</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://www.iconsfeed.com/" target="_blank">
-                            <div class="thumbnail" style="background-color: #6DBB47;">iOS Icon Gallery</div>
-                            <h4 class="title">Iconsfeed</h4>
-                            <p class="descript">Looking for iOS icon inspiration? We bring the iOS icons gallery to you.</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /App ICON -->
-
-        <!-- Website -->
-        <div class="feature-section gray">
-            <h2 class="feature-title">網頁設計靈感</h2>
-            <div class="feature-content">
-                <p>多個LOGO網站，滿滿的都是想法</p>
-                <div class="row clear">
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://www.awwwards.com/" target="_blank">
-                            <div class="thumbnail" style="background-color: #3AB2D0;">Awwwards</div>
-                            <h4 class="title">Awwwards</h4>
-                            <p class="descript">Awwwards are the Website Awards that recognize and promote the talent and effort of the best developers, designers and web agencies in the world.</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://www.siteinspire.com//" target="_blank">
-                            <div class="thumbnail" style="background-color: #3AB2D0;">siteInspire</div>
-                            <h4 class="title">siteInspire</h4>
-                            <p class="descript">A CSS gallery and showcase of the best web design inspiration, featuring over 2,500 websites searchable by type, subject, and style.</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://www.webdesignserved.com/" target="_blank">
-                            <div class="thumbnail" style="background-color: #3AB2D0;">Web Design Served</div>
-                            <h4 class="title">Web Design Served</h4>
-                            <p class="descript">Web Design Served features top work in the web design and user interface design categories.</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://box.mepholio.com/" target="_blank">
-                            <div class="thumbnail" style="background-color: #3AB2D0;">MephoBox</div>
-                            <h4 class="title">MephoBox</h4>
-                            <p class="descript">A collection of web design and web inspiration from all over the web, where users can share pieces they like, and learn from other&#039;s design solutions.</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://www.webtutorialplus.com/best-website-designs/" target="_blank">
-                            <div class="thumbnail" style="background-color: #3AB2D0;">Best Website Designs</div>
-                            <h4 class="title">Best Website Designs</h4>
-                            <p class="descript">Collection of top website designs by Web Tutorial Plus. Get inspired by the best web design trends updated weekly.</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://fltdsgn.com/" target="_blank">
-                            <div class="thumbnail" style="background-color: #3AB2D0;">Flat Design</div>
-                            <h4 class="title">Flat Design</h4>
-                            <p class="descript">扁平風格設計收藏</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /Website -->
-
-        <!-- PSD -->
-        <div class="feature-section">
-            <h2 class="feature-title">PSD 素材下載</h2>
-            <div class="feature-content">
-                <p>多個LOGO網站，滿滿的都是想法</p>
-                <div class="row clear">
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://apppsd.com/" target="_blank">
-                            <div class="thumbnail" style="background-color: #00A1DE;">APPPSD</div>
-                            <h4 class="title">APPPSD</h4>
-                            <p class="descript">.</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://www.designfreebies.com/" target="_blank">
-                            <div class="thumbnail" style="background-color: #00A1DE;">Design Freebies</div>
-                            <h4 class="title">Design Freebies</h4>
-                            <p class="descript">Design Kindle offers free design resouces, including graphics, vectors, icons, patterns, textures and fully coded website templates. All downloads are free to use in both commercial and personal projects.</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://graphicburger.com/" target="_blank">
-                            <div class="thumbnail" style="background-color: #00A1DE;">GraphicBurger</div>
-                            <h4 class="title">GraphicBurger</h4>
-                            <p class="descript">Tasty PSD &amp; other resources made with care for each pixel. Free for both personal &amp; commercial use. Have a bite!</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://fribbble.com/" target="_blank">
-                            <div class="thumbnail" style="background-color: #00A1DE;">Fribbble</div>
-                            <h4 class="title">Fribbble</h4>
-                            <p class="descript">Free PSD downloads and resources by Dribbblers curated by Gilbert Pellegrom.</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://freebiesbug.com/" target="_blank">
-                            <div class="thumbnail" style="background-color: #00A1DE;">Freebiesbug</div>
-                            <h4 class="title">Freebiesbug</h4>
-                            <p class="descript">Hand-picked free PSDs, code stuff, free fonts and other resources for web designers every day on Freebiesbug.</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /PSD -->
-
-        <!-- Sketch -->
-        <div class="feature-section gray">
-            <h2 class="feature-title">Sketch 素材下載</h2>
-            <div class="feature-content">
-                <p>多個LOGO網站，滿滿的都是想法</p>
-                <div class="row clear">
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://www.sketchappsources.com/" target="_blank">
-                            <div class="thumbnail" style="background-image: url(images/rscs/sketchappsources.jpg);"></div>
-                            <h4 class="title">Sketch App Sources</h4>
-                            <p class="descript">Sketch App Sources is a catalog of free resources for web ui ux designers working with Sketch 3 by Bohemian Coding. All .sketch files are editable and freely use.</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://sketchcn.com/" target="_blank">
-                            <div class="thumbnail" style="background-color: #45BF7B;">Sketch 中文網</div>
-                            <h4 class="title">Sketch 中文網</h4>
-                            <p class="descript"></p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://brilliantsketch.com/" target="_blank">
-                            <div class="thumbnail" style="background-image: url(images/rscs/brilliantsketch.jpg);"></div>
-                            <h4 class="title">Brilliant Sketch</h4>
-                            <p class="descript">Dribbble 上一位印尼設計師分享自己的 Sketch 文件和創作技巧。</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://www.sketchgems.com/" target="_blank">
-                            <div class="thumbnail" style="background-image: url(images/rscs/sketchmine_logo.jpg);"></div>
-                            <h4 class="title">Sketch MINE</h4>
-                            <p class="descript">一位法國設計師收集的Sketch 資源，分類清晰，能一鍵免費下載</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://www.sketchgems.com/" target="_blank">
-                            <div class="thumbnail" style="background-image: url(images/rscs/sketchgems.jpg);"></div>
-                            <h4 class="title">Sketch GEMS</h4>
-                            <p class="descript">一個用 Sketch 創作UI 套件和圖標的團隊網站，部分免費。</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://sketchshortcuts.com/" target="_blank">
-                            <div class="thumbnail" style="background-image: url(images/rscs/sketchshortcuts.jpg);"></div>
-                            <h4 class="title">Sketch Shortcuts</h4>
-                            <p class="descript">最全的 Sketch 快捷鍵集合，網站最底部還有自定義快捷鍵的方法。</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://sketchtips.tumblr.com/" target="_blank">
-                            <div class="thumbnail" style="background-image: url(images/rscs/tumblrtips.jpg);"></div>
-                            <h4 class="title">Sketch Tips</h4>
-                            <p class="descript">Sketch 的開發團隊 Bohemian Coding 在 tumblr 上維護的一個官方技巧博客。</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://sketchtricks.com/" target="_blank">
-                            <div class="thumbnail" style="background-image: url(images/rscs/trickslogo.jpg);"></div>
-                            <h4 class="title">Sketch Tricks</h4>
-                            <p class="descript">集合了一些 Sketch 的使用心得，同時提供針對Android 的素材。</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="https://github.com/sketchplugins/plugin-directory" target="_blank">
-                            <div class="thumbnail" style="background-image: url(images/rscs/github.jpg);"></div>
-                            <h4 class="title">Sketch Plugins</h4>
-                            <p class="descript">Github上由 Bomber Studios 製作的一系列插件，幫助你更高效的使用Sketch。</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://www.sketchcasts.net/" target="_blank">
-                            <div class="thumbnail" style="background-image: url(images/rscs/sketchcasts.jpg);"></div>
-                            <h4 class="title">SketchCasts</h4>
-                            <p class="descript">一個葡萄牙設計團隊創作的 Sketch 教學視頻，每週更新。</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="https://medium.com/sketch-app/" target="_blank">
-                            <div class="thumbnail" style="background-image: url(images/rscs/medium.jpg);"></div>
-                            <h4 class="title">Sketch App Collect</h4>
-                            <p class="descript">Medium 上關於 Sketch 的 collection, 聚合了很多很棒的討論</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://aegeank.com/sketchactive/" target="_blank">
-                            <div class="thumbnail" style="background-image: url(images/rscs/sketchactive.jpg);"></div>
-                            <h4 class="title">SketchActive</h4>
-                            <p class="descript">用 Sketch 創作的360個矢量圖標，免費下載。</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /Sketch -->
-
-
-        <!-- Logo -->
-        <div class="feature-section gray">
-            <h2 class="feature-title">LOGO靈感資源</h2>
-            <div class="feature-content">
-                <p>多個LOGO網站，滿滿的都是想法</p>
-                <div class="row clear">
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://logopond.com/" target="_blank">
-                            <div class="thumbnail" style="background-color: #E03026;">Logopond</div>
-                            <h4 class="title">Logopond</h4>
-                            <p class="descript">提供眾多的品牌 Logo 設計，是一個尋找 Logo 靈感的好地方</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="" target="_blank">
-                            <div class="thumbnail" style="background-color: #E03026;">LogoFury</div>
-                            <h4 class="title">LogoFury</h4>
-                            <p class="descript">收藏非常多的 Logo，讓設計師們找尋靈感畫廊，在這裡你也可以看到其他人對這些概念的評價</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="" target="_blank">
-                            <div class="thumbnail" style="background-color: #E03026;">Logos</div>
-                            <h4 class="title">Logos</h4>
-                            <p class="descript">在這裡除了可以找到許多免費的 Logo 素材外，你也可以付費購買一些超讚的作品！</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="" target="_blank">
-                            <div class="thumbnail" style="background-color: #E03026;">Logospire</div>
-                            <h4 class="title">Logospire</h4>
-                            <p class="descript">收藏非常多精選的 Logo，缺少靈感的時候來這邊就對了！</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="" target="_blank">
-                            <div class="thumbnail" style="background-color: #E03026;">Logo Galleria</div>
-                            <h4 class="title">Logo Galleria</h4>
-                            <p class="descript">熱門的 Logo 畫廊，也是一個取得靈感的好地方</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="" target="_blank">
-                            <div class="thumbnail" style="background-color: #E03026;">seeklogo.com</div>
-                            <h4 class="title">seeklogo.com</h4>
-                            <p class="descript">Logo 搜尋引擎，你可以透過關鍵字搜尋，找到意想不到的好靈感</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /Logo -->
-
-        <!-- Branding -->
-        <div class="feature-section gray">
-            <h2 class="feature-title">品牌設計靈感</h2>
-            <div class="feature-content">
-                <p>多個LOGO網站，滿滿的都是想法</p>
-                <div class="row clear">
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://www.brandingserved.com/" target="_blank">
-                            <div class="thumbnail" style="background-color: #E27A3F;">Branding Served</div>
-                            <h4 class="title">Branding Served</h4>
-                            <p class="descript">Branding Served features top work in categories such as identity, branding, and logo design.</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /Branding -->
-
-        <!-- Font -->
-        <div class="feature-section">
-            <h2 class="feature-title">字體</h2>
-            <div class="feature-content">
-                <p>多個LOGO網站，滿滿的都是想法</p>
-                <div class="row clear">
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://www.qiuziti.com/" target="_blank">
-                            <div class="thumbnail" style="background-color: #E27A3F;">qiuziti</div>
-                            <h4 class="title">qiuziti</h4>
-                            <p class="descript">上傳圖片找字體，問字體不求人</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /Font -->
-
-        <!-- Colors -->
-        <div class="feature-section gray">
-            <h2 class="feature-title">顏色靈感</h2>
-            <div class="feature-content">
-                <p>多個LOGO網站，滿滿的都是想法</p>
-                <div class="row clear">
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://www.colourlovers.com/" target="_blank">
-                            <div class="thumbnail" style="background-color: #C35156;">COLOURlovers</div>
-                            <h4 class="title">COLOURlovers</h4>
-                            <p class="descript">COLOURlovers is a creative community where people from around the world create and share colors, palettes and patterns, discuss the latest trends and explore colorful articles... All in the spirit of love</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://color.hailpixel.com/" target="_blank">
-                            <div class="thumbnail" style="background-color: #C35156;">color.hailpixel</div>
-                            <h4 class="title">color.hailpixel</h4>
-                            <p class="descript">Color picker for data driven design</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://www.peise.net/tools/web/" target="_blank">
-                            <div class="thumbnail" style="background-color: #C35156;">Color Scheme Designe</div>
-                            <h4 class="title">Color Scheme Designe</h4>
-                            <p class="descript"></p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="https://kuler.adobe.com/zh/explore/" target="_blank">
-                            <div class="thumbnail" style="background-color: #C35156;">Adobe Kuler</div>
-                            <h4 class="title">Adobe Kuler</h4>
-                            <p class="descript">Create color schemes with the color wheel or browse thousands of color combinations from the Kuler community.</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /Colors -->
-
-        <!-- Logo -->
-        <div class="feature-section ">
-            <h2 class="feature-title">設計規範</h2>
-            <div class="feature-content">
-                <p>多個LOGO網站，滿滿的都是想法</p>
-                <div class="row clear">
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://www.google.com/design/" target="_blank">
-                            <div class="thumbnail" style="background-color: #354A5D;">Google Design</div>
-                            <h4 class="title">Google Design</h4>
-                            <p class="descript">A site for Google design guidelines, resources and job opportunities</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://www.google.com/design/spec/material-design/introduction.html" target="_blank">
-                            <div class="thumbnail" style="background-color: #354A5D;">Google Material Design</div>
-                            <h4 class="title">Google Material Design</h4>
-                            <p class="descript">A site for Google design guidelines, resources and job opportunities</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://www.ui.cn/Material/index.html" target="_blank">
-                            <div class="thumbnail" style="background-color: #354A5D;">Google Material Design 中文版</div>
-                            <h4 class="title">Google Material Design 中文版</h4>
-                            <p class="descript">A site for Google design guidelines, resources and job opportunities</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="https://developer.apple.com/library/iOS/documentation/userexperience/conceptual/mobilehig/" target="_blank">
-                            <div class="thumbnail" style="background-color: #354A5D;">iOS Guidelines</div>
-                            <h4 class="title">iOS 7 Human Interface Guidelines</h4>
-                            <p class="descript">A site for Google design guidelines, resources and job opportunities</p>
-                        </a>
-                    </div>
-                    <div class="col col-3 mobile-full">
-                        <a class="service" href="http://zhuanlan.zhihu.com/langqixu/19675089" target="_blank">
-                            <div class="thumbnail" style="background-color: #354A5D;">iOS Guidelines 中文版</div>
-                            <h4 class="title">iOS 7 Human Interface Guidelines 中文版</h4>
-                            <p class="descript">A site for Google design guidelines, resources and job opportunities</p>
-                        </a>
-                    </div>
-                </div>
+                <p>邀請你加入「<a href="http://uiux.tw">使用者經驗研究分析</a>」社團與大家分享討論 UI / UX 那些大小事！</a>
+                </p>
             </div>
         </div>
 
         <div class="feature-section gray">
             <h2 class="feature-title">分享給大家</h2>
             <div class="feature-content">
-                <p>如果你喜歡我們整理的資源，分享給更多的人知道</p>
-                <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+                <p>喜歡這份整理嗎？幫我們分享給更多的人知道：）</p>
+                <div class="fb-like-box" data-href="https://www.facebook.com/ogdesign.tw" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="false" data-show-border="false"></div>
+                <div class="fb-like" data-href="http://resources.ogdesign.tw/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
             </div>
         </div>
 
         <!-- Footer -->
         <div class="footer feature-section">
             <div class="row clear">
-                <div class="col col-4 logo">
-                    <img src="images/logo.png" alt="">
-                    <p>我們致力於創造更好的產品，需要我們的服務嗎？ 馬上與我們聯繫</p>
+                <div class="col col-4 mobile-full logo">
+                    <img src="images/logos/logo_dark.png" alt="">
+                    <p>專注於用戶體驗優化以及網頁/行動應用界面設計，我們以使用者為中心出發，創造最好的品牌體驗。</p>
                 </div>
-                <div class="col col-4 contact">
+                <div class="col col-4 mobile-full contact">
                     <h4 class="footer-title">聯絡我們</h4>
                     <div class="socials-contact">
-                        <div class="social-item"><i class="icon-facebook"></i>
-                        </div>
-                        <div class="social-item"><i class="icon-twitter"></i>
-                        </div>
-                        <div class="social-item"><i class="icon-gplus"></i>
-                        </div>
-                        <div class="social-item"><i class="icon-linkedin"></i>
-                        </div>
+                        <a href="https://www.facebook.com/ogdesign.tw" target="_blank" class="social-item"><i class="icon-facebook"></i></a>
+                        <a href="https://www.facebook.com/ogdesign.tw" target="_blank" class="social-item"><i class="icon-twitter"></i></a>
+                        <a href="https://www.facebook.com/ogdesign.tw" target="_blank" class="social-item"><i class="icon-gplus"></i></a>
+                        <a href="https://www.facebook.com/ogdesign.tw" target="_blank" class="social-item"><i class="icon-linkedin"></i></a>
                     </div>
-                    <div class="footer-item">聯絡電話 : (02) 1234-5678</div>
-                    <div class="footer-item">公司地址：台北市新生北路一段3號4樓</div>
+                    <div class="footer-item">聯絡電話 : <a href="tel:+0927598161">0927-598-161</a>
+                    </div>
+                    <div class="footer-item">電子郵件 : <a href="mailto:augus@ogdesign.tw">augus@ogdesign.tw</a>
+                    </div>
+                    <!-- <div class="footer-item">公司地址：台北市新生北路一段3號4樓</div> -->
                 </div>
-                <div class="col col-2 about">
+                <div class="col col-2 mobile-full about">
                     <h4 class="footer-title">關於我們</h4>
-                    <div class="footer-item">部落格</div>
-                    <div class="footer-item">加入我們</div>
-                    <div class="footer-item">團隊介紹</div>
+                    <div class="footer-item"><a href="http://blog.ogdesign.tw">部落格</a>
+                    </div>
+                    <div class="footer-item"><a href="">設計資源</a>
+                    </div>
+                    <div class="footer-item"><a href="">設計週報訂閱</a>
+                    </div>
                 </div>
-                <div class="col col-2 services">
+                <div class="col col-2 mobile-full services">
                     <h4 class="footer-title">服務</h4>
-                    <div class="footer-item">網站設計</div>
-                    <div class="footer-item">App 設計</div>
-                    <div class="footer-item">使用性優化</div>
-                    <div class="footer-item">產品雛形開發</div>
+                    <div class="footer-item"><a href="">網站設計</a>
+                    </div>
+                    <div class="footer-item"><a href="">App 設計</a>
+                    </div>
+                    <div class="footer-item"><a href="">使用性優化</a>
+                    </div>
+                    <div class="footer-item"><a href="">產品雛形開發</a>
+                    </div>
                 </div>
             </div>
         </div>
 
     </div>
     <div id="fb-root"></div>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="js/jquery.scrollTo.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.13/angular.min.js"></script>
     <script src="js/default.js"></script>
     <script src="js/app.js"></script>
@@ -715,23 +155,26 @@
             (i[r].q = i[r].q || []).push(arguments)
         }, i[r].l = 1 * new Date();
         a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
+        m = s.getElementsByTagName(o)[0];
         a.async = 1;
         a.src = g;
         m.parentNode.insertBefore(a, m)
     })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-    ga('create', 'UA-52653674-2', 'auto');
+    ga('create', 'UA-52653674-3', 'auto');
     ga('send', 'pageview');
     </script>
 
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&appId=1426307150978932&version=v2.0";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+    <script>
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&appId=1426307150978932&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
     <script src="js/modernizr.js"></script>
     <script src="js/retina.min.js"></script>
 </body>

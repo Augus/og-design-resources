@@ -1,7 +1,49 @@
+::-webkit-scrollbar {
+	height: 4px !important;
+	overflow: visible !important;
+	width: 6px !important;
+}
 
+::-webkit-scrollbar-thumb {
+	background: rgba(128,128,128, .3) !important;
+	background-clip: padding-box !important;
+	border: 0px solid transparent !important;
+	border-image: initial !important;
+	min-height: 20px !important;
+	padding: 50px 0px 0px !important;
+	@include border-radius(10px);
+}
+
+/* :window-inactive inspired by cssTricks */
+::-webkit-scrollbar-thumb:hover {
+	background: rgba(128,128,128, .6) !important;
+	background-clip: padding-box !important;
+}
+
+/* :window-inactive inspired by cssTricks */
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(220,220,220, 0) !important;
+	background-clip: padding-box !important;
+}
+
+::-webkit-scrollbar-button {
+	height: 0px !important;
+	width: 0px !important;
+}
+
+::-webkit-scrollbar-track {
+}
+
+::-webkit-scrollbar-corner {
+	background: transparent !important;
+}
 
 body * {
 	font-family: $globe-font-style;
+}
+
+a {
+	text-decoration: none;
 }
 
 form {
@@ -65,21 +107,31 @@ form {
 	h1.logo {
 		img {
 			width: 100%;
+			max-width: 300px;
 		}
 	}
 	ul.nav {
+		margin-top: 28px;
 		list-style: none;
 		text-align: right;
 		li {
 			display: inline-block;
-			color: #eee;
+			color: #bbb;
 			margin-left: 35px;
 			@include font-size(14);
+			a {
+				color: #bbb;
+				text-decoration: none;
+			}
+			&:hover {
+				cursor: pointer;
+				color: $main-color;
+			}
 			&.active {
-				border: 1px solid #fff;
+				border: 1px solid $main-color;
 				padding: 5px 13px;
 				border-radius: 3px;
-				color: #fff;
+				color: $main-color;
 			}
 		}
 	}
@@ -89,7 +141,7 @@ form {
 	z-index: $menuZindex;
 	position: fixed;
 	right: 0;
-	top: 100px;
+	top: 190px;
 	background-color: #3E4248;
 	border: 1px solid darken(#3E4248, 10%);
 	border-right: 0;
@@ -107,27 +159,44 @@ form {
 		padding: 15px;
 		border-bottom: 1px solid darken(#3E4248, 10%);
 		color: #eee;
+		font-size: 14px;
 		// margin-bottom: 10px;
+	}
+	.menu-content {
+		max-height: 350px;
+		overflow: auto;
 	}
 	.menu-item {
 		padding: 12px 25px;
 		color: #ababab;
+		font-size: 14px;
 		@include easeOutCirc(all, 550ms);
 		// border-bottom: 1px dashed #ccc;
 		&:last-child {
 			// border-bottom: none;
 		}
-		&:hover, &.active {
+		&:hover {
 			cursor: pointer;
-			color: #58E6E2;
+			color: $main-color;
 			background-color: darken(#3E4248, 10%);
 		}
+		&.active {
+			cursor: pointer;
+			color: $main-color;
+			background-color: darken(#3E4248, 10%);
+		}
+	}
+	.fb-like {
+		display: block;
+		text-align: center;
+		max-width: 180px;
+		padding: 12px 15px;
 	}
 }
 
 .launch-screen {
 	position: relative;
-	height: 300px;
+	height: 180px;
 	background-image: url(../images/bg.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -156,7 +225,7 @@ form {
 		content: "";
 		background-color: #000;
 		background-image: url(../images/02.png);
-		opacity: 0.65;
+		opacity: 0.85;
 	}
 	.slogan {
 		z-index: 3;
@@ -219,6 +288,25 @@ form {
 			}
 		}
 	}
+	&.blue {
+		background-color: #2B3B49;
+		// background-image: url(../images/02.png);
+		.feature-title {
+			color: #fff;
+		}
+		.feature-content {
+			h2 {
+				color: #fff;
+			}
+			p {
+				color: #eee;
+			}
+			a {
+				color: #fff;
+				text-decoration: underline;
+			}
+		}
+	}
 	.feature-title {
 		text-align: center;
 		color: $title-color;
@@ -269,7 +357,7 @@ form {
 .feature-section {
 	&.gray {
 		.service {
-			border: none;
+			// border: none;
 			background-color: #fff;
 		}
 	}
@@ -285,10 +373,15 @@ form {
 	margin: 10px;
 	margin-bottom: 30px;
 	text-decoration: none;
+	// border: 2px solid transparent;
+	@include easeOutCirc(all, 750ms);
 	@include border-radius(5px);
+	@include box-shadow(0px 1px #DDD);
 	&:hover {
+		// border: 2px solid #000;
 		.thumbnail {
-			// @include opacity(.8);
+			// -webkit-filter: grayscale(0);
+			@include opacity(1);
 		}
 	}
 	.thumbnail {
@@ -303,8 +396,9 @@ form {
 		font-size: 30px;
 		padding: 0 20px;
 		color: #fff;
+		// -webkit-filter: grayscale(.7);
 		@include border-radius(3px);
-		@include opacity(.5);
+		@include opacity(.6);
 		@include easeOutCirc(all, 400ms);
 	}
 	h4.title {
@@ -319,8 +413,8 @@ form {
 		@include font-size(14);
 		line-height: 1.6em;
 		color: #777;
-		height: 1.6em * 2;
-		max-height: 1.6em * 2;
+		height: 1.6em * 3;
+		max-height: 1.6em * 3;
 		overflow: hidden;
 	}
 }
@@ -378,13 +472,13 @@ form {
 
 .footer {
 	margin: 0 auto;
-	max-width: 1280px;
+	max-width: 1200px;
 	.logo {
 		// max-width: 240px;
 		img {
 			max-width: 240px;
 			// max-width: 100%;
-			height: 100%;
+			// height: 100%;
 			margin-bottom: 15px;
 		}
 		p {
@@ -403,19 +497,29 @@ form {
 			line-height: 40px;
 			text-align: center;
 			background-color: #aaa;
-			border-radius: 3px;
+			border-radius: 5px;
 			color: #fff;
+			a {
+				color: #fff;
+			}
 		}
 	}
 	.footer-title {
-		@include font-size(14);
-		color: $title-color;
+		@include font-size(16);
+		color: $main-color;
+		font-weight: bold;
 		margin-bottom: 20px;
 	}
 	.footer-item {
 		@include font-size(14);
 		color: #777;
 		margin-bottom: 12px;
+		a {
+			color: #777;
+			&:hover {
+				color: $main-color;
+			}
+		}
 	}
 }
 

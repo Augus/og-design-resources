@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>app</key>
+	<string>com.bohemiancoding.sketch3</string>
+	<key>build</key>
+	<integer>8053</integer>
+	<key>commit</key>
+	<string>104f8b8798002207eebbbee810c02306c5ce85c9</string>
+	<key>fonts</key>
+	<array>
+		<string>Lato-Bold</string>
+		<string>Helvetica</string>
+		<string>Helvetica-Bold</string>
+		<string>Lato-Hairline</string>
+		<string>FZLTXHB--B51-0</string>
+		<string>HelveticaNeue-Thin</string>
+		<string>PerpetuaTitlingMT-Light</string>
+		<string>STHeitiTC-Medium</string>
+		<string>Lato-Light</string>
+		<string>HiraMinPro-W3</string>
+		<string>Lato-Black</string>
+		<string>Roboto-Light</string>
+		<string>STHeitiTC-Light</string>
+		<string>XinGothic-ZhangYue-W4</string>
+		<string>CurlzMT</string>
+	</array>
+	<key>length</key>
+	<integer>1391764</integer>
+	<key>version</key>
+	<integer>37</integer>
+</dict>
+</plist>
