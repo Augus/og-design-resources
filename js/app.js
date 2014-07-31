@@ -197,7 +197,13 @@ app.controller('RootController', function($scope, $location) {
             thumbnail: "images/rscs/flatdsgn.jpg",
             name: "Flat DSGN",
             descript: "超多 Flat 風格的網站設計可以參考，與上一個 Flat Design 非常相似",
-        }, ]
+        }, {
+            linkurl: "http://bm.s5-style.com/",
+            color: "#006C61",
+            name: "S5-Style",
+            descript: "來自日本的靈感網站，分享非常多超好看的網站",
+        },
+        ]
     }, {
         category: "PSD 素材下載",
         descript: "需要免費資源？這幾個網站趕快記下來",
