@@ -260,12 +260,12 @@ app.controller('RootController', function($scope, $location) {
             linkurl: "http://www.sketchgems.com/",
             thumbnail: "images/rscs/sketchgems.jpg",
             name: "Sketch GEMS",
-            descript: "一個用 Sketch 創作UI 套件和圖標的團隊網站，部分免費。",
+            descript: "一個用 Sketch 創作UI 套件和圖示的團隊網站，部分免費。",
         }, {
             linkurl: "http://sketchshortcuts.com/",
             thumbnail: "images/rscs/sketchshortcuts.jpg",
             name: "Sketch Shortcuts",
-            descript: "最全的 Sketch 快捷鍵集合，網站最底部還有自定義快捷鍵的方法。",
+            descript: "最齊全的 Sketch 快捷鍵集合，網站最底部還有自定義快捷鍵的方法。",
         }, {
             linkurl: "http://sketchtips.tumblr.com/",
             thumbnail: "images/rscs/tumblrtips.jpg",
@@ -280,7 +280,7 @@ app.controller('RootController', function($scope, $location) {
             linkurl: "https://github.com/sketchplugins/plugin-directory",
             thumbnail: "images/rscs/github.jpg",
             name: "Sketch Plugins",
-            descript: "Github上由 Bomber Studios 製作的一系列插件，幫助你更高效的使用Sketch。",
+            descript: "Github上由 Bomber Studios 製作的一系列外掛程式，幫助你更高效的使用Sketch。",
         }, {
             linkurl: "http://www.sketchcasts.net/",
             thumbnail: "images/rscs/sketchcasts.jpg",
@@ -295,7 +295,7 @@ app.controller('RootController', function($scope, $location) {
             linkurl: "http://aegeank.com/sketchactive/",
             thumbnail: "images/rscs/sketchactive.jpg",
             name: "SketchActive",
-            descript: "用 Sketch 創作的360個矢量圖標，免費下載。",
+            descript: "用 Sketch 創作的360個向量圖示，免費下載。",
         }, ]
     }, {
         category: "LOGO靈感資源",
