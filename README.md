@@ -10,3 +10,10 @@ http://resources.ogdesign.tw/
 1. 前往 issues 並留言給我們
 2. 直接 fork 本專案，修改 `app.js` 中的 `$scope.resources` 變數
 3. 直接聯繫我們（augus@ogdesign.tw）
+
+## 專案的成員
+- [奧革士](https://www.facebook.com/Augus.YiHao)
+- [Even Wu](https://www.facebook.com/evenwu)
+- [Evan Wu](https://www.facebook.com/evan.wu.79)
+- [Wei Chen](https://www.facebook.com/jingwei.chen)
+- 期待你加入
