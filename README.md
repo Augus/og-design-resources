@@ -16,4 +16,4 @@ http://resources.ogdesign.tw/
 - [Even Wu](https://www.facebook.com/evenwu)
 - [Evan Wu](https://www.facebook.com/evan.wu.79)
 - [Wei Chen](https://www.facebook.com/jingwei.chen)
-- 期待你加入
+- 以及你的加入
