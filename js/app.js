@@ -339,7 +339,13 @@ app.controller('RootController', function($scope, $location) {
             color: "#000",
             name: "Brand New",
             descript: "Brand New: Opinions on corporate and brand identity work. A division of UnderConsideration.",
-        }, ]
+        }, {
+			linkurl: "http://identitydesigned.com/",
+			thumbnail: "images/rscs/identitydesigned.jpg",
+			color: "#000",
+			name: "Identity Designed",
+			descript: "Identity Designed is a showcase of brand identity projects from around the world."
+		} ]
     }, {
         category: "字體",
         descript: "一些字體相關的網站",
