@@ -1,0 +1,239 @@
+// *************************************
+//
+//   Sidebar style
+//   -> 
+//
+// 	TODO : 決定 sidebar z-index
+// *************************************
+
+$sidebar-width: 240px;
+$sidebar-background-color: #f3f4f5;
+$sidebar-user-section-color: rgba(0,0,0,.2);
+$sidebar-section-title-color: #707F97;
+$sidebar-nav-item-color: #999;
+// $sidebar-nav-item-color: #7B8894;
+$sidebar-nav-item-active-color: #f3f4f5;
+
+#sidebar {
+	z-index: 999999;
+	position: fixed;
+	top: 0px;
+	bottom: 0;
+	width: $sidebar-width;
+	background-color: $sidebar-background-color;
+	border-right: 1px solid rgba(0,0,0,.1);
+	@extend .no-selection;
+	h1.logo {
+		text-align: center;
+		margin: 48px;
+
+		img {
+			max-width: 120px;
+			// height: 86px;
+			// width: 104px;
+		}
+	}
+	.nav {
+		// position: fixed;
+		// left: 0;
+		// width: 240px;
+		// top: 50%;
+		padding: 0 48px 0 0;
+		// @include translateY(-50%);
+		li {
+			position: relative;
+			text-align: right;
+			line-height: 24px;
+			margin-bottom: 8px;
+			list-style: none;
+			.text {
+				font-size: 14px;
+				color: #6a6a6a;
+				letter-spacing: 1.3px;
+				padding: 3px 0;
+				display: inline-block;
+				font-weight: 300;
+				text-transform: uppercase;
+				font-family: pt mono;
+				&:before {
+					content: "";
+					position: absolute;
+					left: 60px;
+					// width: 90%;
+					right: 60px;
+					bottom: -2px;
+					height: 1px;
+					background-color: $main-color;
+					width: 0;
+					@include easeOutCirc(all, 250ms);
+				}
+			}
+			&:hover {
+				cursor: pointer;
+				.text {
+					color: $main-color;
+				}
+			}
+			&.active {
+				cursor: pointer;
+				.text {
+					color: $main-color;
+					&:before {
+						width: calc(50%);
+					}
+				}
+			}
+		}
+	}
+	.footer {
+		position: absolute;
+		bottom: 36px;
+		width: 100%;
+		padding: 0 10px;
+		text-align: center;
+		.copy-right {
+			font-family: PlayfairDisplay-Regular;
+			font-size: 12px;
+			color: #9B9B9B;
+			line-height: 16px;
+		}
+	}
+}
+
+.second-sidebar {
+	z-index: 999998;
+	position: absolute;
+	top: 0;
+	left: $sidebar-width;
+	bottom: 0;
+	background: #111111;
+	width: 200px;
+	opacity: .8;
+	overflow: hidden;
+	@include transform(translateX(-100%));
+	@include easeOutCirc(all, 350ms);
+	&.open {
+		opacity: 1;
+		@include transform(translateX(0%));
+	}
+	padding: 24px;
+	text-align: center;
+	.circle-container {
+		visibility: hidden;
+		opacity: 0;
+		height: 0;
+		&.open {
+			visibility: visible;
+			height: auto;
+			opacity: 1;
+			.circle {
+				opacity: 1;
+				@include transform(scale(1));
+			}
+		}
+		.circle {
+			opacity: 0;
+			position: relative;
+			display: inline-block;
+			width: 120px;
+			height: 120px;
+			line-height: 120px;
+			border-radius: 50%;
+			margin-bottom: 16px;
+			background-color: #333;
+			@include imageBlock();
+			@for $i from 1 through 20 {
+				&:nth-child(#{$i}) {
+					@include easeOutBouncing(all, 400ms + $i * 200ms);
+					// @include transition-delay($i * 200ms);
+				}
+			}
+			@include transform(scale(.2));
+			&:hover {
+				cursor: pointer;
+				&:before {
+					background-color: transparentize(#000, .3);
+					// border: 2px solid #fff;
+				}			
+				.text {
+					opacity: 1;
+					pre {
+						color: #fff;
+					}
+				}
+			}
+			&.active {
+				cursor: pointer;
+				&:before {
+					background-color: transparentize(#000, .3);
+					border: 2px solid $main-color;
+				}			
+				.text {
+					opacity: 1;
+					pre {
+						color: $main-color;
+					}
+				}
+				// @include animation-duration(.3s);
+				// @include animation-name(popup);
+				// @include animation-duration-function(ease);
+			}
+			&.yellow {
+				background-color: $main-color;
+				.text pre{
+					color: #000;
+				}
+				&:before {
+					display: none;
+				}
+			}
+			&:before {
+				z-index: 8;
+				content: "";
+				position: absolute;
+				top: 0;
+				right: 0;
+				left: 0;
+				bottom: 0;
+				// background-color: #000;
+				background-color: transparentize(#000, .5);
+				// opacity: .5;
+				border-radius: 50%;
+				border: 0px solid transparent;
+				box-sizing: border-box;
+				@include easeOutCirc(all, 350ms);
+			}
+			.text {
+				z-index: 9;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 100%;
+				max-width: 100px;
+				@include transform(translateX(-50%) translateY(-50%));
+				@include easeOutCirc(all, 350ms);
+				// margin-top: 30px;
+				opacity: 0.7;
+				pre {
+					color: #FFFFFF;
+					font-family: STZhongsong;
+					font-size: 20px;	
+					line-height: 1.6em;
+					background-color: transparent;
+				}
+			}
+		}
+	}
+}
+
+@include keyframes(popup) {
+  0% {
+  	@include transform(scale(.8));
+  }
+  50% {
+  	@include transform(scale(1.1));
+  }
+  100% {
+  	@include transform(scale(1));
+  }
+}
