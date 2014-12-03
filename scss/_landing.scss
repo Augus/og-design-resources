@@ -1,3 +1,10 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important; }
+
+a {
+	color: $main-color;
+}
+
 ::-webkit-scrollbar {
 	height: 4px !important;
 	overflow: visible !important;
@@ -46,361 +53,78 @@ a {
 	text-decoration: none;
 }
 
-form {
-	input, textarea, label {
-		width: 100%;
-		display: block;
-		margin-bottom: 20px;
-	}
-	input[type=text],
-	input[type=password],
-	input[type=email],
-	input[type=search],
-	input[type=tel],
-	textarea {
-		border: none;
-		@include border-radius(3px);
-		&:focus {
-			outline: none;
-			box-shadow: 0 0 0 2px #aaa;
-		}
-	}
-	input[type=text],
-	input[type=password],
-	input[type=email],
-	input[type=search],
-	input[type=tel] {
-		height: 44px;
-	}
-	label {
-		margin-bottom: 8px;
-	}
-	*.necessary {
-		font-size: 16px;
-		color: #DE4F50;
-	}
-}
-
-.contact-form {
-	margin: 0 auto;
-	max-width: 480px;
-	text-align: left;
-	label {
-		color: $title-color;
-		font-size: 14px;
-	}
-	.button {
-		// width: 160px;
-		padding: 15px 30px;
-	}
-}
-
-.header {
-	z-index: 2;
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	max-width: 1280px;
-	margin: 0 auto;
-	padding-top: 30px;
-	h1.logo {
-		img {
-			width: 100%;
-			max-width: 300px;
-		}
-	}
-	ul.nav {
-		margin-top: 28px;
-		list-style: none;
-		text-align: right;
-		li {
-			display: inline-block;
-			color: #bbb;
-			margin-left: 35px;
-			@include font-size(14);
-			a {
-				color: #bbb;
-				text-decoration: none;
-			}
-			&:hover {
-				cursor: pointer;
-				color: $main-color;
-			}
-			&.active {
-				border: 1px solid $main-color;
-				padding: 5px 13px;
-				border-radius: 3px;
-				color: $main-color;
-			}
-		}
-	}
-}
-
-.quick-menu {
-	z-index: $menuZindex;
+.section-container {
 	position: fixed;
+	left: 240px;
+	top: 0;
+	bottom: 0;
 	right: 0;
-	top: 190px;
-	background-color: #3E4248;
-	border: 1px solid darken(#3E4248, 10%);
-	border-right: 0;
-	padding-bottom: 15px;
-	// @include transform(translateX(60%));
-	// @include opacity(.9);
-	@include border-radius(5px 0 0 5px);
-	@include easeOutCirc(all, 550ms);
-	&:hover {
-		@include transform(translateX(0%));
-		@include opacity(1);
-	}
-	.menu-header {
-		text-align: center;
-		padding: 15px;
-		border-bottom: 1px solid darken(#3E4248, 10%);
-		color: #eee;
-		font-size: 14px;
-		// margin-bottom: 10px;
-	}
-	.menu-content {
-		max-height: 350px;
-		overflow: auto;
-	}
-	.menu-item {
-		padding: 12px 25px;
-		color: #ababab;
-		font-size: 14px;
-		@include easeOutCirc(all, 550ms);
-		// border-bottom: 1px dashed #ccc;
-		&:last-child {
-			// border-bottom: none;
-		}
-		&:hover {
-			cursor: pointer;
-			color: $main-color;
-			background-color: darken(#3E4248, 10%);
-		}
-		&.active {
-			cursor: pointer;
-			color: $main-color;
-			background-color: darken(#3E4248, 10%);
-		}
-	}
-	.fb-like {
-		display: block;
-		text-align: center;
-		max-width: 180px;
-		padding: 12px 15px;
-	}
+	background-color: #fff;
+	overflow: auto;
+	padding: 40px 80px;
 }
 
-.launch-screen {
-	position: relative;
-	height: 180px;
-	background-image: url(../images/bg.jpg);
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	padding: 25px 0;
-
-	&:after {
-		z-index: 1;
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		content: "";
-		background: -webkit-linear-gradient(left top, #FFA26D, #3ABED0);
-		background: -moz-linear-gradient(left top, #FFA26D, #3ABED0);
-		opacity: 0.10;
+.resource-section {
+	padding-top: 30px;
+	margin-bottom: 50px;
+	.resource-section-title {
+		font-weight: 700;
+		text-transform: uppercase;
+		// font-family: pt mono;
+		font-size: 36px;
+		color: #000;
 	}
-	&:before {
-		z-index: 0;
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		content: "";
-		background-color: #000;
-		background-image: url(../images/02.png);
-		opacity: 0.85;
-	}
-	.slogan {
-		z-index: 3;
-		position: absolute;
-		top: 50%;
-		left: 0;
-		right: 0;
-		margin-top: -100px;
-		text-align: center;
-		color: #fff;
-		h2 {
-			@include font-size(48);
-			font-weight: bold;
-			letter-spacing: 5px;
-			margin-bottom: 30px;
-		}
-		h6 {
-			@include font-size(18);
-			letter-spacing: 3px;
-		}
-		img {
-			max-width: 100%;
-			// min-width: 560px;
-		}
-	}
-	.scroll-down {
-		z-index: 3;
-		position: absolute;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		text-align: center;
-		.button {
-			width: 240px;
-			padding: 14px;
-			border-radius: 3px 3px 0 0;
-			opacity: 0.7;
-			// border-radius: 100px;
-		}
-	}
-}
-
-.feature-section {
-	padding: 80px 20px;
-	&.gray {
-		background-color: #eee;
-	}
-	&.dark {
-		background-color: #222222;
-		background-image: url(../images/02.png);
-		.feature-title {
-			color: #fff;
-		}
-		.feature-content {
-			h2 {
-				color: #fff;
-			}
-			p {
-				color: #eee;
-			}
-		}
-	}
-	&.blue {
-		background-color: #2B3B49;
-		// background-image: url(../images/02.png);
-		.feature-title {
-			color: #fff;
-		}
-		.feature-content {
-			h2 {
-				color: #fff;
-			}
-			p {
-				color: #eee;
-			}
-			a {
-				color: #fff;
-				text-decoration: underline;
-			}
-		}
-	}
-	.feature-title {
-		text-align: center;
-		color: $title-color;
-		@include font-size(36);
-		font-weight: bold;
-		margin-bottom: 20px;
-	}
-	.feature-content {
-		margin: 0 auto;
-		max-width: 1280px;
-		text-align: center;
-		h2 {
-			text-align: center;
-			color: $title-color;
-			@include font-size(36);
-			font-weight: bold;
-			margin-bottom: 20px;
+	.resource-section-content {
+		hr {
+			background-color: #000;
+			height: 1px;
+			margin-bottom: 36px;
 		}
 		p {
-			@include font-size(18);
-			color: #777;
-			line-height: 1.6em;
-		}
-		.tags {
-			text-align: left;
-			.button {
-				margin-right: 6px;
-				margin-bottom: 10px;
-				font-size: 13px;
-				padding: 6px 16px;
-				border-color: $main-color;
-				color: $main-color;
-			}
-		}
-		.button {
-			&.button-large {
-				min-width: 240px;
-			}
-		}
-	}
-}
-
-
-.filter {
-	margin: 15px auto;
-}
-
-.feature-section {
-	&.gray {
-		.service {
-			// border: none;
-			background-color: #fff;
+			color: #6a6a6a;
+			line-height: 1.7em;
+			max-width: 750px;
 		}
 	}
 }
 
 .service {
-	display: block;
-	padding: 15px;
-	height: 320px;
-	background-color: #f7f8f9;
-	// border: 1px solid #ddd;
-	text-align: center;
-	margin: 10px;
+	display: inline-block;
+	padding: 0 30px 10px 0;
+	width: 100%;
+	max-width: 480px;
+	text-align: left;
+	margin: 0 36px 36px 0;
 	margin-bottom: 30px;
 	text-decoration: none;
-	// border: 2px solid transparent;
 	@include easeOutCirc(all, 750ms);
 	@include border-radius(5px);
-	// @include box-shadow(0px 1px #DDD);
-	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 	&:hover {
-		// border: 2px solid #000;
-		.thumbnail {
-			// -webkit-filter: grayscale(0);
-			@include opacity(1);
+		.title {
+			color: $main-color;
+		}
+		.descript {
+			color: #6a6a6a;
 		}
 	}
 	.thumbnail {
-		height: 160px;
-		line-height: 160px;
+		vertical-align: top;
+		display: inline-block;
+		float: left;
+		text-align: center;
+		width: 120px;
+		height: 120px;
+		line-height: 120px;
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center;
-		margin-bottom: 20px;
-		font-family: 'Lato', sans-serif;
+		margin-right: 16px;
 		font-weight: 300;
-		font-size: 30px;
+		font-size: 15px;
 		padding: 0 20px;
-		color: #fff;
-		// -webkit-filter: grayscale(.7);
-		@include border-radius(3px);
-		@include opacity(.6);
-		@include easeOutCirc(all, 400ms);
+		color: #FFF;
+		box-shadow: 0 0 1px 0 #9b9b9b;
+		@include border-radius(50%);
 	}
 	h4.title {
 		font-weight: bold;
@@ -413,167 +137,9 @@ form {
 	p.descript {
 		@include font-size(14);
 		line-height: 1.6em;
-		color: #777;
+		color: #6a6a6a;
 		height: 1.6em * 3;
 		max-height: 1.6em * 3;
 		overflow: hidden;
-	}
-}
-
-.gallery {
-	min-height: 560px;
-	padding-top: 30px;
-	.project {
-		// height: 180px;
-		border-radius: 3px;
-		overflow: hidden;
-		margin-bottom: 20px;
-		.title {
-			padding: 8px;
-			color: #555;
-			@include easeOutSine(all, 300ms);
-			@include font-size(13);
-		}
-		&:hover {
-			.title {
-				color: $green-color;
-			}
-		}
-		.thumbnail {
-			position: relative;
-			width: 100%;
-			height: 180px;
-			background-color: #606060;
-			background-size: cover;
-			background-repeat: no-repeat;
-			background-position: center;
-			@include easeOutSine(all, 300ms);
-			&:after {
-				z-index: 1;
-				position: absolute;
-				top: 0;
-				left: -2px;
-				right: -2px;
-				bottom: 0;
-				content: "";
-				background-color: #000;
-				opacity: 0.65;
-				@include easeOutCirc(all, 2500ms);
-			}
-			&:hover {
-				cursor: pointer;
-				// @include transform(scale(1.1));
-				&:after {
-					opacity: 0;
-				}
-			}
-		}
-	}
-}
-
-.footer {
-	margin: 0 auto;
-	max-width: 1200px;
-	.logo {
-		// max-width: 240px;
-		img {
-			max-width: 240px;
-			// max-width: 100%;
-			// height: 100%;
-			margin-bottom: 15px;
-		}
-		p {
-			max-width: 240px;
-			@include font-size(13);
-			color: #777;
-			line-height: 1.6em;
-		}
-	}
-	.socials-contact {
-		margin-bottom: 20px;
-		.social-item {
-			display: inline-block;
-			width: 40px;
-			height: 40px;
-			line-height: 40px;
-			text-align: center;
-			background-color: #aaa;
-			border-radius: 5px;
-			color: #fff;
-			a {
-				color: #fff;
-			}
-		}
-	}
-	.footer-title {
-		@include font-size(16);
-		color: $main-color;
-		font-weight: bold;
-		margin-bottom: 20px;
-	}
-	.footer-item {
-		@include font-size(14);
-		color: #777;
-		margin-bottom: 12px;
-		a {
-			color: #777;
-			&:hover {
-				color: $main-color;
-			}
-		}
-	}
-}
-
-.recommend {
-
-	.message {
-		text-align: left;
-		position: relative;
-		padding: 20px 25px;
-		margin-bottom: 36px;
-		background-color: #fff;
-		color: $title-color;
-		line-height: 1.6em;
-		@include border-radius(3px);
-		&:after {
-			position: absolute;
-			left: 20px;
-			bottom: -7px;
-			content: "";
-			height: 14px;
-			width: 14px;
-			background-color: #fff;
-			@include transform(rotate(45deg));
-		}
-		.rank {
-			margin-top: 10px;
-			text-align: right;
-			color: #777;
-			@include font-size(13);
-		}
-	}
-	.profile {
-		text-align: left;
-		.company {
-			font-size: 14px;
-			color: $main-color;
-		}
-		.name {
-			font-size: 14px;
-			color: $title-color;
-		}
-		.thumbnail {
-			float: left;
-			display: inline-block;
-			width: 50px;
-			height: 50px;
-			margin-right: 10px;
-			margin-top: -3px;
-			border: 3px solid #ddd;
-			background-size: cover;
-			background-repeat: no-repeat;
-			background-position: center;
-			@include border-radius(50%);
-		}
 	}
 }

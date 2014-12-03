@@ -2,9 +2,14 @@ var app = angular.module("resourcesApp", []);
 
 app.controller('RootController', function($scope, $location) {
 
+    $scope.onNavClick = function (index) {
+        var $target = $(".resource-section").eq(index + 1);
+        $(".section-container").scrollTo($target, 0);
+    };
+
     $scope.resources = [{
-        category: "必逛大站",
-        descript: "天天逛、增廣見聞的好地方",
+        category: "每日必逛網站",
+        descript: "這些網站非常適合天天來逛逛，是增廣見聞的好地方！",
         items: [{
             linkurl: "https://dribbble.com/",
             thumbnail: "images/rscs/dribbble.jpg",
@@ -24,7 +29,7 @@ app.controller('RootController', function($scope, $location) {
             linkurl: "http://www.ui.cn/",
             thumbnail: "images/rscs/uicn.jpg",
             name: "UI中国",
-            descript: "UI中国,前身为iconfans.com。是专业的界面设计师交流、学习/展示平台.同时也是UI设计师人才流动的集散地,会员均为一线UI设计师,覆盖主流互联网公司.我们希望借助互联网的力量打造国内最专业的UI设计平台,为UI设计师做最好的服务,提高UI设计行业价值!",
+            descript: "专业的界面设计师交流、学习/展示平台.同时也是UI设计师人才流动的集散地,会员均为一线UI设计师,覆盖主流互联网公司。",
         }, {
             linkurl: "http://www.uisheji.cn/",
             thumbnail: "images/rscs/uidesign.jpg",
@@ -34,7 +39,7 @@ app.controller('RootController', function($scope, $location) {
             linkurl: "http://www.boxui.com/",
             thumbnail: "images/rscs/boxui.jpg",
             name: "BoxUI",
-            descript: "专注于以用户体验为中心的设计，分享精彩的UI设计、交互设计、用户研究作品及相关设计理论知识；您还可以在这里发布最新UI设计行业动态、设计活动及招聘求职信息。",
+            descript: "专注于以用户体验为中心的设计，分享精彩的UI设计、交互设计、用户研究作品及相关设计理论知识。",
         }, {
             linkurl: "http://designlol.net/",
             thumbnail: "images/rscs/designlol.jpg",
@@ -59,7 +64,7 @@ app.controller('RootController', function($scope, $location) {
             linkurl: "http://shijue.me/home/hot/0",
             thumbnail: "images/rscs/shijue.jpg",
             name: "視覺中國",
-            descript: "视觉中国是中国最具活力的视觉图片分享社区及创意设计产品社会化电商平台。依托独特的创意生态理论，为原创者和消费者提供一个互动沟通的原创社区，发现原创、发现美丽，收获并分享美好的创意体验。",
+            descript: "视觉中国是中国最具活力的视觉图片分享社区及创意设计产品社会化电商平台，发现原创、发现美丽，收获并分享美好的创意体验。",
         }, {
             linkurl: "http://www.chicun.in/index.html",
             thumbnail: "images/rscs/chicun.jpg",
@@ -67,8 +72,8 @@ app.controller('RootController', function($scope, $location) {
             descript: "定義了各種裝置的尺寸，尺寸ChiCun最給力的設計標準分享網站。",
         }, ]
     }, {
-        category: "App UI 靈感",
-        descript: "App 設計收藏，個個都是極品",
+        category: "App 設計參考",
+        descript: "App設計沒有靈感，趕快到這些網站逛逛吧！",
         items: [{
             linkurl: "http://www.pttrns.com/",
             thumbnail: "images/rscs/pttrns.jpg",
@@ -126,26 +131,7 @@ app.controller('RootController', function($scope, $location) {
             descript: "分享精美的App界面设计，可以說是對岸版本的Pttrns。",
         }, ]
     }, {
-        category: "App ICON 靈感",
-        descript: "精品 ICON 設計收藏",
-        items: [{
-            linkurl: "http://www.overlapps.com/",
-            thumbnail: "images/rscs/overlapps.jpg",
-            name: "overlapps",
-            descript: "收藏來自世界各地的優良 ICON 設計，是一個非常專注在 ICON 設計整理與分享的好地方！",
-        }, {
-            linkurl: "http://iosicongallery.com/",
-            thumbnail: "images/rscs/iosicongallery.jpg",
-            name: "iOS Icon Gallery",
-            descript: "收藏非常多的 iOS 系統上的 ICON 設計，各個案例都是精選！",
-        }, {
-            linkurl: "http://www.iconsfeed.com/",
-            thumbnail: "images/rscs/iconsfeed.jpg",
-            name: "Iconsfeed",
-            descript: "Iconsfeed 就像是 ICON 界的 Pttrns，你可以閱覽各種分類的 ICON 設計。",
-        }, ]
-    }, {
-        category: "網頁設計靈感",
+        category: "Web 設計參考",
         descript: "網頁設計極品收藏，靈感多到溢出來",
         items: [{
             linkurl: "http://www.awwwards.com/",
@@ -167,7 +153,14 @@ app.controller('RootController', function($scope, $location) {
             thumbnail: "images/rscs/cssawards.jpg",
             name: "CSS Awards",
             descript: "在這裡你看到來至世界各地超讚的網頁設計，學習他們是如何使用CSS進行設計！",
-        }, {
+        }, 
+        {
+            linkurl: "http://land-book.com/",
+            name: "Land-Book",
+            descript: "這裏收藏了非常多好看又實用的 Landing page，缺少靈感不妨來這看看。",
+            color: "#e74c3c"
+        },
+        {
             linkurl: "http://www.siteinspire.com//",
             thumbnail: "images/rscs/siteinspire.jpg",
             name: "siteInspire",
@@ -205,7 +198,165 @@ app.controller('RootController', function($scope, $location) {
         },
         ]
     }, {
-        category: "PSD 素材下載",
+        category: "ICON 設計參考",
+        descript: "精品 ICON 設計收藏",
+        items: [{
+            linkurl: "http://www.overlapps.com/",
+            thumbnail: "images/rscs/overlapps.jpg",
+            name: "overlapps",
+            descript: "收藏來自世界各地的優良 ICON 設計，是一個非常專注在 ICON 設計整理與分享的好地方！",
+        }, {
+            linkurl: "http://iosicongallery.com/",
+            thumbnail: "images/rscs/iosicongallery.jpg",
+            name: "iOS Icon Gallery",
+            descript: "收藏非常多的 iOS 系統上的 ICON 設計，各個案例都是精選！",
+        }, {
+            linkurl: "http://www.iconsfeed.com/",
+            thumbnail: "images/rscs/iconsfeed.jpg",
+            name: "Iconsfeed",
+            descript: "Iconsfeed 就像是 ICON 界的 Pttrns，你可以閱覽各種分類的 ICON 設計。",
+        }, ]
+    }, {
+        category: "LOGO 設計參考",
+        descript: "多個LOGO網站，滿滿的都是想法",
+        items: [{
+            linkurl: "http://logopond.com/",
+            thumbnail: "images/rscs/logopond.jpg",
+            name: "Logopond",
+            descript: "提供眾多的品牌 Logo 設計，是一個尋找 Logo 靈感的好地方",
+        }, {
+            linkurl: "http://logofury.com/",
+            thumbnail: "images/rscs/logofury.jpg",
+            name: "LogoFury",
+            descript: "收藏非常多的 Logo，讓設計師們找尋靈感畫廊，在這裡你也可以看到其他人對這些概念的評價",
+        }, {
+            linkurl: "http://logos.co/",
+            thumbnail: "images/rscs/logos.jpg",
+            name: "logos",
+            descript: "在這裡除了可以找到許多免費的 Logo 素材外，你也可以付費購買一些超讚的作品！",
+        }, {
+            linkurl: "http://www.logogalleria.com/",
+            thumbnail: "images/rscs/logogalleria.jpg",
+            name: "Logo Galleria",
+            descript: "熱門的 Logo 畫廊，也是一個取得靈感的好地方",
+        }, {
+            linkurl: "http://seeklogo.com/",
+            thumbnail: "images/rscs/seeklogo.jpg",
+            name: "seeklogo.com",
+            descript: "Logo 搜尋引擎，你可以透過關鍵字搜尋，找到意想不到的好靈感",
+        }, ]
+    }, {
+        category: "Branding 設計參考",
+        descript: "了解品牌設計，最完整的設計靈感",
+        items: [{
+            linkurl: "http://www.brandingserved.com/",
+            thumbnail: "images/rscs/brandingserved.jpg",
+            name: "Branding Served",
+            descript: "知名設計社群 Behance 的分站，這裡的 Branding Design 都是從 Behance 上精挑細選出來的！",
+        }, {
+            linkurl: "http://www.underconsideration.com/brandnew/",
+            color: "#000",
+            name: "Brand New",
+            descript: "Brand New: Opinions on corporate and brand identity work. A division of UnderConsideration.",
+        }, {
+            linkurl: "http://identitydesigned.com/",
+            thumbnail: "images/rscs/identitydesigned.jpg",
+            color: "#000",
+            name: "Identity Designed",
+            descript: "Identity Designed is a showcase of brand identity projects from around the world."
+        } ]
+    }, {
+        category: "字體相關",
+        descript: "一些字體相關的網站",
+        items: [{
+            linkurl: "http://blog.justfont.com/",
+            thumbnail: "images/rscs/justfont.jpg",
+            name: "JUSTFONT 部落格",
+            descript: "有關字型和字型相關的專業文章，包括字體設計、專業排版、英文和中文字型討論，如何挑選一套好字型等專業文章.",
+        }, 
+        {
+            linkurl: "http://hellohappy.org/beautiful-web-type/",
+            name: "Beautiful Web Type",
+            color: "#EF4723",
+            descript: "A showcase of the best typefaces from the Google web fonts directory.",
+        },
+        {
+            linkurl: "http://www.qiuziti.com/",
+            thumbnail: "images/rscs/qiuziti.jpg",
+            name: "qiuziti",
+            descript: "來 qiuziti 上傳圖片，問字體不求人！",
+        }, {
+            linkurl: "https://typekit.com/",
+            color: "#2ecc71",
+            name: "Typekit",
+            descript: "Typekit is a service which allows subscribers to embed fonts into online documents.[1] It allows designers and developers a subscription-based library of hosted, high-quality fonts to use on their websites.",
+        }, {
+            linkurl: "http://www.fontshop.com/",
+            name: "FontShop",
+            descript: "FontShop.com -- Find, Try, Buy &amp; Download Fonts",
+            color: "#9b59b6",
+        }, {
+            linkurl: "http://www.typeisbeautiful.com/",
+            name: "Type is Beautiful",
+            descript: "Type is Beautiful 是一个关于文字设计和视觉文化的网站。我们关注的话题包括字体、排版、平面设计、公共设计、技术和视觉文化。",
+            color: "#34495e",
+        }, {
+            linkurl: "http://www.typography.com/",
+            name: "Hoefler",
+            descript: "Webfonts by Hoefler&Co.Meet Cloud.typography, the webfont solution for design professionals. ",
+            color: "#e67e22",
+        }, {
+            linkurl: "http://typetester.org/",
+            name: "Typetester",
+            descript: "The Typetester is an online application for comparison of the fonts for the screen. Its primary role is to make web designer’s life easier.",
+            color: "#000",
+        }, ]
+    }, {
+        category: "配色參考",
+        descript: "缺乏配色靈感，從這幾個網站上找找吧",
+        items: [{
+            linkurl: "http://www.colourlovers.com/",
+            thumbnail: "images/rscs/colourlovers.jpg",
+            name: "COLOURlovers",
+            descript: "討論配色的社群，你可以在這看到來自四面八方的色彩靈感！",
+        }, {
+            linkurl: "http://color.hailpixel.com/",
+            thumbnail: "images/rscs/hailpixel.jpg",
+            name: "color.hailpixel",
+            descript: "非常酷的配色網站，你只需要點、點、點，隨性配色的好地方！",
+        }, {
+            linkurl: "http://www.peise.net/tools/web/",
+            thumbnail: "images/rscs/peise.jpg",
+            name: "Color Scheme Designe",
+            descript: "超級好用的配色工具，你可以使用單色、互補色、類似色等搭配方式找到理想的色彩搭配方案。",
+        }, {
+            linkurl: "https://kuler.adobe.com/zh/explore/",
+            thumbnail: "images/rscs/kuler.jpg",
+            name: "Adobe Kuler",
+            descript: "由 Adobe 開發的色彩分享網站，在這裡你可以看到非常多樣的 Color Scheme，讓我們的靈感源源不絕！",
+        }, 
+        {
+            linkurl: "http://flatuicolors.com/",
+            color: "#1abc9c",
+            name: "Flat Colors",
+            descript: "扁平化配色案例參考，裡面已經配好各式各樣扁平化設計風格的顏色。",
+        }, 
+        {
+            linkurl: "http://nipponcolors.com/#tonoko",
+            color: "#2C586A",
+            name: "日本の伝統色",
+            descript: "想要設計日本風格的配色嗎，趕快來這個網站找配色！",
+        }, 
+        {
+            linkurl: "http://colourco.de/",
+            color: "#954335",
+            name: "Colourcode",
+            descript: "非常好玩的配色工具，點擊旁邊的工具列，移動滑鼠瞬間就配出超好看的顏色了！",
+        }, 
+        
+        ]
+    }, {
+        category: "PSD 相關資源",
         descript: "需要免費資源？這幾個網站趕快記下來",
         items: [{
             linkurl: "http://freebiesbug.com/",
@@ -234,7 +385,7 @@ app.controller('RootController', function($scope, $location) {
             descript: "Fribbble 從名字就能猜出它在做什麼，這裡收藏很多來自 Dribbble 設計師之手的免費 PSD 素材。",
         }, ]
     }, {
-        category: "Sketch 素材下載",
+        category: "Sketch 相關資源",
         descript: "Sketch 資源整理，找資源先來這幾個網站看看",
         items: [{
             linkurl: "http://www.sketchappsources.com/",
@@ -298,119 +449,7 @@ app.controller('RootController', function($scope, $location) {
             descript: "用 Sketch 創作的360個向量圖示，免費下載。",
         }, ]
     }, {
-        category: "LOGO靈感資源",
-        descript: "多個LOGO網站，滿滿的都是想法",
-        items: [{
-            linkurl: "http://logopond.com/",
-            thumbnail: "images/rscs/logopond.jpg",
-            name: "Logopond",
-            descript: "提供眾多的品牌 Logo 設計，是一個尋找 Logo 靈感的好地方",
-        }, {
-            linkurl: "http://logofury.com/",
-            thumbnail: "images/rscs/logofury.jpg",
-            name: "LogoFury",
-            descript: "收藏非常多的 Logo，讓設計師們找尋靈感畫廊，在這裡你也可以看到其他人對這些概念的評價",
-        }, {
-            linkurl: "http://logos.co/",
-            thumbnail: "images/rscs/logos.jpg",
-            name: "logos",
-            descript: "在這裡除了可以找到許多免費的 Logo 素材外，你也可以付費購買一些超讚的作品！",
-        }, {
-            linkurl: "http://www.logogalleria.com/",
-            thumbnail: "images/rscs/logogalleria.jpg",
-            name: "Logo Galleria",
-            descript: "熱門的 Logo 畫廊，也是一個取得靈感的好地方",
-        }, {
-            linkurl: "http://seeklogo.com/",
-            thumbnail: "images/rscs/seeklogo.jpg",
-            name: "seeklogo.com",
-            descript: "Logo 搜尋引擎，你可以透過關鍵字搜尋，找到意想不到的好靈感",
-        }, ]
-    }, {
-        category: "品牌設計靈感",
-        descript: "了解品牌設計，最完整的設計靈感",
-        items: [{
-            linkurl: "http://www.brandingserved.com/",
-            thumbnail: "images/rscs/brandingserved.jpg",
-            name: "Branding Served",
-            descript: "知名設計社群 Behance 的分站，這裡的 Branding Design 都是從 Behance 上精挑細選出來的！",
-        }, {
-            linkurl: "http://www.underconsideration.com/brandnew/",
-            color: "#000",
-            name: "Brand New",
-            descript: "Brand New: Opinions on corporate and brand identity work. A division of UnderConsideration.",
-        }, {
-			linkurl: "http://identitydesigned.com/",
-			thumbnail: "images/rscs/identitydesigned.jpg",
-			color: "#000",
-			name: "Identity Designed",
-			descript: "Identity Designed is a showcase of brand identity projects from around the world."
-		} ]
-    }, {
-        category: "字體",
-        descript: "一些字體相關的網站",
-        items: [{
-            linkurl: "http://blog.justfont.com/",
-            thumbnail: "images/rscs/justfont.jpg",
-            name: "JUSTFONT 部落格",
-            descript: "有關字型和字型相關的專業文章，包括字體設計、專業排版、英文和中文字型討論，如何挑選一套好字型等專業文章.",
-        }, {
-            linkurl: "http://www.qiuziti.com/",
-            thumbnail: "images/rscs/qiuziti.jpg",
-            name: "qiuziti",
-            descript: "來 qiuziti 上傳圖片，問字體不求人！",
-        }, {
-            linkurl: "https://typekit.com/",
-            color: "#000",
-            name: "Typekit",
-            descript: "Typekit is a service which allows subscribers to embed fonts into online documents.[1] It allows designers and developers a subscription-based library of hosted, high-quality fonts to use on their websites.",
-        }, {
-            linkurl: "http://www.fontshop.com/",
-            name: "FontShop",
-            descript: "FontShop.com -- Find, Try, Buy &amp; Download Fonts",
-            color: "#000",
-        }, {
-            linkurl: "http://www.typeisbeautiful.com/",
-            name: "Type is Beautiful",
-            descript: "Type is Beautiful 是一个关于文字设计和视觉文化的网站。我们关注的话题包括字体、排版、平面设计、公共设计、技术和视觉文化。",
-            color: "#000",
-        }, {
-            linkurl: "http://www.typography.com/",
-            name: "Hoefler",
-            descript: "",
-            color: "#000",
-        }, {
-            linkurl: "http://typetester.org/",
-            name: "Typetester",
-            descript: "The Typetester is an online application for comparison of the fonts for the screen. Its primary role is to make web designer’s life easier.",
-            color: "#000",
-        }, ]
-    }, {
-        category: "顏色靈感",
-        descript: "缺乏配色靈感，從這幾個網站上找找吧",
-        items: [{
-            linkurl: "http://www.colourlovers.com/",
-            thumbnail: "images/rscs/colourlovers.jpg",
-            name: "COLOURlovers",
-            descript: "討論配色的社群，你可以在這看到來自四面八方的色彩靈感！",
-        }, {
-            linkurl: "http://color.hailpixel.com/",
-            thumbnail: "images/rscs/hailpixel.jpg",
-            name: "color.hailpixel",
-            descript: "非常酷的配色網站，你只需要點、點、點，隨性配色的好地方！",
-        }, {
-            linkurl: "http://www.peise.net/tools/web/",
-            thumbnail: "images/rscs/peise.jpg",
-            name: "Color Scheme Designe",
-            descript: "超級好用的配色工具，你可以使用單色、互補色、類似色等搭配方式找到理想的色彩搭配方案。",
-        }, {
-            linkurl: "https://kuler.adobe.com/zh/explore/",
-            thumbnail: "images/rscs/kuler.jpg",
-            name: "Adobe Kuler",
-            descript: "由 Adobe 開發的色彩分享網站，在這裡你可以看到非常多樣的 Color Scheme，讓我們的靈感源源不絕！",
-        }, ]
-    }, {
-        category: "效率工具",
+        category: "推薦設計工具",
         descript: "省下時間，喝咖啡！",
         items: [{
                 linkurl: "http://www.getmarkman.com//",
@@ -438,10 +477,18 @@ app.controller('RootController', function($scope, $location) {
                 name: "xScope",
                 descript: "xScope是一套強大的專業設計輔助工具，專門為設計師和開發人員設計。它是一個非常理想的測量，校準，檢查屏幕上的圖形和佈局的軟體",
             },
+            {
+                linkurl: "https://www.tailorbrands.com/",
+                name: "Tailor",
+                color: "#000",
+                descript: "只要輸入你的品牌名稱，Tailor就會自動產生精美的Logo設計，設計師沒靈感的時候也可以來玩玩！",
+            },
+
+            
 
         ]
     }, {
-        category: "設計規範",
+        category: "各家設計規範",
         descript: "設計規範一定有它的道理，了解各種平台上的設計細節",
         items: [{
             linkurl: "http://www.google.com/design/spec/material-design/introduction.html",
@@ -465,7 +512,7 @@ app.controller('RootController', function($scope, $location) {
             descript: "由對岸翻譯的蘋果人機界面設計規範，翻譯的品質還不錯。",
         }, ]
     }, {
-        category: "設計輔具",
+        category: "免費設計用紙",
         descript: "用這些工具來輔助設計",
         items: [{
             linkurl: "http://sneakpeekit.com/",
