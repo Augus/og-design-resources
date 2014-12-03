@@ -22,127 +22,75 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
 </head>
 
-<body ng-controller="RootController">
+<body ng-controller="RootController" ng-cloak>
 
-    <!-- 啟動面 -->
-    <div class="launch-screen">
-
-        <!-- Header -->
-        <div class="header">
-
-            <div class="row clear">
-                <div class="col col-3 tablet-col-3 mobile-hide">
-                    <h1 class="logo">
-                        <a href="http://ogdesign.tw">
-                            <img src="images/logos/logo.png" alt="奧革設計, OGDeisgn">
-                        </a>
-                    </h1>
-                </div>
-                <div class="col col-9 tablet-col-9 mobile-full">
-                    <ul class="nav">
-                        <li><a href="http://ogdesign.tw">首頁</a>
-                        </li>
-                        <li><a href="http://blog.ogdesign.tw">部落格</a>
-                        </li>
-                        <li class="active">設計資源</li>
-                        <li><a href="http://ogdesign.tw/#contact">聯絡我們</a>
-                        </li>
-                    </ul>
-                </div>
+    <div id="sidebar">
+        <a href="http://ogdesign.tw">
+            <h1 class="logo">
+                <img src="images/Logo.png" alt="">
+            </h1>
+        </a>
+        <ul class="nav">
+            <li ng-repeat="r in resources" ng-click="onNavClick($index)">
+                <div class="text">{{r.category}}</div>
+            </li>
+        </ul>
+        <div class="footer">
+            <div class="copy-right">
+                ogdesign © All rights reserved
             </div>
         </div>
     </div>
 
-    <div class="feature-section white">
-        <h2 class="feature-title">設計師必備資源總匯</h2>
-        <div class="feature-content">
-            <p>如果你喜歡這份整理，幫我們分享給更多的人知道：）</p>
-            <div class="fb-like-box" data-href="https://www.facebook.com/ogdesign.tw" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="false" data-show-border="false"></div>
-            <div class="fb-like" data-href="http://resources.ogdesign.tw/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-        </div>
-    </div>
-
-    <div class="">
-        <div class="feature-section" ng-repeat="r in resources" ng-class="{'gray': $index%2===0}">
-            <h2 class="feature-title">{{r.category}}</h2>
-            <div class="feature-content">
-                <p>{{r.descript}}</p>
-                <div class="row clear">
-                    <div class="col col-3 tablet-col-4 mobile-full" ng-repeat="i in r.items">
-                        <a class="service" href="{{i.linkurl}}" target="_blank">
-                            <div ng-if="i.thumbnail" class="thumbnail" style="background-image: url({{i.thumbnail}});"></div>
-                            <div ng-if="!i.thumbnail" class="thumbnail" style="background-color: {{i.color}}">{{i.name}}</div>
-                            <h4 class="title">{{i.name}}</h4>
-                            <p class="descript">{{i.descript}}</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="feature-section blue">
-            <h2 class="feature-title">UI/UX 社團</h2>
-            <div class="feature-content">
-                <p>邀請你加入「<a href="http://uiux.tw">使用者經驗研究分析</a>」社團與大家分享討論 UI / UX 那些大小事！</a>
-                </p>
-            </div>
-        </div>
-
-        <div class="feature-section gray">
-            <h2 class="feature-title">分享給大家</h2>
-            <div class="feature-content">
-                <p>喜歡這份整理嗎？幫我們分享給更多的人知道：）</p>
-                <div class="fb-like-box" data-href="https://www.facebook.com/ogdesign.tw" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="false" data-show-border="false"></div>
+    <div class="section-container">
+        
+        <div class="resource-section gray">
+            <h2 class="resource-section-title">設計師必備資源總匯</h2>
+            <div class="resource-section-content">
+                <hr>
+                <p>精心整理了各式各樣的設計資源，有各種靈感、資源、工具，如果你喜歡這份整理嗎，幫我們分享給更多的人知道：）</p>
                 <div class="fb-like" data-href="http://resources.ogdesign.tw/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+                <div class="fb-like-box" data-href="https://www.facebook.com/ogdesign.tw" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="false" data-show-border="false"></div>
             </div>
         </div>
 
-        <!-- Footer -->
-        <div class="footer feature-section">
-            <div class="row clear">
-                <div class="col col-4 mobile-full logo">
-                    <img src="images/logos/logo_dark.png" alt="">
-                    <p>專注於用戶體驗優化以及網頁/行動應用界面設計，我們以使用者為中心出發，創造最好的品牌體驗。</p>
+        <div class="">
+            <div class="resource-section" ng-repeat="r in resources" ng-class="{'gray': $index%2===0}">
+                <h2 id="{{r.category}}" class="resource-section-title">{{r.category}}</h2>
+                <div class="resource-section-content">
+                    <p>{{r.descript}}</p>
+                    <hr>
+                    <a class="service" href="{{i.linkurl}}" target="_blank" ng-repeat="i in r.items">
+                        <div ng-if="i.thumbnail" class="thumbnail" style="background-image: url({{i.thumbnail}});"></div>
+                        <div ng-if="!i.thumbnail" class="thumbnail" style="background-color: {{i.color}}">{{i.name}}</div>
+                        <h4 class="title">{{i.name}}</h4>
+                        <p class="descript">{{i.descript}}</p>
+                    </a>
                 </div>
-                <div class="col col-4 mobile-full contact">
-                    <h4 class="footer-title">聯絡我們</h4>
-                    <div class="socials-contact">
-                        <a href="https://www.facebook.com/ogdesign.tw" target="_blank" class="social-item"><i class="icon-facebook"></i></a>
-                        <a href="https://www.facebook.com/ogdesign.tw" target="_blank" class="social-item"><i class="icon-twitter"></i></a>
-                        <a href="https://www.facebook.com/ogdesign.tw" target="_blank" class="social-item"><i class="icon-gplus"></i></a>
-                        <a href="https://www.facebook.com/ogdesign.tw" target="_blank" class="social-item"><i class="icon-linkedin"></i></a>
-                    </div>
-                    <div class="footer-item">聯絡電話 : <a href="tel:+0927598161">0927-598-161</a>
-                    </div>
-                    <div class="footer-item">電子郵件 : <a href="mailto:augus@ogdesign.tw">augus@ogdesign.tw</a>
-                    </div>
-                    <!-- <div class="footer-item">公司地址：台北市新生北路一段3號4樓</div> -->
+            </div>
+
+            <div class="resource-section">
+                <h2 class="resource-section-title">台灣 UI/UX 社團</h2>
+                <div class="resource-section-content">
+                    <hr>
+                    <p>「<a href="http://uiux.tw">使用者經驗研究分析</a>」社團成立於 2013 年，在這裡漢大家觀察最使用者經驗(User Experience)趨勢，分享並討論設計議題，使用人本的社群溝通方法、用人性解構網路世界。</a>
+                    </p>
                 </div>
-                <div class="col col-2 mobile-full about">
-                    <h4 class="footer-title">關於我們</h4>
-                    <div class="footer-item"><a href="http://blog.ogdesign.tw">部落格</a>
-                    </div>
-                    <div class="footer-item"><a href="">設計資源</a>
-                    </div>
-                    <div class="footer-item"><a href="">設計週報訂閱</a>
-                    </div>
-                </div>
-                <div class="col col-2 mobile-full services">
-                    <h4 class="footer-title">服務</h4>
-                    <div class="footer-item"><a href="">網站設計</a>
-                    </div>
-                    <div class="footer-item"><a href="">App 設計</a>
-                    </div>
-                    <div class="footer-item"><a href="">使用性優化</a>
-                    </div>
-                    <div class="footer-item"><a href="">產品雛形開發</a>
-                    </div>
+            </div>
+
+            <div class="resource-section gray">
+                <h2 class="resource-section-title">關於奧革設計</h2>
+                <div class="resource-section-content">
+                    <hr>
+                    <p>我們是一家提供全面設計服務的公司，專注於使用性（Usability）優化以及網頁/行動應用界面設計。全力幫助新創產業服務是我們創立的理念，我們樂意為各類客戶提供具創新的解決方案。</p>
+                    <div class="fb-follow" data-href="https://www.facebook.com/Augus.YiHao" data-colorscheme="light" data-layout="standard" data-show-faces="true"></div>
+                    <div class="fb-like-box" data-href="https://www.facebook.com/ogdesign.tw" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="false" data-show-border="false"></div>
                 </div>
             </div>
         </div>
-
     </div>
     <div id="fb-root"></div>
+    <script src="//code.jquery.com/jquery-1.8.0.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.13/angular.min.js"></script>
     <script src="js/default.js"></script>
     <script src="js/app.js"></script>
@@ -155,7 +103,7 @@
             (i[r].q = i[r].q || []).push(arguments)
         }, i[r].l = 1 * new Date();
         a = s.createElement(o),
-        m = s.getElementsByTagName(o)[0];
+            m = s.getElementsByTagName(o)[0];
         a.async = 1;
         a.src = g;
         m.parentNode.insertBefore(a, m)
@@ -177,6 +125,7 @@
     </script>
     <script src="js/modernizr.js"></script>
     <script src="js/retina.min.js"></script>
+    <script src="js/jquery.scrollTo.min.js"></script>
 </body>
 
 </html>
