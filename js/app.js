@@ -4,7 +4,7 @@ app.controller('RootController', function($scope, $location) {
 
     $scope.onNavClick = function (index) {
         var $target = $(".resource-section").eq(index + 1);
-        $(".section-container").scrollTo($target, 0);
+        $(".section-container").scrollTo($target, 450);
     };
 
     $scope.resources = [{
