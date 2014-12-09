@@ -47,6 +47,7 @@ $sidebar-nav-item-active-color: #f3f4f5;
 			margin-bottom: 8px;
 			list-style: none;
 			.text {
+				position: relative;
 				font-size: 14px;
 				color: #6a6a6a;
 				letter-spacing: 1.3px;
@@ -58,14 +59,14 @@ $sidebar-nav-item-active-color: #f3f4f5;
 				&:before {
 					content: "";
 					position: absolute;
-					left: 60px;
+					// left: 60px;
 					// width: 90%;
-					right: 60px;
+					right: 0;
 					bottom: -2px;
 					height: 1px;
 					background-color: $main-color;
 					width: 0;
-					@include easeOutCirc(all, 250ms);
+					@include easeOutCirc(all, 150ms);
 				}
 			}
 			&:hover {
@@ -79,7 +80,7 @@ $sidebar-nav-item-active-color: #f3f4f5;
 				.text {
 					color: $main-color;
 					&:before {
-						width: calc(50%);
+						width: calc(100%);
 					}
 				}
 			}
