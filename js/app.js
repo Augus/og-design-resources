@@ -4,8 +4,37 @@ app.controller('RootController', function($scope, $location) {
 
     $scope.onNavClick = function (index) {
         var $target = $(".resource-section").eq(index + 1);
-        $(".section-container").scrollTo($target, 450);
+        $(window).scrollTo($target, 450);
     };
+
+    $(window).on("scroll", function () {
+        var min = 999999999,
+            idx = -1,
+            $closest,
+            windowHeight = $(window).height(),
+            scrollTop = $(this).scrollTop(),
+            $sectionTitles = $(".resource-section");
+
+        $sectionTitles.each(function (index) {
+
+            var $sectionTitle = $(this),
+                middle = $sectionTitle.offset().top,
+                diff = Math.abs(scrollTop - middle);
+
+            if (diff <= min) {
+                min = diff;
+                idx = index;
+                // console.log(middle);
+                $closest = $sectionTitle;
+            }
+
+        });
+
+        // console.log($closest.eq(0)[0]);
+        console.log(idx);
+        $(".nav-item").removeClass("active").eq(idx - 1).addClass("active");
+        // console.log(scrollTop);
+    });
 
     $scope.resources = [{
         category: "每日必逛網站",
@@ -523,3 +552,16 @@ app.controller('RootController', function($scope, $location) {
     }, ];
 
 });
+
+
+function throttle(fn, delay) {
+    var timer = null;
+    return function() {
+        var context = this,
+            args = arguments;
+        clearTimeout(timer);
+        timer = setTimeout(function() {
+            fn.apply(context, args);
+        }, delay);
+    };
+}
