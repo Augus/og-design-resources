@@ -85,7 +85,15 @@ app.controller('RootController', function($scope, $location, $timeout) {
             thumbnail: "images/rscs/pttrns.jpg",
             name: "Pttrns",
             descript: "收集各種界面設計模式（Patterns），收藏在這裡的都是精品！",
-        }, {
+        }, 
+        {
+            isNew : true,
+            linkurl: "http://colorhunt.co/",
+            thumbnail: "images/rscs/colorhunt.jpg",
+            name: "Color Hunt",
+            descript: "每日配色靈感，有空就來這裡挖掘神氣的色彩靈感！",
+        },
+        {
             linkurl: "http://www.ui.cn/",
             thumbnail: "images/rscs/uicn.jpg",
             name: "UI中国",
@@ -113,29 +121,9 @@ app.controller('RootController', function($scope, $location, $timeout) {
             name: "Big Details",
             color: "#69B0C1",
             descript: "非常棒的網站，發掘出很多App裡頭的細節設計，非常值得做為借鏡！",
-        }, {
-            linkurl: "http://www.iospirations.com/",
-            // thumbnail: "images/rscs/iospirations.png",
-            name: "iospirations",
-            color: "#92E0A9",
-            descript: "收藏了很多 iOS / Mac 良好的界面設計、圖示設計",
-        // }, {
-        //     linkurl: "http://thedesigninspiration.com/",
-        //     thumbnail: "images/rscs/designinspiration.jpg",
-        //     name: "The Design Inspiration",
-        //     descript: "每天分享Logo設計, 插圖設計, 網頁設計, 名片設計, 美圖與背景圖",
-        // }, {
-        //     linkurl: "http://shijue.me/home/hot/0",
-        //     thumbnail: "images/rscs/shijue.jpg",
-        //     name: "視覺中國",
-        //     descript: "视觉中国是中国最具活力的视觉图片分享社区及创意设计产品社会化电商平台，发现原创、发现美丽，收获并分享美好的创意体验。",
-        // }, {
-        //     linkurl: "http://www.chicun.in/index.html",
-        //     thumbnail: "images/rscs/chicun.jpg",
-        //     name: "尺寸",
-        //     descript: "定義了各種裝置的尺寸，尺寸ChiCun最給力的設計標準分享網站。",
+        }, 
 
-        }, ]
+        ]
     }, {
         category: "App  設計參考",
         descript: "App設計沒有靈感，趕快到這些網站逛逛吧！",
@@ -200,7 +188,16 @@ app.controller('RootController', function($scope, $location, $timeout) {
             name: "Ui4App",
             color: "#B0B8B4",
             descript: "分享精美的App界面设计，可以說是對岸版本的Pttrns。",
-        }, ]
+        }, 
+        {
+            linkurl: "http://www.iospirations.com/",
+            // thumbnail: "images/rscs/iospirations.png",
+            name: "iospirations",
+            color: "#92E0A9",
+            descript: "收藏了很多 iOS / Mac 良好的界面設計、圖示設計",
+            descript: "定義了各種裝置的尺寸，尺寸ChiCun最給力的設計標準分享網站。",
+        }, 
+        ]
     }, {
         category: "Web  設計參考",
         descript: "網頁設計極品收藏，靈感多到溢出來",
@@ -385,7 +382,15 @@ app.controller('RootController', function($scope, $location, $timeout) {
     }, {
         category: "Colors  配色參考",
         descript: "缺乏配色靈感，從這幾個網站上找找吧",
-        items: [{
+        items: [
+        {
+            isNew : true,
+            linkurl: "http://colorhunt.co/",
+            thumbnail: "images/rscs/colorhunt.jpg",
+            name: "Color Hunt",
+            descript: "每日配色靈感，有空就來這裡挖掘神氣的色彩靈感！",
+        },
+        {
             linkurl: "http://www.colourlovers.com/",
             thumbnail: "images/rscs/colourlovers.jpg",
             name: "COLOURlovers",
