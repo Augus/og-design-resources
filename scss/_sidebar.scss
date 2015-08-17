@@ -7,10 +7,10 @@
 // *************************************
 
 $sidebar-width: 240px;
-$sidebar-background-color: #f3f4f5;
+$sidebar-background-color: #1C1B20;
 $sidebar-user-section-color: rgba(0,0,0,.2);
-$sidebar-section-title-color: #707F97;
-$sidebar-nav-item-color: #999;
+$sidebar-section-title-color: #02A4D5;
+$sidebar-nav-item-color: rgba(#fff, 0.7);
 // $sidebar-nav-item-color: #7B8894;
 $sidebar-nav-item-active-color: #f3f4f5;
 
@@ -22,15 +22,38 @@ $sidebar-nav-item-active-color: #f3f4f5;
 	width: $sidebar-width;
 	background-color: $sidebar-background-color;
 	border-right: 1px solid rgba(0,0,0,.1);
-	@extend .no-selection;
+	text-align: center;
+	overflow: auto;
+	// @extend .no-selection;
 	h1.logo {
 		text-align: center;
-		margin: 48px;
+		margin: 48px 48px 24px 48px;
 
 		img {
 			max-width: 120px;
 			// height: 86px;
 			// width: 104px;
+		}
+	}
+	.search {
+		text-align: center;
+		input {
+			width: 160px;
+			background: rgba(54,54,54,0.00);
+			border: 2px solid #363636;
+			border-radius: 40px;
+		    padding: 0 24px;
+			font-size: 12px;
+			height: 40px;
+			line-height: 40px;
+			line-height: 13px;
+			color: #fff;
+			@include transition(all 225ms ease);
+			&:focus {
+				outline: none;
+				// color: $main-color;
+				border-color: $main-color; 
+			}
 		}
 	}
 	.nav {
@@ -43,18 +66,19 @@ $sidebar-nav-item-active-color: #f3f4f5;
 		li {
 			position: relative;
 			text-align: right;
-			line-height: 24px;
+			line-height: 20px;
 			margin-bottom: 8px;
 			list-style: none;
 			.text {
 				position: relative;
 				font-size: 14px;
-				color: #6a6a6a;
+				color: rgba(#fff, 0.7);
 				letter-spacing: 1.3px;
 				padding: 3px 0;
 				display: inline-block;
 				font-weight: 300;
-				text-transform: uppercase;
+				// text-transform: uppercase;
+				text-transform: capitalize;
 				font-family: pt mono;
 				&:before {
 					content: "";
