@@ -1,10 +1,44 @@
-var app = angular.module("resourcesApp", []);
+var app = angular.module("resourcesApp", ['ngAnimate', 'mgo-mousetrap']);
 
-app.controller('RootController', function($scope, $location) {
+app.controller('RootController', function($scope, $location, $timeout) {
 
     $scope.onNavClick = function (index) {
-        var $target = $(".resource-section").eq(index + 1);
-        $(window).scrollTo($target, 450);
+        var $target = $(".resource-section").eq(index);
+        $(window).scrollTo($target, 250);
+    };
+
+    $scope.keyword = "";
+
+    $scope.search = function () {
+        $timeout(function () {
+            $("#search").focus().select();
+        }, 100);
+    };
+    $scope.onSearchKeyUp = function (event) {
+        var keyCode = event.keyCode;
+        if (keyCode == 27) {
+            $timeout(function () {
+                $("#search").blur();
+            }, 100);
+        }
+    };
+
+    $scope.searchFilter = function(resource) {
+
+        if (resource) {
+            // debugger
+            var keyword = $scope.keyword.toLowerCase(),
+                resourceUrl = resource.linkurl && resource.linkurl.toLowerCase(),
+                resourceName = resource.name.toLowerCase(),
+                resourceDescription = resource.descript.toLowerCase();
+
+            if (resourceName.indexOf(keyword) != -1 || 
+                resourceUrl.indexOf(keyword) != -1 || 
+                resourceDescription.indexOf(keyword) != -1) {
+                return true;
+            }
+        }
+        return false;
     };
 
     $(window).on("scroll", function () {
@@ -27,21 +61,18 @@ app.controller('RootController', function($scope, $location) {
                 // console.log(middle);
                 $closest = $sectionTitle;
             }
-
         });
 
-        // console.log($closest.eq(0)[0]);
-        console.log(idx);
-        $(".nav-item").removeClass("active").eq(idx - 1).addClass("active");
+        $(".nav-item").removeClass("active").eq(idx).addClass("active");
         // console.log(scrollTop);
     });
 
     $scope.resources = [{
-        category: "每日必逛網站",
+        category: "Daily  每日必逛",
         descript: "這些網站非常適合天天來逛逛，是增廣見聞的好地方！",
         items: [{
             linkurl: "https://dribbble.com/",
-            thumbnail: "images/rscs/dribbble.jpg",
+            thumbnail: "images/rscs/dribbble.png",
             name: "Dribbble",
             descript: "設計領域最熱門的社群之一，大神設計師都會在上面分享作品",
         }, {
@@ -50,64 +81,70 @@ app.controller('RootController', function($scope, $location) {
             name: "Behance",
             descript: "Adobe 旗下的設計師作品分享社群，在這裡你可以找到非常完整的設計概念！",
         }, {
-            linkurl: "http://www.iospirations.com/",
-            thumbnail: "images/rscs/iospirations.jpg",
-            name: "iospirations",
-            descript: "收藏了很多 iOS / Mac 良好的界面設計、圖示設計",
+            linkurl: "http://www.pttrns.com/",
+            thumbnail: "images/rscs/pttrns.jpg",
+            name: "Pttrns",
+            descript: "收集各種界面設計模式（Patterns），收藏在這裡的都是精品！",
         }, {
             linkurl: "http://www.ui.cn/",
             thumbnail: "images/rscs/uicn.jpg",
             name: "UI中国",
             descript: "专业的界面设计师交流、学习/展示平台.同时也是UI设计师人才流动的集散地,会员均为一线UI设计师,覆盖主流互联网公司。",
         }, {
-            linkurl: "http://www.uisheji.cn/",
-            thumbnail: "images/rscs/uidesign.jpg",
-            name: "UI設計",
-            descript: "收藏各式各樣有用的設計資源",
-        }, {
             linkurl: "http://www.boxui.com/",
-            thumbnail: "images/rscs/boxui.jpg",
+            // thumbnail: "images/rscs/boxui.jpg",
             name: "BoxUI",
+            color: "#352D4D",
             descript: "专注于以用户体验为中心的设计，分享精彩的UI设计、交互设计、用户研究作品及相关设计理论知识。",
-        }, {
-            linkurl: "http://designlol.net/",
-            thumbnail: "images/rscs/designlol.jpg",
-            name: "Design LOL",
-            descript: "這裡整理了世界各地優良的設計，各種領域的經典作品都被收集進來囉",
+        // }, {
+        //     linkurl: "http://designlol.net/",
+        //     thumbnail: "images/rscs/designlol.jpg",
+        //     name: "Design LOL",
+        //     descript: "這裡整理了世界各地優良的設計，各種領域的經典作品都被收集進來囉",
         }, {
             linkurl: "http://usepanda.com/app/",
-            thumbnail: "images/rscs/panda.jpg",
+            // thumbnail: "images/rscs/panda.jpg",
             name: "Panda",
+            color: "#6D6192",
             descript: "國外知名的服務，除了收入Dribble最熱門的作品外，你也可以在這裡看到產業最的訊息",
         }, {
             linkurl: "http://littlebigdetails.com/",
-            thumbnail: "images/rscs/littlebigdetails.jpg",
-            name: "Little Big Details",
+            // thumbnail: "images/rscs/littlebigdetails.jpg",
+            name: "Big Details",
+            color: "#69B0C1",
             descript: "非常棒的網站，發掘出很多App裡頭的細節設計，非常值得做為借鏡！",
         }, {
-            linkurl: "http://thedesigninspiration.com/",
-            thumbnail: "images/rscs/designinspiration.jpg",
-            name: "The Design Inspiration",
-            descript: "每天分享Logo設計, 插圖設計, 網頁設計, 名片設計, 美圖與背景圖",
-        }, {
-            linkurl: "http://shijue.me/home/hot/0",
-            thumbnail: "images/rscs/shijue.jpg",
-            name: "視覺中國",
-            descript: "视觉中国是中国最具活力的视觉图片分享社区及创意设计产品社会化电商平台，发现原创、发现美丽，收获并分享美好的创意体验。",
-        }, {
-            linkurl: "http://www.chicun.in/index.html",
-            thumbnail: "images/rscs/chicun.jpg",
-            name: "尺寸",
-            descript: "定義了各種裝置的尺寸，尺寸ChiCun最給力的設計標準分享網站。",
+            linkurl: "http://www.iospirations.com/",
+            // thumbnail: "images/rscs/iospirations.png",
+            name: "iospirations",
+            color: "#92E0A9",
+            descript: "收藏了很多 iOS / Mac 良好的界面設計、圖示設計",
+        // }, {
+        //     linkurl: "http://thedesigninspiration.com/",
+        //     thumbnail: "images/rscs/designinspiration.jpg",
+        //     name: "The Design Inspiration",
+        //     descript: "每天分享Logo設計, 插圖設計, 網頁設計, 名片設計, 美圖與背景圖",
+        // }, {
+        //     linkurl: "http://shijue.me/home/hot/0",
+        //     thumbnail: "images/rscs/shijue.jpg",
+        //     name: "視覺中國",
+        //     descript: "视觉中国是中国最具活力的视觉图片分享社区及创意设计产品社会化电商平台，发现原创、发现美丽，收获并分享美好的创意体验。",
+        // }, {
+        //     linkurl: "http://www.chicun.in/index.html",
+        //     thumbnail: "images/rscs/chicun.jpg",
+        //     name: "尺寸",
+        //     descript: "定義了各種裝置的尺寸，尺寸ChiCun最給力的設計標準分享網站。",
+
         }, ]
     }, {
-        category: "App 設計參考",
+        category: "App  設計參考",
         descript: "App設計沒有靈感，趕快到這些網站逛逛吧！",
         items: [{
-            linkurl: "http://www.pttrns.com/",
-            thumbnail: "images/rscs/pttrns.jpg",
-            name: "Pttrns",
-            descript: "收集各種界面設計模式（Patterns），收藏在這裡的都是精品！",
+            linkurl: "http://www.uisheji.cn/",
+            // thumbnail: "images/rscs/uidesign.jpg",
+            name: "UI設計",
+            color: "#33425B",
+            descript: "收藏各式各樣有用的設計資源",
         }, {
             linkurl: "http://inspired-ui.com/",
             thumbnail: "images/rscs/inspiredui.jpg",
@@ -115,13 +152,15 @@ app.controller('RootController', function($scope, $location) {
             descript: "收藏各種行動界面設計，你可以在這裡找到各種設計模式的好設計。",
         }, {
             linkurl: "http://www.mobile-patterns.com/user-profiles",
-            thumbnail: "images/rscs/mobilepatterns.jpg",
+            // thumbnail: "images/rscs/mobilepatterns.jpg",
             name: "Mobile Patterns",
+            color: "#526ED0",
             descript: "與 Pttrns 相似，這裡也有許多設計樣式可以參考",
         }, {
             linkurl: "http://mobileawesomeness.com/?ref=tap",
-            thumbnail: "images/rscs/mobileawesomeness.jpg",
+            // thumbnail: "images/rscs/mobileawesomeness.jpg",
             name: "Mobile Awesomeness",
+            color: "#484CB0",
             descript: "在這裡除了可以找到許多免費的 Logo 素材外，你也可以付費購買一些超讚的作品！",
         }, {
             linkurl: "http://www.lovelyui.com/",
@@ -145,22 +184,25 @@ app.controller('RootController', function($scope, $location) {
             descript: "UI设计-最具有视觉性的设计 我们不收集毁三观设计 我们只收集精品 提供原创欣赏 并在用户允许状态下免费提供下载",
         }, {
             linkurl: "http://www.uicorner.com/",
-            thumbnail: "images/rscs/uicorner.jpg",
+            // thumbnail: "images/rscs/uicorner.jpg",
             name: "UICorner",
+            color: "#D4A2BE",
             descript: "分享許多界面設計靈感、設計教學，內容整理得非常細心。",
         }, {
             linkurl: "http://www.appdesignserved.co/",
-            thumbnail: "images/rscs/appdesignserved.jpg",
+            // thumbnail: "images/rscs/appdesignserved.jpg",
             name: "App Design Served",
+            color: "#75597D",
             descript: "知名設計社群 Behance 的分站，這裡的 App Design 都是從 Behance 上精挑細選出來的！",
         }, {
             linkurl: "http://ui4app.com/category/userguide",
-            thumbnail: "images/rscs/ui4app.jpg",
+            // thumbnail: "images/rscs/ui4app.jpg",
             name: "Ui4App",
+            color: "#B0B8B4",
             descript: "分享精美的App界面设计，可以說是對岸版本的Pttrns。",
         }, ]
     }, {
-        category: "Web 設計參考",
+        category: "Web  設計參考",
         descript: "網頁設計極品收藏，靈感多到溢出來",
         items: [{
             linkurl: "http://www.awwwards.com/",
@@ -227,7 +269,7 @@ app.controller('RootController', function($scope, $location) {
         },
         ]
     }, {
-        category: "ICON 設計參考",
+        category: "ICON  設計參考",
         descript: "精品 ICON 設計收藏",
         items: [{
             linkurl: "http://www.overlapps.com/",
@@ -246,7 +288,7 @@ app.controller('RootController', function($scope, $location) {
             descript: "Iconsfeed 就像是 ICON 界的 Pttrns，你可以閱覽各種分類的 ICON 設計。",
         }, ]
     }, {
-        category: "LOGO 設計參考",
+        category: "LOGO  設計參考",
         descript: "多個LOGO網站，滿滿的都是想法",
         items: [{
             linkurl: "http://logopond.com/",
@@ -275,7 +317,7 @@ app.controller('RootController', function($scope, $location) {
             descript: "Logo 搜尋引擎，你可以透過關鍵字搜尋，找到意想不到的好靈感",
         }, ]
     }, {
-        category: "Branding 設計參考",
+        category: "Branding  設計參考",
         descript: "了解品牌設計，最完整的設計靈感",
         items: [{
             linkurl: "http://www.brandingserved.com/",
@@ -295,7 +337,7 @@ app.controller('RootController', function($scope, $location) {
             descript: "Identity Designed is a showcase of brand identity projects from around the world."
         } ]
     }, {
-        category: "字體相關",
+        category: "Font  字體相關",
         descript: "一些字體相關的網站",
         items: [{
             linkurl: "http://blog.justfont.com/",
@@ -341,7 +383,7 @@ app.controller('RootController', function($scope, $location) {
             color: "#000",
         }, ]
     }, {
-        category: "配色參考",
+        category: "Colors  配色參考",
         descript: "缺乏配色靈感，從這幾個網站上找找吧",
         items: [{
             linkurl: "http://www.colourlovers.com/",
@@ -385,7 +427,7 @@ app.controller('RootController', function($scope, $location) {
         
         ]
     }, {
-        category: "PSD 相關資源",
+        category: "PSD  相關資源",
         descript: "需要免費資源？這幾個網站趕快記下來",
         items: [{
             linkurl: "http://freebiesbug.com/",
@@ -414,7 +456,7 @@ app.controller('RootController', function($scope, $location) {
             descript: "Fribbble 從名字就能猜出它在做什麼，這裡收藏很多來自 Dribbble 設計師之手的免費 PSD 素材。",
         }, ]
     }, {
-        category: "Sketch 相關資源",
+        category: "Sketch  相關資源",
         descript: "Sketch 資源整理，找資源先來這幾個網站看看",
         items: [{
             linkurl: "http://www.sketchappsources.com/",
@@ -478,7 +520,7 @@ app.controller('RootController', function($scope, $location) {
             descript: "用 Sketch 創作的360個向量圖示，免費下載。",
         }, ]
     }, {
-        category: "推薦設計工具",
+        category: "Tools  設計工具",
         descript: "省下時間，喝咖啡！",
         items: [{
                 linkurl: "http://www.getmarkman.com//",
@@ -517,7 +559,7 @@ app.controller('RootController', function($scope, $location) {
 
         ]
     }, {
-        category: "各家設計規範",
+        category: "Guideline  設計規範",
         descript: "設計規範一定有它的道理，了解各種平台上的設計細節",
         items: [{
             linkurl: "http://www.google.com/design/spec/material-design/introduction.html",
@@ -541,8 +583,8 @@ app.controller('RootController', function($scope, $location) {
             descript: "由對岸翻譯的蘋果人機界面設計規範，翻譯的品質還不錯。",
         }, ]
     }, {
-        category: "免費設計用紙",
-        descript: "用這些工具來輔助設計",
+        category: "Papers  設計用紙",
+        descript: "印出來幫助你更快繪製草圖",
         items: [{
             linkurl: "http://sneakpeekit.com/",
             thumbnail: "images/rscs/sneakpeekit.jpg",
