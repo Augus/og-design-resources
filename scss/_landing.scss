@@ -155,6 +155,7 @@ a {
     background-color: #1C1B20;
     padding: 30px;
     text-align: center;
+    border: 1px solid rgba(#000, 0.2);
     @include transition(all 455ms ease);
 	// @include easeOutCirc(all, 750ms);
 	@include border-radius(3px);
@@ -218,13 +219,22 @@ a {
 	    opacity:0;
 	}
 	&:hover {
-		// .title {
+		.title {
 			// color: $main-color;
-		// }
-		// .descript {
+		}
+		.descript {
 			// color: #6a6a6a;
-		// }
+			color: rgba(#fff, 0.9);
+		}
+		cursor: pointer;
+		border-color: $main-color;
+		.see {
+			background: rgba($main-color,0.05);
+			border: 2px solid $main-color;
+			color: $main-color;
+		}
 		.thumbnail {
+			// border-color: $main-color;
 			// @include transform(scale(1.2));
 		}
 	}
@@ -243,7 +253,9 @@ a {
 	    font-size: 15px;
 	    padding: 0 20px;
 	    color: #FFF;
-		box-shadow: 0 0 1px 0 #000;
+	    // border: 3px solid transparent;
+	    @include transition(all 455ms ease);
+		// box-shadow: 0 0 1px 0 #000;
 		@include border-radius(50%);
 		.text {
 			max-width: 200px;
@@ -267,15 +279,16 @@ a {
 		margin-bottom: 15px;
 		font-size: 16px;
 		color: #FFFFFF;
+		@include transition(all 455ms ease);
 	}
 	p.descript {
-		opacity: 0.5;
 		font-size: 14px;
-		color: #FFFFFF;
+		color: rgba(#FFFFFF, 0.5);
 		line-height: 1.6em;
 		height: 1.6em * 3;
 		max-height: 1.6em * 2;
 		overflow: hidden;
+		@include transition(all 455ms ease);
 	}
 	.badge {
 		position: absolute;
@@ -291,20 +304,20 @@ a {
 	.see {
 		display: inline-block;
 		background: rgba(54,54,54,0.00);
-		border: 2px solid rgba(#FFFFFF, 0.4);
+		border: 2px solid rgba(#FFFFFF, 0.2);
 		border-radius: 40px;
 		height: 40px;
 		line-height: 36px;
 		text-align: center;
 		font-size: 14px;
-		color: rgba(#FFFFFF, 0.4);
+		color: rgba(#FFFFFF, 0.3);
 		letter-spacing: 0.3px;
 		padding: 0 40px;
-		@include transition(all 225ms ease);
+		@include transition(all 455ms ease);
 		&:hover {
-			background: rgba($main-color,0.05);
-			border: 2px solid $main-color;
-			color: $main-color;
+			// background: rgba($main-color,0.05);
+			// border: 2px solid $main-color;
+			// color: $main-color;
 		}
 	}
 }
