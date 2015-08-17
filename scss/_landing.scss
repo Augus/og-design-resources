@@ -144,6 +144,7 @@ a {
 }
 
 .service {
+	position: relative;
 	display: inline-block;
     width: 100%;
     max-width: 300px;
@@ -238,6 +239,17 @@ a {
 		height: 1.6em * 3;
 		max-height: 1.6em * 2;
 		overflow: hidden;
+	}
+	.badge {
+		position: absolute;
+		top: 16px;
+		right: 16px;
+		background: rgba(#FEE34A,0.05);
+		border: 2px solid rgba(#FEE34A, 0.4);
+		color: #FEE34A;
+		padding: 4px 8px;
+		font-size: 12px;
+		border-radius: 2px;
 	}
 	.see {
 		display: inline-block;

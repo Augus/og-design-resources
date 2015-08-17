@@ -67,6 +67,7 @@
                     <div class="service" ng-repeat="i in is = (r.items | filter: searchFilter)">
                         <div ng-if="i.thumbnail" class="thumbnail" style="background-image: url({{i.thumbnail}});"></div>
                         <div ng-if="!i.thumbnail" class="thumbnail" style="background-color: {{i.color}}"><div class="text">{{i.name}}</div></div>
+                        <div class="badge" ng-class="i.isNew" ng-if="i.isNew">NEW</div>
                         <h4 class="title">{{i.name}}</h4>
                         <p class="descript">{{i.descript}}</p>
                         <div><a href="{{i.linkurl}}" target="_blank" class="see">前往查看</a></div>
