@@ -72,7 +72,7 @@ a {
 	padding: 40px 0;
 	text-align: center;
 	.title {
-		font-size: 32px;
+		font-size: 36px;
 		color: #FFFFFF;
 		font-weight: bold;
 		margin-bottom: 24px;
@@ -100,18 +100,19 @@ a {
 		font-weight: bold;
 		margin-bottom: 16px;
 	}
+	p {
+		color: rgba(#fff, 0.7);
+		line-height: 1.7em;
+		max-width: 750px;
+		margin-bottom: 24px;
+	}
 	.resource-section-content {
-		// hr {
-		// 	background-color: #000;
-		// 	height: 1px;
-		// 	margin-bottom: 12px;
-		// }
-		p {
-			color: rgba(#fff, 0.5);
-			line-height: 1.7em;
-			max-width: 750px;
-			margin-bottom: 24px;
-		}
+	    // -webkit-justify-content: left;
+	    // justify-content: left;
+	    // -webkit-flex-flow: row wrap;
+	    // flex-flow: row wrap;
+	    // display: -webkit-flex;
+	    // display: flex;
 	}
 }
 
@@ -146,8 +147,8 @@ a {
 .service {
 	position: relative;
 	display: inline-block;
-    width: 100%;
-    max-width: 300px;
+    width: calc(50% - 20px);
+    min-width: 200px;
     margin: 0 20px 20px 0;
     margin-bottom: 20px;
     text-decoration: none;
@@ -157,6 +158,42 @@ a {
     @include transition(all 455ms ease);
 	// @include easeOutCirc(all, 750ms);
 	@include border-radius(3px);
+	@media all and (min-width: 481px) and (max-width: 1024px) {
+        width: calc(50% - 12px);
+        &:nth-child(2n) {
+            margin-right: 0;
+        }
+    }
+    @media all and (min-width: 1025px) and (max-width: 1280px) {
+        width: calc(33% - 12px);
+        &:nth-child(3n) {
+            margin-right: 0;
+        }
+    }
+    @media all and (min-width: 1281px) and (max-width: 1440px) {
+        width: calc(33% - 12px);
+        &:nth-child(3n) {
+            margin-right: 0;
+        }
+    }
+    @media all and (min-width: 1441px) and (max-width: 1912px) {
+        width: calc(25% - 20px);
+        &:nth-child(4n) {
+            margin-right: 0;
+        }
+    }
+    @media all and (min-width: 1921px) and (max-width: 2000px) {
+        width: calc(20% - 20px);
+        &:nth-child(5n) {
+            margin-right: 0;
+        }
+    }
+    @media all and (min-width: 2000px) and (max-width: 2561px) {
+        width: calc(16.666666667% - 20px);
+        &:nth-child(6n) {
+            margin-right: 0;
+        }
+    }
 	&.ng-enter {
 	    opacity:0;
 	    @include transform(scale(.8)); 

@@ -53,7 +53,8 @@
             <!-- <div class="resource-section-content"> -->
                 <!-- <hr> -->
                 <p>精心整理了各式各樣的設計資源，有各種靈感、資源、工具，如果你喜歡這份整理嗎，幫我們分享給更多的人知道：）</p>
-                <div class="fb-like" data-href="https://www.facebook.com/ogdesign.tw" data-layout="standard" data-action="like" data-show-faces="false" data-share="false" data-colorscheme="dark" style="width: 240px;"></div>
+                <div class="fb-like" data-href="https://www.facebook.com/ogdesign.tw" data-layout="standard" data-action="like" data-show-faces="false" data-share="false" data-colorscheme="dark" style="width: 280px;vertical-align: top;display: inline-block;"></div>
+                <div class="fb-follow" data-href="https://www.facebook.com/Augus.YiHao" data-colorscheme="dark" data-layout="standard" data-show-faces="true" style="width: 240px; vertical-align: top;display: inline-block;"></div>
                 <!-- <div class="fb-like-box" data-href="https://www.facebook.com/ogdesign.tw" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="false" data-show-border="false"></div> -->
             <!-- </div> -->
         </div>
@@ -61,8 +62,9 @@
         <div class="">
             <div class="resource-section" ng-repeat="r in resources" ng-class="{'gray': $index%2===0}" ng-hide="is.length == 0">
                 <h2 id="{{r.category}}" class="resource-section-title">{{r.category}}</h2>
+                <p>{{r.descript}}</p>
                 <div class="resource-section-content">
-                    <p>{{r.descript}}</p>
+                    
                     <!-- <hr> -->
                     <div class="service" ng-repeat="i in is = (r.items | filter: searchFilter)">
                         <div ng-if="i.thumbnail" class="thumbnail" style="background-image: url({{i.thumbnail}});"></div>
@@ -101,7 +103,8 @@
             <!-- <div class="resource-section-content"> -->
                 <!-- <hr> -->
                 <p>如果你喜歡這份整理，幫我們分享給更多的人知道：）</p>
-                <div class="fb-like" data-href="https://www.facebook.com/ogdesign.tw" data-layout="standard" data-action="like" data-show-faces="false" data-share="false" data-colorscheme="dark" style="width: 240px;"></div>
+                <div class="fb-like" data-href="https://www.facebook.com/ogdesign.tw" data-layout="standard" data-action="like" data-show-faces="false" data-share="false" data-colorscheme="dark" style="width: 280px;vertical-align: top;display: inline-block;"></div>
+                <div class="fb-follow" data-href="https://www.facebook.com/Augus.YiHao" data-colorscheme="dark" data-layout="standard" data-show-faces="true" style="width: 240px; vertical-align: top;display: inline-block;"></div>
                 <!-- <div class="fb-like-box" data-href="https://www.facebook.com/ogdesign.tw" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="false" data-show-border="false"></div> -->
             <!-- </div> -->
         </div>
