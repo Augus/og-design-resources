@@ -28,11 +28,13 @@ app.controller('RootController', function($scope, $location, $timeout) {
         if (resource) {
             // debugger
             var keyword = $scope.keyword.toLowerCase(),
+                tags = resource.tags && resource.tags.toLowerCase() || "",
                 resourceUrl = resource.linkurl && resource.linkurl.toLowerCase(),
                 resourceName = resource.name.toLowerCase(),
                 resourceDescription = resource.descript.toLowerCase();
 
-            if (resourceName.indexOf(keyword) != -1 || 
+            if (tags.indexOf(keyword) != -1 || 
+                resourceName.indexOf(keyword) != -1 || 
                 resourceUrl.indexOf(keyword) != -1 || 
                 resourceDescription.indexOf(keyword) != -1) {
                 return true;
@@ -85,6 +87,7 @@ app.controller('RootController', function($scope, $location, $timeout) {
             thumbnail: "images/rscs/pttrns.jpg",
             name: "Pttrns",
             descript: "收集各種界面設計模式（Patterns），收藏在這裡的都是精品！",
+            tags: "patterns pttrn mobile ui components 樣式 模式 介面 界面"
         }, 
         {
             isNew : true,
@@ -336,7 +339,29 @@ app.controller('RootController', function($scope, $location, $timeout) {
     }, {
         category: "Font  字體相關",
         descript: "一些字體相關的網站",
-        items: [{
+        items: [
+        {
+            isNew: true,
+            linkurl: "http://ziwwwo.com/",
+            thumbnail: "images/rscs/ziwwwo.jpg",
+            name: "字窩",
+            descript: "結合群眾力量的經營，上傳圖片、辨識文字、單一漢字搜尋、拼貼宣傳，字窩可以是平面設計師尋找靈感的工具，也是漢字設計做完善保存的管道。",
+        }, 
+        {
+            isNew: true,
+            linkurl: "http://tips.justfont.com/",
+            thumbnail: "images/rscs/justfont.jpg",
+            name: "jf tips",
+            descript: "JUSTFONT 的另一個部落格，時常分享有用的文章，讓字體走入生活。",
+        }, 
+        {
+            isNew: true,
+            linkurl: "http://wordmark.it/",
+            color: "#000",
+            name: "wordmark.it",
+            descript: "自動列出你電腦內安裝過的字體，並且立即測試你所需要的文字，反黑、改大小等等設定都不難，不失為快速選字體的方式噢！",
+        }, 
+        {
             linkurl: "http://blog.justfont.com/",
             thumbnail: "images/rscs/justfont.jpg",
             name: "JUSTFONT 部落格",
@@ -463,7 +488,29 @@ app.controller('RootController', function($scope, $location, $timeout) {
     }, {
         category: "Sketch  相關資源",
         descript: "Sketch 資源整理，找資源先來這幾個網站看看",
-        items: [{
+        items: [
+        {
+            isNew: true,
+            linkurl: "http://sketchrepo.com/",
+            thumbnail: "images/rscs/sketchrepo.png",
+            name: "Sketch Repo",
+            descript: "這裡只收藏高品質的 Sketch 設計素材，全部都是每費下載的哦！",
+        },
+        {
+            isNew: true,
+            linkurl: "http://sketchtalk.io/",
+            thumbnail: "images/rscs/sketchtalk.jpg",
+            name: "Sketch Talk",
+            descript: "Sketch 使用者社區，時時關注 Sketch 最新的開發動態。",
+        },
+        {
+            isNew: true,
+            linkurl: "https://www.youtube.com/playlist?list=PLLnpHn493BHE6UIsdKYlS5zu-ZYvx22CS",
+            thumbnail: "images/rscs/sketch_tutorials.jpg",
+            name: "Sketch 3 Tutorial",
+            descript: "免費 Sketch 3 使用教學，非常適合給初次入門的設計師學習。",
+        },
+        {
             linkurl: "http://www.sketchappsources.com/",
             thumbnail: "images/rscs/sketchappsources.jpg",
             name: "Sketch App Sources",
@@ -525,28 +572,127 @@ app.controller('RootController', function($scope, $location, $timeout) {
             descript: "用 Sketch 創作的360個向量圖示，免費下載。",
         }, ]
     }, {
+        category: "Prototype  原型設計",
+        descript: "省下時間，喝咖啡！",
+        items: [
+            {
+                linkurl: "http://www.invisionapp.com",
+                color: "#000",
+                name: "InVision",
+                descript: "待整理",
+            },
+            {
+                linkurl: "https://marvelapp.com",
+                color: "#000",
+                name: "Marvel",
+                descript: "待整理",
+            },
+            {
+                linkurl: "www.mixture.io",
+                color: "#000",
+                name: "Mixture",
+                descript: "待整理",
+            },
+            {
+                linkurl: "www.flinto.com",
+                color: "#000",
+                name: "Flinto",
+                descript: "待整理",
+            },
+            {
+                linkurl: "www.gridsetapp.com",
+                color: "#000",
+                name: "Gridset",
+                descript: "待整理",
+            },
+            {
+                linkurl: "https://webflow.com",
+                color: "#000",
+                name: "Webflow",
+                descript: "待整理",
+            },
+            {
+                linkurl: "https://redpen.io",
+                color: "#000",
+                name: "Red Pen",
+                descript: "待整理",
+            },
+            {
+                linkurl: "http://proto.io",
+                color: "#000",
+                name: "Proto",
+                descript: "待整理",
+            },
+            {
+                linkurl: "www.gridsetapp.com",
+                color: "#000",
+                name: "Gridset",
+                descript: "待整理",
+            },
+            {
+                linkurl: "http://iconii.com",
+                color: "#000",
+                name: "Iconii",
+                descript: "待整理",
+            },
+            {
+                linkurl: "http://froont.com",
+                color: "#000",
+                name: "Froont",
+                descript: "待整理",
+            },
+            {
+                linkurl: "http://macaw.co/",
+                color: "#000",
+                name: "Macaw",
+                descript: "待整理",
+            },
+
+        ]           
+    }, {
         category: "Tools  設計工具",
         descript: "省下時間，喝咖啡！",
-        items: [{
+        items: [
+            {
+                isNew: true,
+                linkurl: "http://www.jpegmini.com/",
+                thumbnail: "images/rscs/jpegmini.jpg",
+                name: "JPEGmini",
+                descript: "可樂罐是 Mac 上非常知名的軟體，也最強的 JPG 圖片壓縮軟體！",
+                tags: "壓縮 Compress jpeg jpg 圖片 image picture reduce"
+            },
+            {
+                isNew: true,
+                linkurl: "http://nukesaq88.github.io/Pngyu/",
+                color: "#97CCCD",
+                name: "Pngyu",
+                descript: "Mac 上最強 PNG 圖片壓縮軟體，使用方式非常簡單！",
+                tags: "壓縮 Compress png 圖片 image picture reduce"
+            },
+            {
                 linkurl: "http://www.getmarkman.com//",
                 thumbnail: "images/rscs/getmarkman.jpg",
                 name: "馬克鰻",
                 descript: "你還在用PS標注設計稿？馬上試試超高效的設計稿標註、測量工具",
+                tags: "標注 標搞 Measure 標號 測量 效率"
             }, {
                 linkurl: "http://www.fancynode.com/colorcube/",
                 thumbnail: "images/rscs/colorcube.jpg",
                 name: "配色神器ColorCube",
                 descript: "簡單易用，支持下列功能：1.批量網頁截圖 2.屏幕吸管 3.色彩分析,色板導出",
+                tags: "color picker, cube"
             }, {
                 linkurl: "http://macrabbit.com/slicy/",
                 thumbnail: "images/rscs/slicy.jpg",
                 name: "Slicy",
                 descript: "自動切圖神器！減少了很多設計師的工作量！",
+                tags: "切圖 slice"
             }, {
                 linkurl: "http://www.cutterman.cn/",
                 thumbnail: "images/rscs/cutterman.jpg",
                 name: "Cutterman",
                 descript: "它是款Photoshop插件，幫助你快速完成切圖工作",
+                tags: "切圖 slice"
             }, {
                 linkurl: "http://xscopeapp.com/",
                 thumbnail: "images/rscs/xscopeapp.jpg",
@@ -590,12 +736,28 @@ app.controller('RootController', function($scope, $location, $timeout) {
     }, {
         category: "Papers  設計用紙",
         descript: "印出來幫助你更快繪製草圖",
-        items: [{
+        items: [
+        {
+            isNew: true,
+            linkurl: "http://www.interfacesketch.com/",
+            color: "#E48F24",
+            name: "INTERFACE SKETCH",
+            descript: "提供網頁、移動和平板電腦平台免費素描模板。",
+        }, 
+        {
+            isNew: true,
+            linkurl: "http://www.pixle.pl/#post-64",
+            color: "#CF5430",
+            name: "Outline and Tapsize",
+            descript: "提供 28 種網頁、移動和平板電腦平台免費素描模板。",
+        }, 
+        {
             linkurl: "http://sneakpeekit.com/",
-            thumbnail: "images/rscs/sneakpeekit.jpg",
-            name: "Sneakpeekit - Sketch Sheets",
+            color: "#7A3A8F",
+            name: "Sneakpeekit",
             descript: "最完整的設計紙免費下載，有 Mobile、Tablet、Web、點點紙等等",
-        }, ]
+        }, 
+        ]
     }, ];
 
 });
