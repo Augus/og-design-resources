@@ -265,7 +265,7 @@ a {
 			max-width: 200px;
 		    text-align: center;
 		    width: 120px;
-		    transform: translateX(-50%) translateY(-50%);
+		    @include transform(translateX(-50%) translateY(-50%));
 		    position: absolute;
 		    left: 50%;
 		    top: 50%;
