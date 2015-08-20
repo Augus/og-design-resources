@@ -90,8 +90,7 @@ a {
 }
 
 .resource-section {
-	padding-top: 30px;
-	margin-bottom: 50px;
+	
 	.resource-section-title {
 		// font-weight: 700;
 		// text-transform: uppercase;
@@ -111,6 +110,8 @@ a {
 		margin-bottom: 24px;
 	}
 	.resource-section-content {
+		padding-top: 30px;
+		margin-bottom: 50px;
 	    // -webkit-justify-content: left;
 	    // justify-content: left;
 	    // -webkit-flex-flow: row wrap;
@@ -164,40 +165,40 @@ a {
 	// @include easeOutCirc(all, 750ms);
 	@include border-radius(3px);
 	@media all and (min-width: 481px) and (max-width: 1024px) {
-        width: calc(50% - 12px);
-        &:nth-child(2n) {
-            margin-right: 0;
-        }
+        width: calc(50% - 20px);
+        // &:nth-child(2n) {
+        //     margin-right: 0;
+        // }
     }
     @media all and (min-width: 1025px) and (max-width: 1280px) {
-        width: calc(33% - 12px);
-        &:nth-child(3n) {
-            margin-right: 0;
-        }
+        width: calc(33% - 20px);
+        // &:nth-child(3n) {
+        //     margin-right: 0;
+        // }
     }
     @media all and (min-width: 1281px) and (max-width: 1440px) {
-        width: calc(33% - 12px);
-        &:nth-child(3n) {
-            margin-right: 0;
-        }
+        width: calc(33% - 20px);
+        // &:nth-child(3n) {
+        //     margin-right: 0;
+        // }
     }
     @media all and (min-width: 1441px) and (max-width: 1912px) {
         width: calc(25% - 20px);
-        &:nth-child(4n) {
-            margin-right: 0;
-        }
+        // &:nth-child(4n) {
+        //     margin-right: 0;
+        // }
     }
     @media all and (min-width: 1921px) and (max-width: 2000px) {
         width: calc(20% - 20px);
-        &:nth-child(5n) {
-            margin-right: 0;
-        }
+        // &:nth-child(5n) {
+        //     margin-right: 0;
+        // }
     }
     @media all and (min-width: 2000px) and (max-width: 2561px) {
         width: calc(16.666666667% - 20px);
-        &:nth-child(6n) {
-            margin-right: 0;
-        }
+        // &:nth-child(6n) {
+            // margin-right: 0;
+        // }
     }
 	&.ng-enter {
 	    opacity:0;
@@ -239,7 +240,7 @@ a {
 		}
 		.thumbnail {
 			// border-color: $main-color;
-			// @include transform(scale(1.2));
+			@include transform(rotateZ(30deg));
 		}
 	}
 	.thumbnail {
@@ -258,7 +259,7 @@ a {
 	    padding: 0 20px;
 	    color: #FFF;
 	    // border: 3px solid transparent;
-	    @include transition(all 455ms ease);
+	    @include transition(all 300ms ease-out);
 		// box-shadow: 0 0 1px 0 #000;
 		@include border-radius(50%);
 		.text {

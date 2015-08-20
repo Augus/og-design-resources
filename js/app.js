@@ -228,15 +228,26 @@ app.controller('RootController', function($scope, $location, $timeout) {
             tags: "app mobile ui components 介面 界面 logo "
         }, 
         ]
-    }, {
+    }, 
+    {
         category: "Web  設計參考",
         descript: "網頁設計極品收藏，靈感多到溢出來",
-        items: [{
+        items: [
+        {
+            isNew: true,
+            linkurl: "https://vine.co/ThisIsSIXUX",
+            thumbnail: "images/rscs/sixux.jpg",
+            name: "SIX UX",
+            descript: "非常用心的介面交互收藏，發現許許多多的介面交互細節。",
+            tags: "app gif ixd interactive ui 介面 界面 web 動畫 animation"
+        }, 
+        {
             linkurl: "http://www.awwwards.com/",
             thumbnail: "images/rscs/awwwards.jpg",
             name: "Awwwards",
             descript: "在這裡你看到來至世界各地超讚的網頁設計，除此之外你也可以看到這個網站在這種各種分析指標的分數！",
-        }, {
+        }, 
+        {
             linkurl: "http://www.webdesignerdepot.com/",
             thumbnail: "images/rscs/webdesignerdepot.jpg",
             name: "Webdesigner Depot",
@@ -598,95 +609,86 @@ app.controller('RootController', function($scope, $location, $timeout) {
             name: "SketchActive",
             descript: "用 Sketch 創作的360個向量圖示，免費下載。",
         }, ]
-    }, {
+    }, 
+    {
         category: "Prototype  原型設計",
-        descript: "省下時間，喝咖啡！",
+        descript: "透過產品雛形設計，快速驗證你的想法！",
         items: [
             {
+                isNew: true,
                 linkurl: "http://www.invisionapp.com",
-                color: "#000",
+                thumbnail: "images/rscs/invision.jpg",
                 name: "InVision",
-                descript: "待整理",
+                descript: "讓 UI 設計師共享自己的原型同時與他人互動及討論，並獲得立即的意見回應。有了InVision以後，公司內部許多人都可以對設計師給出自己的意見。",
             },
             {
+                isNew: true,
                 linkurl: "https://marvelapp.com",
-                color: "#000",
-                name: "Marvel",
-                descript: "待整理",
+                thumbnail: "images/rscs/marvel.jpg",
+                name: "Marvel App",
+                descript: "好用又免費的原型製作工具，與 Sketch 搭配，快速製作產品原型！",
             },
-            {
-                linkurl: "www.mixture.io",
-                color: "#000",
-                name: "Mixture",
-                descript: "待整理",
-            },
-            {
-                linkurl: "www.flinto.com",
-                color: "#000",
-                name: "Flinto",
-                descript: "待整理",
-            },
-            {
-                linkurl: "www.gridsetapp.com",
-                color: "#000",
-                name: "Gridset",
-                descript: "待整理",
-            },
-            {
-                linkurl: "https://webflow.com",
-                color: "#000",
-                name: "Webflow",
-                descript: "待整理",
-            },
-            {
-                linkurl: "https://redpen.io",
-                color: "#000",
-                name: "Red Pen",
-                descript: "待整理",
-            },
-            {
-                linkurl: "http://proto.io",
-                color: "#000",
-                name: "Proto",
-                descript: "待整理",
-            },
-            {
-                linkurl: "www.gridsetapp.com",
-                color: "#000",
-                name: "Gridset",
-                descript: "待整理",
-            },
-            {
-                linkurl: "http://iconii.com",
-                color: "#000",
-                name: "Iconii",
-                descript: "待整理",
-            },
-            {
-                linkurl: "http://froont.com",
-                color: "#000",
-                name: "Froont",
-                descript: "待整理",
-            },
-            {
-                linkurl: "http://macaw.co/",
-                color: "#000",
-                name: "Macaw",
-                descript: "待整理",
-            },
-
         ]           
-    }, {
+    }, 
+    {
+        category: "CC0 Stocks  免費圖庫",
+        descript: "所有提供編輯、商用的 CC0 授權圖庫整理！",
+        items: [
+            {
+                isNew: true,
+                linkurl: "http://www.pexels.com/",
+                color: "#7A9EAF",
+                name: "Pexels",
+                descript: "一網打盡所有免費圖",
+                tags: "圖庫 stock photo image cc cc0 free gallery search 免費 圖片 授權"
+            },
+            {
+                isNew: true,
+                linkurl: "http://pixabay.com/",
+                color: "#655989",
+                name: "Pixabay",
+                descript: "一網打盡所有免費圖",
+                tags: "圖庫 stock photo image cc cc0 free gallery search 免費 圖片 授權"
+            },
+            {
+                isNew: true,
+                linkurl: "http://thestocks.im/",
+                color: "#DE88A5",
+                name: "The Stocks",
+                descript: "一網打盡所有免費圖",
+                tags: "圖庫 stock photo image cc cc0 free gallery search 免費 圖片 授權"
+            },
+            {
+                isNew: true,
+                linkurl: "http://finda.photo/",
+                color: "#7FCBD7",
+                name: "Find a photo",
+                descript: "一站搜尋所有熱門免費圖庫網站",
+                tags: "圖庫 stock photo image cc cc0 free gallery search 免費 圖片 授權"
+            },
+            {
+                isNew: true,
+                linkurl: "http://streetwill.co/",
+                color: "#857EBB",
+                name: "Street Will",
+                descript: "一網打盡所有免費圖",
+                tags: "圖庫 stock photo image cc cc0 free gallery search 免費 圖片 授權"
+            },
+            
+            
+        ]           
+    }, 
+    {
         category: "Tools  設計工具",
         descript: "省下時間，喝咖啡！",
         items: [
             {
                 isNew: true,
-                linkurl: "http://www.jpegmini.com/",
-                thumbnail: "images/rscs/jpegmini.jpg",
-                name: "JPEGmini",
-                descript: "可樂罐是 Mac 上非常知名的軟體，也最強的 JPG 圖片壓縮軟體！",
-                tags: "壓縮 Compress jpeg jpg 圖片 image picture reduce"
+                linkurl: "http://uifaces.com/",
+                thumbnail: "images/rscs/uifaces.jpg",
+                name: "UI Faces",
+                descript: "設計時找不到適當的大頭照嗎？ 下次到 uifaces 來找找！",
+                tags: "avatar photo 大頭照 face tool image 假頭像"
             },
             {
                 isNew: true,
@@ -694,7 +696,15 @@ app.controller('RootController', function($scope, $location, $timeout) {
                 color: "#97CCCD",
                 name: "Pngyu",
                 descript: "Mac 上最強 PNG 圖片壓縮軟體，使用方式非常簡單！",
-                tags: "壓縮 Compress png 圖片 image picture reduce"
+                tags: "壓縮 Compress png 圖片 image picture reduce tool"
+            },
+            {
+                isNew: true,
+                linkurl: "http://www.jpegmini.com/",
+                thumbnail: "images/rscs/jpegmini.jpg",
+                name: "JPEGmini",
+                descript: "可樂罐是 Mac 上非常知名的軟體，也最強的 JPG 圖片壓縮軟體！",
+                tags: "壓縮 Compress jpeg jpg 圖片 image picture reduce tool"
             },
             {
                 linkurl: "http://www.getmarkman.com//",
@@ -707,19 +717,19 @@ app.controller('RootController', function($scope, $location, $timeout) {
                 thumbnail: "images/rscs/colorcube.jpg",
                 name: "配色神器ColorCube",
                 descript: "簡單易用，支持下列功能：1.批量網頁截圖 2.屏幕吸管 3.色彩分析,色板導出",
-                tags: "color picker, cube"
+                tags: "color picker, cube tool"
             }, {
                 linkurl: "http://macrabbit.com/slicy/",
                 thumbnail: "images/rscs/slicy.jpg",
                 name: "Slicy",
                 descript: "自動切圖神器！減少了很多設計師的工作量！",
-                tags: "切圖 slice"
+                tags: "切圖 slice tool"
             }, {
                 linkurl: "http://www.cutterman.cn/",
                 thumbnail: "images/rscs/cutterman.jpg",
                 name: "Cutterman",
                 descript: "它是款Photoshop插件，幫助你快速完成切圖工作",
-                tags: "切圖 slice"
+                tags: "切圖 slice tool"
             }, {
                 linkurl: "http://xscopeapp.com/",
                 thumbnail: "images/rscs/xscopeapp.jpg",
