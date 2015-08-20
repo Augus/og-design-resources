@@ -57,11 +57,14 @@ $sidebar-nav-item-active-color: #f3f4f5;
 		}
 	}
 	.nav {
-		// position: fixed;
-		// left: 0;
-		// width: 240px;
+		position: fixed;
+		top: 180px;
+		left: 0;
+		bottom: 100px;
+		width: 240px;
 		// top: 50%;
 		padding: 0 48px 0 0;
+		overflow: auto;
 		// @include translateY(-50%);
 		li {
 			position: relative;
