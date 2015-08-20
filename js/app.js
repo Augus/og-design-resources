@@ -77,17 +77,19 @@ app.controller('RootController', function($scope, $location, $timeout) {
             thumbnail: "images/rscs/dribbble.png",
             name: "Dribbble",
             descript: "設計領域最熱門的社群之一，大神設計師都會在上面分享作品",
+            tags: "ui 界面 介面 gif 靈感 設計 app web 網頁 行動 社群 大神 交互 ixd interactive"
         }, {
             linkurl: "https://www.behance.net/",
             thumbnail: "images/rscs/behance.jpg",
             name: "Behance",
             descript: "Adobe 旗下的設計師作品分享社群，在這裡你可以找到非常完整的設計概念！",
+            tags: "ui 界面 介面 靈感 作品集 設計 adobe branding app web 網頁 行動 社群 大神 每日 "
         }, {
             linkurl: "http://www.pttrns.com/",
             thumbnail: "images/rscs/pttrns.jpg",
             name: "Pttrns",
             descript: "收集各種界面設計模式（Patterns），收藏在這裡的都是精品！",
-            tags: "patterns pttrn mobile ui components 樣式 模式 介面 界面"
+            tags: "patterns pttrn mobile ui components 樣式 模式 介面 界面 每日 "
         }, 
         {
             isNew : true,
@@ -95,35 +97,61 @@ app.controller('RootController', function($scope, $location, $timeout) {
             thumbnail: "images/rscs/colorhunt.jpg",
             name: "Color Hunt",
             descript: "每日配色靈感，有空就來這裡挖掘神氣的色彩靈感！",
+            tags: "color 顏色 色彩 配色 每日 靈感"
         },
+        {
+            isNew: true,
+            linkurl: "http://capptivate.co/",
+            name: "CAPPTIVATE",
+            thumbnail: "images/rscs/capptivate.png",
+            descript: "Capptivate.co captures fleeting transitions between app screens and delightful animated UI elements that we will otherwise lose forever as apps and operating systems continue to evolve.",
+            tags: "animation gif ui 界面 介面 每日 ixd interactive 靈感"
+        }, 
+        {
+            isNew: true,
+            linkurl: "https://twitter.com/uiGIFs/",
+            name: "UI Gif",
+            color: "#A52F57",
+            descript: "值得關注的 Twitter 帳號，時常分享有趣的 Gif 介面動畫靈感！",
+            tags: "animation gif ui 界面 介面 每日 ixd interactive 靈感"
+        }, 
+        {
+            isNew: true,
+            linkurl: "https://instagram.com/gifux/",
+            color: "#EB5E60",
+            name: "gifux",
+            descript: "Instagram 上值得關注的帳號，每日分享有趣的 Gif 介面動畫靈感！",
+            tags: "animation gif ui 界面 介面 每日 ixd interactive 靈感"
+        }, 
         {
             linkurl: "http://www.ui.cn/",
             thumbnail: "images/rscs/uicn.jpg",
             name: "UI中国",
             descript: "专业的界面设计师交流、学习/展示平台.同时也是UI设计师人才流动的集散地,会员均为一线UI设计师,覆盖主流互联网公司。",
-        }, {
+            tags: "中國 對岸 ui 界面 介面 每日 "
+        }, 
+        {
             linkurl: "http://www.boxui.com/",
             // thumbnail: "images/rscs/boxui.jpg",
             name: "BoxUI",
             color: "#352D4D",
             descript: "专注于以用户体验为中心的设计，分享精彩的UI设计、交互设计、用户研究作品及相关设计理论知识。",
-        // }, {
-        //     linkurl: "http://designlol.net/",
-        //     thumbnail: "images/rscs/designlol.jpg",
-        //     name: "Design LOL",
-        //     descript: "這裡整理了世界各地優良的設計，各種領域的經典作品都被收集進來囉",
-        }, {
+            tags: "中國 對岸 pttrns patterns ui 界面 介面 每日 ixd interactive"
+        }, 
+        {
             linkurl: "http://usepanda.com/app/",
             // thumbnail: "images/rscs/panda.jpg",
             name: "Panda",
             color: "#6D6192",
             descript: "國外知名的服務，除了收入Dribble最熱門的作品外，你也可以在這裡看到產業最的訊息",
+            tags: "新聞 靈感 ui 界面 介面 每日 "
         }, {
             linkurl: "http://littlebigdetails.com/",
             // thumbnail: "images/rscs/littlebigdetails.jpg",
             name: "Big Details",
             color: "#69B0C1",
             descript: "非常棒的網站，發掘出很多App裡頭的細節設計，非常值得做為借鏡！",
+            tags: "細節 靈感 ui 界面 介面 每日 交互"
         }, 
 
         ]
@@ -131,66 +159,64 @@ app.controller('RootController', function($scope, $location, $timeout) {
         category: "App  設計參考",
         descript: "App設計沒有靈感，趕快到這些網站逛逛吧！",
         items: [{
-            linkurl: "http://www.uisheji.cn/",
-            // thumbnail: "images/rscs/uidesign.jpg",
-            name: "UI設計",
-            color: "#33425B",
-            descript: "收藏各式各樣有用的設計資源",
+            linkurl: "http://appui.mobi/",
+            thumbnail: "images/rscs/appmobiledesign.jpg",
+            name: "APP UI",
+            descript: "對岸收藏行動介面設計的網站，發現設計、分享設計",
+            tags: "app patterns pttrn mobile ui components 樣式 模式 介面 界面 對岸"
         }, {
             linkurl: "http://inspired-ui.com/",
             thumbnail: "images/rscs/inspiredui.jpg",
             name: "Inspired UI",
             descript: "收藏各種行動界面設計，你可以在這裡找到各種設計模式的好設計。",
+            tags: "app patterns pttrn mobile ui components 樣式 模式 介面 界面 "
+        }, {            
+            linkurl: "http://www.uisheji.cn/",
+            // thumbnail: "images/rscs/uidesign.jpg",
+            name: "UI設計",
+            color: "#33425B",
+            descript: "收藏各式各樣有用的設計資源",
+            tags: "app patterns pttrn mobile ui components 樣式 模式 介面 界面 "
         }, {
             linkurl: "http://www.mobile-patterns.com/user-profiles",
             // thumbnail: "images/rscs/mobilepatterns.jpg",
             name: "Mobile Patterns",
             color: "#526ED0",
             descript: "與 Pttrns 相似，這裡也有許多設計樣式可以參考",
+            tags: "app patterns pttrn mobile ui components 樣式 模式 介面 界面 "
         }, {
             linkurl: "http://mobileawesomeness.com/?ref=tap",
             // thumbnail: "images/rscs/mobileawesomeness.jpg",
             name: "Mobile Awesomeness",
             color: "#484CB0",
             descript: "在這裡除了可以找到許多免費的 Logo 素材外，你也可以付費購買一些超讚的作品！",
+            tags: "app logo mobile ui components 樣式 模式 介面 界面 "
         }, {
             linkurl: "http://www.lovelyui.com/",
             thumbnail: "images/rscs/lovelyui.jpg",
             name: "lovely UI",
             descript: "lovely UI 是 tumblr 平台上的知名部落格，這裡收藏許多簡潔好看的界面設計。",
+            tags: "app patterns pttrn mobile ui components 樣式 模式 介面 界面 "
         }, {
             linkurl: "http://inspirationmobile.tumblr.com/",
             thumbnail: "images/rscs/mobiledesigninspiration.jpg",
             name: "Mobile Design Inspiration",
             descript: "Mobile Design Inspiration 每天分享許多來自世界各地的良好界面、圖示。",
-        }, {
-            linkurl: "http://appui.mobi/",
-            thumbnail: "images/rscs/appmobiledesign.jpg",
-            name: "APP UI",
-            descript: "對岸收藏行動介面設計的網站，發現設計、分享設計",
-        }, {
-            linkurl: "http://www.uisheji.me/",
-            thumbnail: "images/rscs/uisheji.jpg",
-            name: "UI 設計",
-            descript: "UI设计-最具有视觉性的设计 我们不收集毁三观设计 我们只收集精品 提供原创欣赏 并在用户允许状态下免费提供下载",
-        }, {
-            linkurl: "http://www.uicorner.com/",
-            // thumbnail: "images/rscs/uicorner.jpg",
-            name: "UICorner",
-            color: "#D4A2BE",
-            descript: "分享許多界面設計靈感、設計教學，內容整理得非常細心。",
+            tags: "app gif ixd interactive ui 介面 界面 "
         }, {
             linkurl: "http://www.appdesignserved.co/",
             // thumbnail: "images/rscs/appdesignserved.jpg",
             name: "App Design Served",
             color: "#75597D",
             descript: "知名設計社群 Behance 的分站，這裡的 App Design 都是從 Behance 上精挑細選出來的！",
+            tags: "app mobile ui components 樣式 模式 介面 界面 adobe"
         }, {
             linkurl: "http://ui4app.com/category/userguide",
             // thumbnail: "images/rscs/ui4app.jpg",
             name: "Ui4App",
             color: "#B0B8B4",
             descript: "分享精美的App界面设计，可以說是對岸版本的Pttrns。",
+            tags: "app patterns pttrn mobile ui components 樣式 模式 介面 界面 "
         }, 
         {
             linkurl: "http://www.iospirations.com/",
@@ -199,17 +225,29 @@ app.controller('RootController', function($scope, $location, $timeout) {
             color: "#92E0A9",
             descript: "收藏了很多 iOS / Mac 良好的界面設計、圖示設計",
             descript: "定義了各種裝置的尺寸，尺寸ChiCun最給力的設計標準分享網站。",
+            tags: "app mobile ui components 介面 界面 logo "
         }, 
         ]
-    }, {
+    }, 
+    {
         category: "Web  設計參考",
         descript: "網頁設計極品收藏，靈感多到溢出來",
-        items: [{
+        items: [
+        {
+            isNew: true,
+            linkurl: "https://vine.co/ThisIsSIXUX",
+            thumbnail: "images/rscs/sixux.jpg",
+            name: "SIX UX",
+            descript: "非常用心的介面交互收藏，發現許許多多的介面交互細節。",
+            tags: "app gif ixd interactive ui 介面 界面 web 動畫 animation"
+        }, 
+        {
             linkurl: "http://www.awwwards.com/",
             thumbnail: "images/rscs/awwwards.jpg",
             name: "Awwwards",
             descript: "在這裡你看到來至世界各地超讚的網頁設計，除此之外你也可以看到這個網站在這種各種分析指標的分數！",
-        }, {
+        }, 
+        {
             linkurl: "http://www.webdesignerdepot.com/",
             thumbnail: "images/rscs/webdesignerdepot.jpg",
             name: "Webdesigner Depot",
@@ -571,95 +609,86 @@ app.controller('RootController', function($scope, $location, $timeout) {
             name: "SketchActive",
             descript: "用 Sketch 創作的360個向量圖示，免費下載。",
         }, ]
-    }, {
+    }, 
+    {
         category: "Prototype  原型設計",
-        descript: "省下時間，喝咖啡！",
+        descript: "透過產品雛形設計，快速驗證你的想法！",
         items: [
             {
+                isNew: true,
                 linkurl: "http://www.invisionapp.com",
-                color: "#000",
+                thumbnail: "images/rscs/invision.jpg",
                 name: "InVision",
-                descript: "待整理",
+                descript: "讓 UI 設計師共享自己的原型同時與他人互動及討論，並獲得立即的意見回應。有了InVision以後，公司內部許多人都可以對設計師給出自己的意見。",
             },
             {
+                isNew: true,
                 linkurl: "https://marvelapp.com",
-                color: "#000",
-                name: "Marvel",
-                descript: "待整理",
+                thumbnail: "images/rscs/marvel.jpg",
+                name: "Marvel App",
+                descript: "好用又免費的原型製作工具，與 Sketch 搭配，快速製作產品原型！",
             },
-            {
-                linkurl: "www.mixture.io",
-                color: "#000",
-                name: "Mixture",
-                descript: "待整理",
-            },
-            {
-                linkurl: "www.flinto.com",
-                color: "#000",
-                name: "Flinto",
-                descript: "待整理",
-            },
-            {
-                linkurl: "www.gridsetapp.com",
-                color: "#000",
-                name: "Gridset",
-                descript: "待整理",
-            },
-            {
-                linkurl: "https://webflow.com",
-                color: "#000",
-                name: "Webflow",
-                descript: "待整理",
-            },
-            {
-                linkurl: "https://redpen.io",
-                color: "#000",
-                name: "Red Pen",
-                descript: "待整理",
-            },
-            {
-                linkurl: "http://proto.io",
-                color: "#000",
-                name: "Proto",
-                descript: "待整理",
-            },
-            {
-                linkurl: "www.gridsetapp.com",
-                color: "#000",
-                name: "Gridset",
-                descript: "待整理",
-            },
-            {
-                linkurl: "http://iconii.com",
-                color: "#000",
-                name: "Iconii",
-                descript: "待整理",
-            },
-            {
-                linkurl: "http://froont.com",
-                color: "#000",
-                name: "Froont",
-                descript: "待整理",
-            },
-            {
-                linkurl: "http://macaw.co/",
-                color: "#000",
-                name: "Macaw",
-                descript: "待整理",
-            },
-
         ]           
-    }, {
+    }, 
+    {
+        category: "CC0 Stocks  免費圖庫",
+        descript: "所有提供編輯、商用的 CC0 授權圖庫整理！",
+        items: [
+            {
+                isNew: true,
+                linkurl: "http://www.pexels.com/",
+                color: "#7A9EAF",
+                name: "Pexels",
+                descript: "一網打盡所有免費圖",
+                tags: "圖庫 stock photo image cc cc0 free gallery search 免費 圖片 授權"
+            },
+            {
+                isNew: true,
+                linkurl: "http://pixabay.com/",
+                color: "#655989",
+                name: "Pixabay",
+                descript: "一網打盡所有免費圖",
+                tags: "圖庫 stock photo image cc cc0 free gallery search 免費 圖片 授權"
+            },
+            {
+                isNew: true,
+                linkurl: "http://thestocks.im/",
+                color: "#DE88A5",
+                name: "The Stocks",
+                descript: "一網打盡所有免費圖",
+                tags: "圖庫 stock photo image cc cc0 free gallery search 免費 圖片 授權"
+            },
+            {
+                isNew: true,
+                linkurl: "http://finda.photo/",
+                color: "#7FCBD7",
+                name: "Find a photo",
+                descript: "一站搜尋所有熱門免費圖庫網站",
+                tags: "圖庫 stock photo image cc cc0 free gallery search 免費 圖片 授權"
+            },
+            {
+                isNew: true,
+                linkurl: "http://streetwill.co/",
+                color: "#857EBB",
+                name: "Street Will",
+                descript: "一網打盡所有免費圖",
+                tags: "圖庫 stock photo image cc cc0 free gallery search 免費 圖片 授權"
+            },
+            
+            
+        ]           
+    }, 
+    {
         category: "Tools  設計工具",
         descript: "省下時間，喝咖啡！",
         items: [
             {
                 isNew: true,
-                linkurl: "http://www.jpegmini.com/",
-                thumbnail: "images/rscs/jpegmini.jpg",
-                name: "JPEGmini",
-                descript: "可樂罐是 Mac 上非常知名的軟體，也最強的 JPG 圖片壓縮軟體！",
-                tags: "壓縮 Compress jpeg jpg 圖片 image picture reduce"
+                linkurl: "http://uifaces.com/",
+                thumbnail: "images/rscs/uifaces.jpg",
+                name: "UI Faces",
+                descript: "設計時找不到適當的大頭照嗎？ 下次到 uifaces 來找找！",
+                tags: "avatar photo 大頭照 face tool image 假頭像"
             },
             {
                 isNew: true,
@@ -667,7 +696,15 @@ app.controller('RootController', function($scope, $location, $timeout) {
                 color: "#97CCCD",
                 name: "Pngyu",
                 descript: "Mac 上最強 PNG 圖片壓縮軟體，使用方式非常簡單！",
-                tags: "壓縮 Compress png 圖片 image picture reduce"
+                tags: "壓縮 Compress png 圖片 image picture reduce tool"
+            },
+            {
+                isNew: true,
+                linkurl: "http://www.jpegmini.com/",
+                thumbnail: "images/rscs/jpegmini.jpg",
+                name: "JPEGmini",
+                descript: "可樂罐是 Mac 上非常知名的軟體，也最強的 JPG 圖片壓縮軟體！",
+                tags: "壓縮 Compress jpeg jpg 圖片 image picture reduce tool"
             },
             {
                 linkurl: "http://www.getmarkman.com//",
@@ -680,19 +717,19 @@ app.controller('RootController', function($scope, $location, $timeout) {
                 thumbnail: "images/rscs/colorcube.jpg",
                 name: "配色神器ColorCube",
                 descript: "簡單易用，支持下列功能：1.批量網頁截圖 2.屏幕吸管 3.色彩分析,色板導出",
-                tags: "color picker, cube"
+                tags: "color picker, cube tool"
             }, {
                 linkurl: "http://macrabbit.com/slicy/",
                 thumbnail: "images/rscs/slicy.jpg",
                 name: "Slicy",
                 descript: "自動切圖神器！減少了很多設計師的工作量！",
-                tags: "切圖 slice"
+                tags: "切圖 slice tool"
             }, {
                 linkurl: "http://www.cutterman.cn/",
                 thumbnail: "images/rscs/cutterman.jpg",
                 name: "Cutterman",
                 descript: "它是款Photoshop插件，幫助你快速完成切圖工作",
-                tags: "切圖 slice"
+                tags: "切圖 slice tool"
             }, {
                 linkurl: "http://xscopeapp.com/",
                 thumbnail: "images/rscs/xscopeapp.jpg",
