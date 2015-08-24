@@ -26,19 +26,45 @@ app.controller('RootController', function($scope, $location, $timeout) {
     $scope.searchFilter = function(resource) {
 
         if (resource) {
-            // debugger
-            var keyword = $scope.keyword.toLowerCase(),
-                tags = resource.tags && resource.tags.toLowerCase() || "",
-                resourceUrl = resource.linkurl && resource.linkurl.toLowerCase(),
-                resourceName = resource.name.toLowerCase(),
-                resourceDescription = resource.descript.toLowerCase();
 
-            if (tags.indexOf(keyword) != -1 || 
-                resourceName.indexOf(keyword) != -1 || 
-                resourceUrl.indexOf(keyword) != -1 || 
-                resourceDescription.indexOf(keyword) != -1) {
-                return true;
+            var isMatch = false,
+                keywords = $scope.keyword.split(" ");
+
+            for (var i = 0; i < keywords.length; i++) {
+                
+                var  keyword = keywords[i].toLowerCase();
+
+                var tags = resource.tags && resource.tags.toLowerCase() || "",
+                    resourceUrl = resource.linkurl && resource.linkurl.toLowerCase(),
+                    resourceName = resource.name.toLowerCase(),
+                    resourceDescription = resource.descript.toLowerCase();
+
+                if (tags.indexOf(keyword) != -1 || 
+                    resourceName.indexOf(keyword) != -1 || 
+                    resourceUrl.indexOf(keyword) != -1 || 
+                    resourceDescription.indexOf(keyword) != -1) {
+                    isMatch = true;
+                }
+                else {
+                    isMatch = false;
+                    return false;
+                }
             }
+
+            return isMatch;
+            // debugger
+            // var keyword = $scope.keyword.toLowerCase(),
+            //     tags = resource.tags && resource.tags.toLowerCase() || "",
+            //     resourceUrl = resource.linkurl && resource.linkurl.toLowerCase(),
+            //     resourceName = resource.name.toLowerCase(),
+            //     resourceDescription = resource.descript.toLowerCase();
+
+            // if (tags.indexOf(keyword) != -1 || 
+            //     resourceName.indexOf(keyword) != -1 || 
+            //     resourceUrl.indexOf(keyword) != -1 || 
+            //     resourceDescription.indexOf(keyword) != -1) {
+            //     return true;
+            // }
         }
         return false;
     };
@@ -620,6 +646,7 @@ app.controller('RootController', function($scope, $location, $timeout) {
                 thumbnail: "images/rscs/invision.jpg",
                 name: "InVision",
                 descript: "讓 UI 設計師共享自己的原型同時與他人互動及討論，並獲得立即的意見回應。有了InVision以後，公司內部許多人都可以對設計師給出自己的意見。",
+                tags: "prototype 原型 雛形 快速 工具 溝通 "
             },
             {
                 isNew: true,
@@ -627,6 +654,7 @@ app.controller('RootController', function($scope, $location, $timeout) {
                 thumbnail: "images/rscs/marvel.jpg",
                 name: "Marvel App",
                 descript: "好用又免費的原型製作工具，與 Sketch 搭配，快速製作產品原型！",
+                tags: "prototype 原型 雛形 快速 工具 溝通 "
             },
         ]           
     }, 
