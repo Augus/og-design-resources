@@ -36,6 +36,7 @@ $sidebar-nav-item-active-color: #f3f4f5;
 		}
 	}
 	.search {
+		position: relative;
 		text-align: center;
 		input {
 			width: 160px;
@@ -53,6 +54,24 @@ $sidebar-nav-item-active-color: #f3f4f5;
 				outline: none;
 				// color: $main-color;
 				border-color: $main-color; 
+			}
+		}
+		.autocomplete {
+			z-index: 4000;
+			position: absolute;
+			top: 40px;
+			left: 36px;
+			right: 36px;
+			background-color: #fff;
+			max-height: 200px;
+			overflow: auto;
+			ul {
+				margin: 0;
+				padding: 15px;
+				text-align: left;
+				li {
+					list-style: none;
+				}
 			}
 		}
 	}

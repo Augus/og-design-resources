@@ -1,4 +1,26 @@
+Array.prototype.getUnique = function(){
+   var u = {}, a = [];
+   for(var i = 0, l = this.length; i < l; ++i){
+      if(u.hasOwnProperty(this[i])) {
+         continue;
+      }
+      a.push(this[i]);
+      u[this[i]] = 1;
+   }
+   return a;
+}
+
 var app = angular.module("resourcesApp", ['ngAnimate', 'mgo-mousetrap']);
+
+app.filter('highlight', function($sce) {
+    return function(text, phrase) {
+      if (phrase) text = text.replace(new RegExp('('+phrase+')', 'gi'),
+        '<span class="highlighted">$1</span>')
+
+      return $sce.trustAsHtml(text)
+    }
+});
+
 
 app.controller('RootController', function($scope, $location, $timeout) {
 
@@ -8,6 +30,7 @@ app.controller('RootController', function($scope, $location, $timeout) {
     };
 
     $scope.keyword = "";
+    $scope.allTags = [];
 
     $scope.search = function () {
         $timeout(function () {
@@ -94,6 +117,8 @@ app.controller('RootController', function($scope, $location, $timeout) {
         $(".nav-item").removeClass("active").eq(idx).addClass("active");
         // console.log(scrollTop);
     });
+
+    
 
     $scope.resources = [{
         category: "Daily  每日必逛",
@@ -642,6 +667,14 @@ app.controller('RootController', function($scope, $location, $timeout) {
         items: [
             {
                 isNew: true,
+                linkurl: "https://www.flinto.com/mac",
+                thumbnail: "images/rscs/flinto.jpg",
+                name: "Flinto for Mac",
+                descript: "Flinto 在 Mac 上的原型製作工具，幾乎大部分的效果都可以模擬，非常的威猛！",
+                tags: "prototype 原型 雛形 快速 工具 溝通 "
+            },
+            {
+                isNew: true,
                 linkurl: "http://www.invisionapp.com",
                 thumbnail: "images/rscs/invision.jpg",
                 name: "InVision",
@@ -825,7 +858,41 @@ app.controller('RootController', function($scope, $location, $timeout) {
         ]
     }, ];
 
+    var allTags = [];
+    $scope.resources.forEach(function (rsc) {
+        rsc.items.forEach(function (item) {
+            if (item.tags) {
+                var tags = item.tags.split(" ");
+                allTags = allTags.concat(tags);
+            }
+        })
+    });
+
+    $scope.allTags = allTags.filter(onlyUnique).sort(function(a, b){
+        if(a < b) return -1;
+        if(a > b) return 1;
+        return 0;
+    });
+
+    $scope.addTag = function (tag) {
+        $scope.keyword += " " + tag;
+    };
+
+    // $scope.tagFilter = function(tag) {
+    //     if ($scope.keyword.indexOf(tag) !== -1) {
+    //         return false;
+    //     }
+    //     else {
+    //         return true;
+    //     }
+    //     return false;
+    // };
 });
+
+
+function onlyUnique(value, index, self) { 
+    return self.indexOf(value) === index;
+}
 
 
 function throttle(fn, delay) {
