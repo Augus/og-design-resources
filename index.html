@@ -8,7 +8,7 @@
     <!-- <meta property="og:url" content="http://" /> -->
     <meta property="og:image" content="http://resources.ogdesign.tw/images/cover.jpg" />
     <meta name="keywords" content="設計資源,設計資源推薦,奧革設計,用戶體驗,design resource,神器推薦" />
-    <title>設計必備資源總匯 - 奧革設計</title>
+    <title>設計師必備資源總匯 - 奧革設計</title>
     <meta name="description" content="精心整理了各式各樣的設計資源，有各種靈感、資源、工具，身為設計師的你別錯過了！">
     <meta property="og:title" content="設計必備資源總匯 - 奧革設計" />
     <meta property="og:description" content="精心整理了各式各樣的設計資源，有各種靈感、資源、工具，設計師的你別錯過了！" />
@@ -32,6 +32,11 @@
         </a>
         <div class="search">
             <input id="search" type="search" placeholder="按鍵「F」快速搜尋…" ng-model="keyword" ng-keyup="onSearchKeyUp($event)">
+            <!-- <div class="autocomplete">
+                <ul>
+                    <li ng-repeat="tag in allTags | filter: tagFilter" ng-class="{'active' : $index == currentIdx}" ng-click="addTag(tag)">{{tag}}</li>
+                </ul>
+            </div> -->
         </div>
         <ul class="nav">
             <li class="nav-item" ng-repeat="r in resources" ng-click="onNavClick($index)">
@@ -49,10 +54,11 @@
     <div class="section-container">
         
         <div class="intro" ng-hide="keyword">
-            <h2 class="title">設計師必備資源總匯 <small>2015</small></h2>
+            <h2 class="title">奧革設計 - 設計師必備資源總匯 <small>2015</small></h2>
             <!-- <div class="resource-section-content"> -->
                 <!-- <hr> -->
                 <p>精心整理了各式各樣的設計資源，有各種靈感、資源、工具，如果你喜歡這份整理嗎，幫我們分享給更多的人知道：）</p>
+                <div class="fb-share-button" data-href="http://resources.ogdesign.tw/" data-layout="button"></div>
                 <div class="fb-like" data-href="https://www.facebook.com/ogdesign.tw" data-layout="standard" data-action="like" data-show-faces="false" data-share="false" data-colorscheme="dark" style="width: 280px;vertical-align: top;display: inline-block;"></div>
                 <div class="fb-follow" data-href="https://www.facebook.com/Augus.YiHao" data-colorscheme="dark" data-layout="standard" data-show-faces="true" style="vertical-align: top;display: inline-block;"></div>
                 <!-- <div class="fb-like-box" data-href="https://www.facebook.com/ogdesign.tw" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="false" data-show-border="false"></div> -->
@@ -102,7 +108,8 @@
             <!-- <h2 class="title">設計師必備資源總匯</h2> -->
             <!-- <div class="resource-section-content"> -->
                 <!-- <hr> -->
-                <p>如果你喜歡這份整理，幫我們分享給更多的人知道：）</p>
+                <p>喜歡這份整理嗎？關注我們的粉絲團，獲得我們精選的的設計資訊：）</p>
+                <div class="fb-share-button" data-href="http://resources.ogdesign.tw/" data-layout="button"></div>
                 <div class="fb-like" data-href="https://www.facebook.com/ogdesign.tw" data-layout="standard" data-action="like" data-show-faces="false" data-share="false" data-colorscheme="dark" style="width: 280px;vertical-align: top;display: inline-block;"></div>
                 <div class="fb-follow" data-href="https://www.facebook.com/Augus.YiHao" data-colorscheme="dark" data-layout="standard" data-show-faces="true" style="width: 240px; vertical-align: top;display: inline-block;"></div>
                 <!-- <div class="fb-like-box" data-href="https://www.facebook.com/ogdesign.tw" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="false" data-show-border="false"></div> -->
