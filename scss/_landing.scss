@@ -49,6 +49,15 @@ a {
 	background: transparent !important;
 }
 
+::selection {
+	color: #02A4D5;
+  	background: #171717; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+	color: #02A4D5;
+  	background: #171717; /* WebKit/Blink Browsers */
+}
+
 body * {
 	font-family: $globe-font-style;
 }
