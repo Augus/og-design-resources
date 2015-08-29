@@ -895,37 +895,77 @@ app.controller('RootController', function($scope, $location, $timeout) {
         items: [
         {
             isNew: true,
+            linkurl: "https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/",
+            thumbnail: "images/rscs/appleguide.jpg",
+            name: "iOS Human Interface Guidelines",
+            descript: "蘋果人機界面設計規範，設計師應該都要看過！",
+            tags: "hig guideline 規範 ios 蘋果 apple 人機介面 ui"
+        }, 
+        {
+            isNew: true,
+            linkurl: "http://isux.tencent.com/ios8-human-interface-guidelines.html",
+            thumbnail: "images/rscs/appleguide.jpg",
+            name: "iOS 設計規範",
+            descript: "由對岸翻譯的蘋果人機界面設計規範，翻譯的品質還不錯。",
+            tags: "hig guideline 規範 ios 蘋果 apple 人機介面 ui 中文 翻譯"
+        }, 
+
+        
+        {
+            isNew: true,
+            linkurl: "https://developer.apple.com/watch/human-interface-guidelines/",
+            thumbnail: "images/rscs/applewatch.jpg",
+            name: "Apple Watch HIG",
+            descript: "蘋果手錶人機界面設計規範，也許你可以看看！",
+            tags: "hig guideline 規範 ios 蘋果 apple 人機介面 ui watch 手錶"
+        }, 
+        {
+            isNew: true,
+            linkurl: "http://news.ipadown.com/41950",
+            thumbnail: "images/rscs/applewatch.jpg",
+            name: "Apple Watch 設計規範",
+            descript: "蘋果手錶人機界面設計規範，也許你可以看看！",
+            tags: "hig guideline 規範 ios 蘋果 apple 人機介面 ui 中文 翻譯 watch 手錶"
+        }, 
+        {
+            isNew: true,
+            linkurl: "https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/",
+            thumbnail: "images/rscs/osx.jpg",
+            name: "OSX HIG",
+            descript: "蘋果作業系統人機界面設計規範，設計應用程式的你一定要讀讀！",
+            tags: "hig guideline 規範 蘋果 apple 人機介面 ui osx"
+        }, 
+        {
+            isNew: true,
             linkurl: "https://developer.android.com/design/wear/index.html",
             thumbnail: "images/rscs/androidwear.jpg",
             name: "Android Wear Design Guideline",
             descript: "Android Wear Design 的設計規範，設計手錶前可以來看看哦。",
-            tags: "guideline 規範 google material wear"
+            tags: "hig guideline 規範 google material wear 手錶 watch"
+        },
+        {
+            isNew: true,
+            linkurl: "http://www.ui.cn/detail/12022.html",
+            thumbnail: "images/rscs/androidwear.jpg",
+            name: "Android Wear 設計規範",
+            descript: "Android Wear Design 的設計規範中文版，不習慣看英文的設計師可以看看哦！",
+            tags: "hig guideline 規範 google material wear watch 手錶"
         },
         {
             linkurl: "http://www.google.com/design/spec/material-design/introduction.html",
             thumbnail: "images/rscs/material-design.jpg",
             name: "Google Material Design",
             descript: "Goolge Material Design 的設計規範，可以從裡頭學到很多很多。",
-            tags: "guideline 規範 google material"
+            tags: "hig guideline 規範 google material"
         }, {
             linkurl: "http://www.ui.cn/Material/index.html",
             thumbnail: "images/rscs/material-design.jpg",
-            name: "Google Material Design 中文版",
+            name: "Google Material 設計規範",
             descript: "來自對岸翻譯的 Material Design 中文版！",
-            tags: "guideline 規範 google material chinese 中文 翻譯"
-        }, {
-            linkurl: "https://developer.apple.com/library/iOS/documentation/userexperience/conceptual/mobilehig/",
-            thumbnail: "images/rscs/iosguideline.jpg",
-            name: "iOS 7 Human Interface Guidelines",
-            descript: "蘋果人機界面設計規範，設計師應該都要看過！",
-            tags: "guideline 規範 ios 蘋果 apple 人機介面 ui"
-        }, {
-            linkurl: "http://zhuanlan.zhihu.com/langqixu/19675089",
-            thumbnail: "images/rscs/iosguideline-cn.jpg",
-            name: "iOS 7 Human Interface Guidelines 中文版",
-            descript: "由對岸翻譯的蘋果人機界面設計規範，翻譯的品質還不錯。",
-            tags: "guideline 規範 ios 蘋果 apple 人機介面 ui 中文 翻譯"
-        }, ]
+            tags: "hig guideline 規範 google material chinese 中文 翻譯"
+        }, 
+
+        ]
     }, {
         category: "Papers  設計用紙",
         descript: "印出來幫助你更快繪製草圖",
