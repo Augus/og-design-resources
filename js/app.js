@@ -958,7 +958,7 @@ app.controller('RootController', function($scope, $location, $timeout) {
             descript: "Goolge Material Design 的設計規範，可以從裡頭學到很多很多。",
             tags: "hig guideline 規範 google material"
         }, {
-            linkurl: "http://www.ui.cn/Material/index.html",
+            linkurl: "https://wcc723.gitbooks.io/google_design_translate/content/index.html",
             thumbnail: "images/rscs/material-design.jpg",
             name: "Google Material 設計規範",
             descript: "來自對岸翻譯的 Material Design 中文版！",
