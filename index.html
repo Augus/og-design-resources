@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Language" content="zh-tw" />
     <!-- <meta property="og:url" content="http://" /> -->
-    <meta property="og:image" content="images/cover.png" />
+    <meta property="og:image" content="http://resources.ogdesign.tw/images/cover.jpg" />
     <meta name="keywords" content="設計資源,設計資源推薦,奧革設計,用戶體驗,design resource,神器推薦" />
-    <title>設計必備資源總匯 - 奧革設計</title>
-    <meta name="description" content="精心整理了各式各樣的設計資源，有各種靈感、資源、工具，設計師的你別錯過了！">
+    <title>設計師必備資源總匯 - 奧革設計</title>
+    <meta name="description" content="精心整理了各式各樣的設計資源，有各種靈感、資源、工具，身為設計師的你別錯過了！">
     <meta property="og:title" content="設計必備資源總匯 - 奧革設計" />
     <meta property="og:description" content="精心整理了各式各樣的設計資源，有各種靈感、資源、工具，設計師的你別錯過了！" />
 
@@ -22,7 +22,7 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
 </head>
 
-<body ng-controller="RootController" ng-cloak>
+<body ng-controller="RootController" ng-cloak w-mousetrap="{'f': search}">
 
     <div id="sidebar">
         <a href="http://ogdesign.tw">
@@ -30,12 +30,21 @@
                 <img src="images/logo.png" alt="">
             </h1>
         </a>
+        <div class="search">
+            <input id="search" type="search" placeholder="按鍵「F」快速搜尋…" ng-model="keyword" ng-keyup="onSearchKeyUp($event)">
+            <!-- <div class="autocomplete">
+                <ul>
+                    <li ng-repeat="tag in allTags | filter: tagFilter" ng-class="{'active' : $index == currentIdx}" ng-click="addTag(tag)">{{tag}}</li>
+                </ul>
+            </div> -->
+        </div>
         <ul class="nav">
             <li class="nav-item" ng-repeat="r in resources" ng-click="onNavClick($index)">
                 <div class="text">{{r.category}}</div>
             </li>
         </ul>
         <div class="footer">
+            <div class="fb-like" data-href="https://www.facebook.com/ogdesign.tw" data-layout="standard" data-action="like" data-show-faces="false" data-share="false" data-width="200" data-colorscheme="dark" style="color: #ffffff; width: 200px;"></div>
             <div class="copy-right">
                 ogdesign © All rights reserved
             </div>
@@ -44,41 +53,48 @@
 
     <div class="section-container">
         
-        <div class="resource-section gray">
-            <h2 class="resource-section-title">設計師必備資源總匯</h2>
-            <div class="resource-section-content">
-                <hr>
+        <div class="intro" ng-hide="keyword">
+            <h2 class="title">奧革設計 - 設計師必備資源總匯 <small>2015</small></h2>
+            <!-- <div class="resource-section-content"> -->
+                <!-- <hr> -->
                 <p>精心整理了各式各樣的設計資源，有各種靈感、資源、工具，如果你喜歡這份整理嗎，幫我們分享給更多的人知道：）</p>
-                <div class="fb-like" data-href="http://resources.ogdesign.tw/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-                <div class="fb-like-box" data-href="https://www.facebook.com/ogdesign.tw" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="false" data-show-border="false"></div>
-            </div>
+                <div class="fb-share-button" data-href="http://resources.ogdesign.tw/" data-layout="button"></div>
+                <div class="fb-like" data-href="https://www.facebook.com/ogdesign.tw" data-layout="standard" data-action="like" data-show-faces="false" data-share="false" data-colorscheme="dark" style="width: 280px;vertical-align: top;display: inline-block;"></div>
+                <div class="fb-follow" data-href="https://www.facebook.com/Augus.YiHao" data-colorscheme="dark" data-layout="standard" data-show-faces="true" style="vertical-align: top;display: inline-block;"></div>
+                <!-- <div class="fb-like-box" data-href="https://www.facebook.com/ogdesign.tw" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="false" data-show-border="false"></div> -->
+            <!-- </div> -->
         </div>
 
         <div class="">
-            <div class="resource-section" ng-repeat="r in resources" ng-class="{'gray': $index%2===0}">
-                <h2 id="{{r.category}}" class="resource-section-title">{{r.category}}</h2>
-                <div class="resource-section-content">
-                    <p>{{r.descript}}</p>
-                    <hr>
-                    <a class="service" href="{{i.linkurl}}" target="_blank" ng-repeat="i in r.items">
+            <div class="resource-section" ng-repeat="r in resources" ng-class="{'gray': $index%2===0}" ng-show="is.length != 0">
+                
+                <div class="resource-section-content" ng-show="is.length != 0">
+                    <h2 id="{{r.category}}" class="resource-section-title">{{r.category}}</h2>
+                    <p>{{r.descript}}</p>    
+                    <!-- <hr> -->
+                    <a class="service" href="{{i.linkurl}}" target="_blank" ng-repeat="i in is = (r.items | filter: searchFilter)">
                         <div ng-if="i.thumbnail" class="thumbnail" style="background-image: url({{i.thumbnail}});"></div>
-                        <div ng-if="!i.thumbnail" class="thumbnail" style="background-color: {{i.color}}">{{i.name}}</div>
+                        <div ng-if="!i.thumbnail" class="thumbnail" style="background-color: {{i.color}}"><div class="text">{{i.name}}</div></div>
+                        <div class="badge" ng-class="i.isNew" ng-if="i.isNew">NEW</div>
                         <h4 class="title">{{i.name}}</h4>
                         <p class="descript">{{i.descript}}</p>
+                        <div class="see">前往查看</div>
                     </a>
                 </div>
             </div>
-
-            <div class="resource-section">
+            
+            <!-- <div class="resource-section" ng-hide="is.length > 0">
+                <h2 class="resource-section-title">找不到與「{{keyword}}」相關的結果</h2>
+            </div> -->
+            <!-- <div class="resource-section" ng-show="is.length > 0">
                 <h2 class="resource-section-title">台灣 UI/UX 社團</h2>
                 <div class="resource-section-content">
-                    <hr>
                     <p>「<a href="http://uiux.tw">使用者經驗研究分析</a>」社團成立於 2013 年，在這裡漢大家觀察最使用者經驗(User Experience)趨勢，分享並討論設計議題，使用人本的社群溝通方法、用人性解構網路世界。</a>
                     </p>
                 </div>
-            </div>
+            </div> -->
 
-            <div class="resource-section gray">
+            <!-- <div class="resource-section gray">
                 <h2 class="resource-section-title">關於奧革設計</h2>
                 <div class="resource-section-content">
                     <hr>
@@ -86,12 +102,24 @@
                     <div class="fb-follow" data-href="https://www.facebook.com/Augus.YiHao" data-colorscheme="light" data-layout="standard" data-show-faces="true"></div>
                     <div class="fb-like-box" data-href="https://www.facebook.com/ogdesign.tw" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="false" data-show-border="false"></div>
                 </div>
-            </div>
+            </div> -->
+        </div>
+        <div class="intro">
+            <!-- <h2 class="title">設計師必備資源總匯</h2> -->
+            <!-- <div class="resource-section-content"> -->
+                <!-- <hr> -->
+                <p>喜歡這份整理嗎？關注我們的粉絲團，獲得我們精選的的設計資訊：）</p>
+                <div class="fb-share-button" data-href="http://resources.ogdesign.tw/" data-layout="button"></div>
+                <div class="fb-like" data-href="https://www.facebook.com/ogdesign.tw" data-layout="standard" data-action="like" data-show-faces="false" data-share="false" data-colorscheme="dark" style="width: 280px;vertical-align: top;display: inline-block;"></div>
+                <div class="fb-follow" data-href="https://www.facebook.com/Augus.YiHao" data-colorscheme="dark" data-layout="standard" data-show-faces="true" style="width: 240px; vertical-align: top;display: inline-block;"></div>
+                <!-- <div class="fb-like-box" data-href="https://www.facebook.com/ogdesign.tw" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="false" data-show-border="false"></div> -->
+            <!-- </div> -->
         </div>
     </div>
     <div id="fb-root"></div>
     <script src="//code.jquery.com/jquery-1.8.0.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.13/angular.min.js"></script>
+    <script src="//code.angularjs.org/1.3.0-beta.13/angular-animate.min.js"></script>
     <script src="js/default.js"></script>
     <script src="js/app.js"></script>
 
@@ -126,6 +154,8 @@
     <script src="js/modernizr.js"></script>
     <script src="js/retina.min.js"></script>
     <script src="js/jquery.scrollTo.min.js"></script>
+    <script src="js/mousetrap.js"></script>
+    <script src="js/wMousetrap.js"></script>
 </body>
 
 </html>
